@@ -1,6 +1,6 @@
 bin/
 .settings/
-.metadata
+.metadata/
 *.class
 .project
 .classpath

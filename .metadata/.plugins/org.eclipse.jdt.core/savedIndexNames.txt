@@ -1,5 +1,4 @@
 INDEX VERSION 1.126+C:\Users\armartin\Projet-Compilo\.metadata\.plugins\org.eclipse.jdt.core
-2950053339.index
 3270002986.index
 1789169078.index
 3000053649.index

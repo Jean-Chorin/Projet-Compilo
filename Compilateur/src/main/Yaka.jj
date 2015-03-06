@@ -19,6 +19,7 @@ PARSER_BEGIN(Yaka)
 
 public class Yaka {
   public static Declaration declaration;
+  //pilou
   public static TabIdent tabIdent;
   public static Expression expression;
   public static YVM yvm;

@@ -1,14 +1,11 @@
 package ident;
 
-public class Ident {
-
-	public enum Type {
-		bool,
-		entier,
-		erreur;
-	}
+public abstract class Ident {
 	
-	public String nom;
 	public Type type;
 	public int valeur;
+	
+	public Ident(){
+		super();
+	}
 }

@@ -147,7 +147,7 @@ void analyse() : {}
    <FPROGRAMME> 
 }
 
-void bloc() : {}{
+void bloc() : {} {
  (declConst())*
  (declVar())*		
    suiteExpr() 

@@ -6,4 +6,8 @@ public class IdVar extends Ident {
 	public IdVar(Type t, int v){
 		super(t, v);
 	}
+	
+	public IdVar() {
+		super();
+	}
 }

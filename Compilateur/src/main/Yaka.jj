@@ -161,16 +161,16 @@ void declConst() : {}
 void defConst() : {}
 {
 	
-  <ident>  	  	
+  <ident> {addConst(YakaTokenManager.identLu);} 	  	
    "=" valConst()
     
 }
 
 void valConst() : {}{
-  <entier> 		
- | <ident>		
- | <VRAI> 		
- | <FAUX> 		
+  <entier> 	{setValeur(ENTIER , YakaTokenManager.entierLu);} 	
+ | <ident>	{setValeur(YakaTokenManager.identLu);}	
+ | <VRAI> 	{setValeur(BOOLEEN , -1);}
+ | <FAUX> 	{setValeur(BOOLEEn , 0);}
 }
 
 

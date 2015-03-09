@@ -10,4 +10,8 @@ public abstract class Ident {
 		type = t;
 		valeur = v;
 	}
+	
+	public Ident() {
+		super();
+	}
 }

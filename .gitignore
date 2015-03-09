@@ -1,4 +1,5 @@
 bin/
+Compilateur/bin/
 .settings/
 .metadata/
 *.class

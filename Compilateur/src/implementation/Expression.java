@@ -24,10 +24,11 @@ public class Expression {
 		pile_Ident.push(e);
 	}
 	
-	public void addDest(Ident e){
+	public void setDest(Ident e){
 		destination = e;
 	}
 	
+	//calcul avec l'operateur de haut de pile et les deux ident de haut de pile
 	public void calcul(){
 		
 	}

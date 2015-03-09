@@ -4,5 +4,13 @@ public enum Operateur {
 	PLUS,
 	MOINS,
 	DIV,
-	FOIS;
+	FOIS,
+	NEG,
+	INF,
+	INFEG,
+	SUP,
+	SUPEG,
+	EG,
+	OU,
+	ET;
 }

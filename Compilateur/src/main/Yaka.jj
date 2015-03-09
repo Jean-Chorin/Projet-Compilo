@@ -15,7 +15,8 @@ options{
 
 PARSER_BEGIN(Yaka)
 
-
+import ident.*;
+import implementation.*;
 
 public class Yaka {
   public static Declaration declaration;

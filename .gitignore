@@ -1,5 +1,7 @@
 bin/
 Compilateur/bin/
+bin/*
+Compilateur/bin/*
 .settings/
 .metadata/
 .metadata/*

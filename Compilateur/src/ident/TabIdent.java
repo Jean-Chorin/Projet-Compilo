@@ -11,4 +11,11 @@ public class TabIdent {
 	public TabIdent(){
 		table = new HashMap<String, Ident>();
 	}
+	
+	//chercheIdent : rend l'ident en passant sa clef en paramètre
+	public Ident chercheIdent (String clef){
+		return table.get(clef);
+	}
+	
+	
 }

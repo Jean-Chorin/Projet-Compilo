@@ -4,6 +4,14 @@ INDEX VERSION 1.126+C:\Users\armartin\Projet-Compilo\.metadata\.plugins\org.ecli
 3000053649.index
 3585733931.index
 2877109961.index
+<<<<<<< HEAD
+=======
+3730526690.index
+4251467834.index
+3000053649.index
+3270002986.index
+2950053339.index
+>>>>>>> 3ab5d8df2e12791517f50c6a6f21fbd6450b6a87
 3277441100.index
 4251467834.index
 3730526690.index

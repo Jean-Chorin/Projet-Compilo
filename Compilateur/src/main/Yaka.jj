@@ -237,10 +237,10 @@ void primaire (): {}
 }
 
 void valeur () : {}
-{ <entier> 	{expression.empileInt(TokenManager.entierLu)
- | <ident> 		
- | <VRAI> 		
- | <FAUX> 		
+{ <entier> 	{expression.empileIdent(new IdConst(Type.ENTIER, TokenManager.entierLu));}
+ | <ident> 	{expression.empileIdent(tabIdent.chercheIdent(TokenManager.entierLu));}	
+ | <VRAI> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, -1));}	
+ | <FAUX> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, 0));}	
  
 }
 

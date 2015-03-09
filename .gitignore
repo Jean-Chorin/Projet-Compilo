@@ -1,7 +1,10 @@
 bin/
 Compilateur/bin/
+bin/*
+Compilateur/bin/*
 .settings/
 .metadata/
+.metadata/*
 *.class
 .project
 .classpath

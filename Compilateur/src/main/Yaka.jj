@@ -15,7 +15,8 @@ options{
 
 PARSER_BEGIN(Yaka)
 
-
+import ident.*;
+import implementation.*;
 
 public class Yaka {
   public static Declaration declaration;
@@ -214,18 +215,18 @@ void simpleExpr() : {}
    terme() 
    (opAdd() 
    terme()	
-   )*
+   {expression.calcul();})*
 } 
 void terme() : {}
 {
   facteur() 
   (opMul() 
   facteur()	
-  )*
+  {expression.calcul();})*
 }
 void facteur() : {}
-{   primaire() 
-  |  opNeg() primaire() 
+{   
+  opNeg()? primaire() 
 }
 
 void primaire (): {}
@@ -236,7 +237,7 @@ void primaire (): {}
 }
 
 void valeur () : {}
-{ <entier> 		
+{ <entier> 	{expression.empileInt(TokenManager.entierLu)
  | <ident> 		
  | <VRAI> 		
  | <FAUX> 		

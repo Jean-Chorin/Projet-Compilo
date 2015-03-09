@@ -215,18 +215,18 @@ void simpleExpr() : {}
    terme() 
    (opAdd() 
    terme()	
-   )*
+   {expression.calcul();})*
 } 
 void terme() : {}
 {
   facteur() 
   (opMul() 
   facteur()	
-  )*
+  {expression.calcul();})*
 }
 void facteur() : {}
-{   primaire() 
-  |  opNeg() primaire() 
+{   
+  opNeg()? primaire() 
 }
 
 void primaire (): {}
@@ -237,7 +237,7 @@ void primaire (): {}
 }
 
 void valeur () : {}
-{ <entier> 		
+{ <entier> 	{expression.empileInt(TokenManager.entierLu)
  | <ident> 		
  | <VRAI> 		
  | <FAUX> 		

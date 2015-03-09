@@ -5,7 +5,7 @@ public enum Operateur {
 	MOINS,
 	DIV,
 	FOIS,
-	NEG,
+	NEG, //entier negatif
 	INF,
 	INFEG,
 	SUP,

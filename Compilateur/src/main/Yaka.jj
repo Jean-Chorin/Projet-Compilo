@@ -237,8 +237,8 @@ void primaire (): {}
 }
 
 void valeur () : {}
-{ <entier> 	{expression.empileIdent(new IdConst(Type.ENTIER, TokenManager.entierLu));}
- | <ident> 	{expression.empileIdent(tabIdent.chercheIdent(TokenManager.entierLu));}	
+{ <entier> 	{expression.empileIdent(new IdConst(Type.ENTIER, YakaTokenManager.entierLu));}
+ | <ident> 	{expression.empileIdent(tabIdent.chercheIdent(YakaTokenManager.identLu));}	
  | <VRAI> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, -1));}	
  | <FAUX> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, 0));}	
  

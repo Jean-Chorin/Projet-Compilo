@@ -1,5 +1,6 @@
 package main;
 
+import generation.YVM;
 import ident.*;
 import implementation.*;
 

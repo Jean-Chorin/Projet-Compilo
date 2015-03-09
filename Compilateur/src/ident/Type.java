@@ -1,7 +1,7 @@
 package ident;
 
 public enum Type {
-	bool,
-	entier,
-	erreur;
+	BOOLEEN,
+	ENTIER,
+	ERREUR;
 }

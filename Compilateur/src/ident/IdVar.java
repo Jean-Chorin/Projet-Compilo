@@ -3,7 +3,7 @@ package ident;
 public class IdVar extends Ident {
 
 	//Constructeur de IdVar
-	public IdVar(){
-		super();
+	public IdVar(Type t, int v){
+		super(t, v);
 	}
 }

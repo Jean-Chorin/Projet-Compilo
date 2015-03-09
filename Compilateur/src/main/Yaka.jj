@@ -17,6 +17,7 @@ PARSER_BEGIN(Yaka)
 
 import ident.*;
 import implementation.*;
+import generation.*;
 
 public class Yaka {
   public static Declaration declaration;

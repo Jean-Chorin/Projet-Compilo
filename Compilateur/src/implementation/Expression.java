@@ -9,7 +9,6 @@ public class Expression {
 	
 	private Stack<Ident> pile_Ident;
 	private Stack<Operateur> pile_op;
-	private Ident destination; //où on stock le calcul
 	
 	public Expression(){
 		pile_Ident = new Stack<Ident>();
@@ -24,12 +23,23 @@ public class Expression {
 		pile_Ident.push(e);
 	}
 	
-	public void setDest(Ident e){
-		destination = e;
-	}
 	
 	//calcul avec l'operateur de haut de pile et les deux ident de haut de pile
 	public void calcul(){
+		switch(pile_op.pop()){
+			case PLUS:
+				if(pile_Ident.pop().type == Type.BOOLEEN || pile_Ident.pop().type != Type.BOOLEEN){
+								System.out.println("On ne peut pas additionner un bool" + " à la ligne " + 
+						Yaka.token.next.beginLine + ", à la colonne " + Yaka.token.next.beginColumn);
+								pile_Ident.push(new IdConst(Type.ERREUR, 0));
+				}
+			
+			break;
+			case MOINS:
+				
+		}
 		
 	}
+	
+	
 }

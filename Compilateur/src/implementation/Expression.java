@@ -7,11 +7,11 @@ import main.*;
 
 public class Expression {
 	
-	private Stack<Ident> pile_Ident;
+	private Stack<Type> pile_Type;
 	private Stack<Operateur> pile_op;
 	
 	public Expression(){
-		pile_Ident = new Stack<Ident>();
+		pile_Type = new Stack<Type>();
 		pile_op = new Stack<Operateur>();
 	}
 	
@@ -20,23 +20,122 @@ public class Expression {
 	}
 	
 	public void empileIdent(Ident e){
-		pile_Ident.push(e);
+		pile_Type.push(e.type);
 	}
+	
+	//appel le YVM correspondant à l'opérateur
+	private void choix_op(Operateur o){
+		
+	}
+	
 	
 	
 	//calcul avec l'operateur de haut de pile et les deux ident de haut de pile
 	public void calcul(){
-		switch(pile_op.pop()){
+		Operateur o = pile_op.pop();
+		Type nb1;
+		Type nb2;
+		switch(o){
+		
+		
+		
 			case PLUS:
-				if(pile_Ident.pop().type == Type.BOOLEEN || pile_Ident.pop().type != Type.BOOLEEN){
-								System.out.println("On ne peut pas additionner un bool" + " à la ligne " + 
-						Yaka.token.next.beginLine + ", à la colonne " + Yaka.token.next.beginColumn);
-								pile_Ident.push(new IdConst(Type.ERREUR, 0));
-				}
-			
-			break;
 			case MOINS:
+			case FOIS:
+			case DIV:
+				 nb1 = pile_Type.pop();
+				 nb2 = pile_Type.pop();
+					if(nb1 == Type.BOOLEEN || nb2 == Type.BOOLEEN){
+						System.out.println("On ne peut pas faire des oppérations à un bool" + " à la ligne " + 
+				Yaka.token.next.beginLine + ", à la colonne " + Yaka.token.next.beginColumn);
+						pile_Type.push(Type.ERREUR);
+				}else if(nb1 == Type.ERREUR || nb2 == Type.ERREUR){
+					pile_Type.push(Type.ERREUR);
+				}else{
+					pile_Type.push(Type.ENTIER);
+				}
+					
+					choix_op(o);
+			break;
+			
+			case INF:
+			case SUP:
+			case SUPEG:
+			case INFEG:
+				 nb1 = pile_Type.pop();
+				 nb2 = pile_Type.pop();
+					if(nb1 == Type.BOOLEEN || nb2 == Type.BOOLEEN){
+						System.out.println("On ne peut pas faire des comparaisons à un bool" + " à la ligne " + 
+				Yaka.token.next.beginLine + ", à la colonne " + Yaka.token.next.beginColumn);
+						pile_Type.push(Type.ERREUR);
+				}else if(nb1 == Type.ERREUR || nb2 == Type.ERREUR){
+					pile_Type.push(Type.ERREUR);
+				}else{
+					pile_Type.push(Type.BOOLEEN);
+				}
+					
+					choix_op(o);
+			break;
+			
+			case EG:
+			case DIF:
+				 nb1 = pile_Type.pop();
+				 nb2 = pile_Type.pop();
+				 if(nb1 == Type.ERREUR || nb2 == Type.ERREUR){
+						pile_Type.push(Type.ERREUR);
+					}else{
+						pile_Type.push(Type.BOOLEEN);
+					}
+					
+					
+					choix_op(o);
+			break;
+			
+			case ET:
+			case OU:
+				 nb1 = pile_Type.pop();
+				 nb2 = pile_Type.pop();
+					if(nb1 == Type.ENTIER || nb2 == Type.ENTIER){
+						System.out.println("On ne peut pas faire des opérations logiques à un entier" + " à la ligne " + 
+				Yaka.token.next.beginLine + ", à la colonne " + Yaka.token.next.beginColumn);
+						pile_Type.push(Type.ERREUR);
+				}else if(nb1 == Type.ERREUR || nb2 == Type.ERREUR){
+					pile_Type.push(Type.ERREUR);
+				}else{
+					pile_Type.push(Type.BOOLEEN);
+				}
+					
+					choix_op(o);
+					break;
+					
+			case NEG:
+				nb1 = pile_Type.pop();
+				if(nb1 == Type.ENTIER ){
+					System.out.println("On ne peut pas faire des oppérations à un entier" + " à la ligne " + 
+							Yaka.token.next.beginLine + ", à la colonne " + Yaka.token.next.beginColumn);
+					pile_Type.push(Type.ERREUR);
+				}else if(nb1 == Type.ERREUR ){
+					pile_Type.push(Type.ERREUR);
+				}else{
+					pile_Type.push(Type.ENTIER);
+				}
+				choix_op(o);
+				break;
 				
+			case NON:
+				nb1 = pile_Type.pop();
+				if(nb1 == Type.BOOLEEN ){
+					System.out.println("On ne peut pas faire des oppérations à un entier" + " à la ligne " + 
+							Yaka.token.next.beginLine + ", à la colonne " + Yaka.token.next.beginColumn);
+					pile_Type.push(Type.ERREUR);
+				}else if(nb1 == Type.ERREUR ){
+					pile_Type.push(Type.ERREUR);
+				}else{
+					pile_Type.push(Type.BOOLEEN);
+				}
+				choix_op(o);
+				break;
+			
 		}
 		
 	}

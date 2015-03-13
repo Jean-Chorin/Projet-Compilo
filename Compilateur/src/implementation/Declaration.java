@@ -13,6 +13,10 @@ public class Declaration {
 		offsetCompteur = -2;
 	}
 	
+	public int getOffsetCompteur() {
+		return offsetCompteur;
+	}
+	
 	//création d'une constante booléenne de type t, sans mettre sa valeur
 	public void addConst(String nom) throws ParseException{
 		if (Yaka.tabIdent.existeIdent(nom)) {

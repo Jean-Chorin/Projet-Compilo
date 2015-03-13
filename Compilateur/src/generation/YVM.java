@@ -45,19 +45,37 @@ public class YVM {
 		ecrireln("; iadd");
 	}
 	
-	public void imoins() {
+	public void isub() {
 		ecrireln("; i");
+	}
+	
+	public void ifois() {
+		ecrireln("; ifois");
 	}
 	
 	public void idiv() {
 		ecrireln("; idiv");
 	}
 	
+	public void iinf() {
+		ecrireln("; iinf");
+	}
+	
+	public void isup() {
+		ecrireln("; isup");
+	}
+	
+	public void isupegal() {
+		ecrireln("; isupegal");
+	}
+	
 	public void i() {
 		ecrireln("; i");
 	}
 	
-	
+	public void i() {
+		ecrireln("; i");
+	}
 	
 	//Méthodes des affectations, entrées, sorties
 	public void ecrireEnt(){

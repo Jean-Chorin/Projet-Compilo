@@ -59,4 +59,26 @@ public class YVM {
 	
 	
 	
+	//Méthodes des affectations, entrées, sorties
+	public void ecrireEnt(){
+		
+	}
+	
+	public void ecrireChaine(){
+			
+	}
+	
+	public void ecrireBool(){
+		
+	}
+	
+	public void lireEnt(int id){
+		
+	}
+	
+	public void aLaLigne(){
+		
+	}
+	
+	
 }

@@ -24,6 +24,7 @@ public class Yaka {
   //pilou
   public static TabIdent tabIdent;
   public static Expression expression;
+  public static Instruction instruction;
   public static YVM yvm;
 
   public static void main(String args[]) { 
@@ -151,7 +152,7 @@ void analyse() : {}
 void bloc() : {} {
  (declConst())*
  (declVar())*		
-   suiteExpr() 
+   suiteInstr()
 }
 
 void declConst() : {}
@@ -193,9 +194,11 @@ void type() :{}
 /*
  * Syntaxe des instructions.
  */
+/*
+*****Replacé par suiteInstr()******
 void suiteExpr() : {}
 { (expression() (";" (expression())? )*)? }
-
+*/
 
 
 /*
@@ -274,4 +277,30 @@ void opNeg() : {}
  | <NON>	
 }
 
+/******Affectation, entrees, sorties*******/
+suiteInstr()
+{
+	(instruction() (";" (instruction())? )*)?
+}
+
+instruction()
+{
+
+}
+
+affectation()
+{
+	<ident> "=" expression()
+}
+
+lecture()
+{
+	<LIRE> "(" <ident> {instruction.lire(YakaTokenManager.identLu);} ")"
+}
+
+ecriture()
+{
+	<ECRIRE> ecrire()
+	| <ALALIGNE> {instruction.aLaligne();}
+}
 

@@ -11,8 +11,8 @@ public enum Operateur {
 	SUP,
 	SUPEG,
 	EG,
+	DIF,
 	OU,
 	ET,
-	NON,
-	DIF;
+	NON;
 }

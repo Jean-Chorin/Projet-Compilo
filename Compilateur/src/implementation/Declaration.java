@@ -13,6 +13,10 @@ public class Declaration {
 		offsetCompteur = -2;
 	}
 	
+	public int getOffsetCompteur() {
+		return offsetCompteur;
+	}
+	
 	//création d'une constante booléenne de type t, sans mettre sa valeur
 	public void addConst(String nom) throws ParseException{
 		if (Yaka.tabIdent.existeIdent(nom)) {
@@ -41,8 +45,6 @@ public class Declaration {
 		type = t;
 	}
 	
-	
-	// A SEPARER EN DEUX §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 	
 	//ajoute un Ident de nom "nom" et de type Declaration.type 
 	public void addIdent(String nom) throws ParseException{

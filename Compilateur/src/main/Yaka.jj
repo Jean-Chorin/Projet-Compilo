@@ -144,15 +144,15 @@ TOKEN  :
 /**************************************/
 void analyse() : {}
 {
-   <PROGRAMME> <ident>	
+   <PROGRAMME> <ident>	{yvm.entete();}
    bloc()
-   <FPROGRAMME> 
+   <FPROGRAMME> {yvm.queue();}
 }
 
 void bloc() : {} {
  (declConst())*
- (declVar())*		
-   suiteInstr()
+ (declVar())*		{yvm.ouvrePrinc();}
+   suiteInstr() 
 }
 
 void declConst() : {}
@@ -163,33 +163,28 @@ void declConst() : {}
 void defConst() : {}
 {
 	
-  <ident> {addConst(YakaTokenManager.identLu);} 	  	
+  <ident> {declaration.addConst(YakaTokenManager.identLu);} 	  	
    "=" valConst()
     
 }
 
 void valConst() : {}{
-  <entier> 	{setValeur(ENTIER , YakaTokenManager.entierLu);} 	
- | <ident>	{setValeur(YakaTokenManager.identLu);}	
- | <VRAI> 	{setValeur(BOOLEEN , -1);}
- | <FAUX> 	{setValeur(BOOLEEn , 0);}
+  <entier> 	{declaration.setValeur(ENTIER , YakaTokenManager.entierLu);} 	
+ | <ident>	{declaration.setValeur(YakaTokenManager.identLu);}	
+ | <VRAI> 	{declaration.setValeur(BOOLEEN , -1);}
+ | <FAUX> 	{declaration.setValeur(BOOLEEN , 0);}
 }
 
 
 void declVar() : {}
 {
-  <VAR> type()	
-  <ident>		
-  ("," 
-      <ident>  
-  )* ";"
-	
+  <VAR> type()	<ident>	  {declaration.addIdent(YakaTokenManager.identLu);}   ("," <ident> {declaration.addIdent(YakaTokenManager.identLu);} )*  ";"
 }
 
 void type() :{}
 {
-   <ENTIER> 			
- | <BOOLEEN>	
+   <ENTIER>  {declaration.setType(ENTIER);}		
+ | <BOOLEEN>	{declaration.setType(BOOLEEN);}		
 }
 /*
  * Syntaxe des instructions.

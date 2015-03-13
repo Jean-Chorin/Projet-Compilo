@@ -143,9 +143,9 @@ TOKEN  :
 /**************************************/
 void analyse() : {}
 {
-   <PROGRAMME> <ident>	{yvm.titreProg();}
+   <PROGRAMME> <ident>	{yvm.entete();}
    bloc()
-   <FPROGRAMME> {yvm.finProg();}
+   <FPROGRAMME> {yvm.queue();}
 }
 
 void bloc() : {} {

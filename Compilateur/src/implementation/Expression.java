@@ -47,33 +47,33 @@ public class Expression {
 		
 		
 		
-		case PLUS: 
+		case PLUS: Yaka.yvm.iadd();
 			break;
-		case MOINS:
+		case MOINS:Yaka.yvm.isub();
 			break;
-		case FOIS:
+		case FOIS:Yaka.yvm.ifois();
 			break;
 		case DIV: Yaka.yvm.idiv();
 			break;
-		case INF:
+		case INF: Yaka.yvm.iinf();
 			break;
-		case SUP:
+		case SUP: Yaka.yvm.isup();
 			break;
-		case SUPEG:
+		case SUPEG: Yaka.yvm.isupegal();
 			break;
-		case INFEG:
+		case INFEG: Yaka.yvm.iinfegal();
 			break;
-		case EG:
+		case EG: Yaka.yvm.iegal();
 			break;
-		case DIF:
+		case DIF: Yaka.yvm.idif();
 			break;
-		case ET:
+		case ET: Yaka.yvm.iand();
 			break;
-		case OU:
+		case OU: Yaka.yvm.ior();
 			break;
-		case NON:
+		case NON: Yaka.yvm.inot();
 			break;
-		case NEG:
+		case NEG: Yaka.yvm.ineg();
 			break;
 		}
 	}

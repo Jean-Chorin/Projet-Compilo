@@ -42,8 +42,6 @@ public class Declaration {
 	}
 	
 	
-	// A SEPARER EN DEUX §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-	
 	//ajoute un Ident de nom "nom" et de type Declaration.type 
 	public void addIdent(String nom) throws ParseException{
 		if (Yaka.tabIdent.existeIdent(nom)) {

@@ -143,9 +143,9 @@ TOKEN  :
 /**************************************/
 void analyse() : {}
 {
-   <PROGRAMME> <ident>	
+   <PROGRAMME> <ident>	{titreProg();}
    bloc()
-   <FPROGRAMME> 
+   <FPROGRAMME> {finProg();}
 }
 
 void bloc() : {} {
@@ -171,24 +171,19 @@ void valConst() : {}{
   <entier> 	{setValeur(ENTIER , YakaTokenManager.entierLu);} 	
  | <ident>	{setValeur(YakaTokenManager.identLu);}	
  | <VRAI> 	{setValeur(BOOLEEN , -1);}
- | <FAUX> 	{setValeur(BOOLEEn , 0);}
+ | <FAUX> 	{setValeur(BOOLEEN , 0);}
 }
 
 
 void declVar() : {}
 {
-  <VAR> type()	
-  <ident>		
-  ("," 
-      <ident>  
-  )* ";"
-	
+  <VAR> type()	<ident>	  {addIdent(YakaTokenManager.identLu);}   ("," <ident> {addIdent(YakaTokenManager.identLu);} )*  ";"
 }
 
 void type() :{}
 {
-   <ENTIER> 			
- | <BOOLEEN>	
+   <ENTIER>  {setType(ENTIER);}		
+ | <BOOLEEN>	{setType(BOOLEEN);}		
 }
 /*
  * Syntaxe des instructions.

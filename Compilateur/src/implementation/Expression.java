@@ -9,6 +9,7 @@ public class Expression {
 	
 	private Stack<Type> pile_Type;
 	private Stack<Operateur> pile_op;
+	private Ident dest;
 	
 	public Expression(){
 		pile_Type = new Stack<Type>();
@@ -21,6 +22,23 @@ public class Expression {
 	
 	public void empileIdent(Ident e){
 		pile_Type.push(e.type);
+		if(e instanceof IdConst){
+			Yaka.yvm.iconst(e.valeur);
+		}else{
+			Yaka.yvm.iload(e.valeur);
+		}
+	}
+	
+	public void addDest(Ident i){
+		dest = i;
+	}
+	//fin du calcul, on istore
+	public void end(){
+		if(dest.type != pile_Type.pop()){
+			System.out.println("Résultats ne correspondent pas" + " à la ligne " + 
+					Yaka.token.next.beginLine + ", à la colonne " + Yaka.token.next.beginColumn);
+		}
+		Yaka.yvm.istore(dest.valeur);
 	}
 	
 	//appel le YVM correspondant à l'opérateur

@@ -285,7 +285,7 @@ instruction()
 
 affectation()
 {
-	<ident> "=" expression()
+	<ident>{expression.addDest(tabIdent.chercheIdent(YakaTokenManager.identLu));}	 "=" expression() {expression.end();}
 }
 
 lecture()

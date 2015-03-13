@@ -295,7 +295,13 @@ lecture()
 
 ecriture()
 {
-	<ECRIRE> ecrire()
+	<ECRIRE> "(" ecrire() ")"
 	| <ALALIGNE> {instruction.aLaligne();}
+}
+
+ecrire()
+{
+	expression() {instruction.ecrireExp();};
+	| <chaine> {instruction.ecrireChaine(YakaTokenManager.identLu);}
 }
 

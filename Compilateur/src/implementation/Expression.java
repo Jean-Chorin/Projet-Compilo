@@ -25,7 +25,39 @@ public class Expression {
 	
 	//appel le YVM correspondant à l'opérateur
 	private void choix_op(Operateur o){
+		switch(o){
 		
+		
+		
+		case PLUS:
+			break;
+		case MOINS:
+			break;
+		case FOIS:
+			break;
+		case DIV:
+			break;
+		case INF:
+			break;
+		case SUP:
+			break;
+		case SUPEG:
+			break;
+		case INFEG:
+			break;
+		case EG:
+			break;
+		case DIF:
+			break;
+		case ET:
+			break;
+		case OU:
+			break;
+		case NON:
+			break;
+		case NEG:
+			break;
+		}
 	}
 	
 	

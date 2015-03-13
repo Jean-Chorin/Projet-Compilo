@@ -245,31 +245,31 @@ void valeur () : {}
 
 void opRel() : {}
 {
-   "=" 		
- | "<>" 	
- | "<" 		
- | "<=" 	
- | ">" 		
- | ">=" 	
+   "=" 		{expression.empileOp(Operateur.EG);}
+ | "<>" 	{expression.empileOp(Operateur.DIF);}
+ | "<" 		{expression.empileOp(Operateur.INF);}
+ | "<=" 	{expression.empileOp(Operateur.INFEG);}
+ | ">" 		{expression.empileOp(Operateur.SUP);}
+ | ">=" 	{expression.empileOp(Operateur.SUPEG);}
 } 
 
 void opAdd() : {}
 {
-    "+"		
-  |  "-"  
-  | <OU> 	
+    "+"		{expression.empileOp(Operateur.PLUS);}
+  |  "-"  {expression.empileOp(Operateur.MOINS);}
+  | <OU> 	{expression.empileOp(Operateur.OU);}
 }
 
 void opMul() : {}
 {
-  "*"		
-  | "/"		
-  | <ET>	
+  "*"		{expression.empileOp(Operateur.FOIS);}
+  | "/"		{expression.empileOp(Operateur.DIV);}
+  | <ET>	{expression.empileOp(Operateur.ET);}
 } 
 
 void opNeg() : {}
-{ "-" 		
- | <NON>	
+{ "-" 		{expression.empileOp(Operateur.NEG);}
+ | <NON>	{expression.empileOp(Operateur.NON);}
 }
 
 /******Affectation, entrees, sorties*******/

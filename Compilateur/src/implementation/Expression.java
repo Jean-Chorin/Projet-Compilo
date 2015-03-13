@@ -29,13 +29,13 @@ public class Expression {
 		
 		
 		
-		case PLUS:
+		case PLUS: 
 			break;
 		case MOINS:
 			break;
 		case FOIS:
 			break;
-		case DIV:
+		case DIV: Yaka.yvm.idiv();
 			break;
 		case INF:
 			break;

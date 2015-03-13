@@ -1,32 +1,69 @@
 package generation;
 
 import java.io.*;
+
 import main.Yaka;
 
 
 public class YVM {
 	private OutputStream sortie;
 	
-	//Ouvre un OutputStream vers le fichier de nom "Alpha"
+	//Ouvre un OutputStream vers le fichier de nom "sortie.yaka"
 	public YVM() {
-		sortie = Ecriture.ouvrir("Alpha");
+		sortie = Ecriture.ouvrir("sortie.yaka");
+	}
+	
+	//fonction pour raccourcir l'appel au fichier de sortie
+	public void ecrireln(String s) {
+		Ecriture.ecrireStringln(sortie , s);
 	}
 	
 	
-	//Entete et Enqueue
-	public void titreProg() {
-		Ecriture.ecrireStringln(sortie , "entete");
+	//--------------------------------------Entete et Enqueue--------------------------------------
+	public void entete() {
+		Ecriture.ecrireStringln(sortie , "; entete");
 	}
 		
-	public void finProg() {
-		Ecriture.ecrireStringln(sortie , "queue");
+	public void queue() {
+		Ecriture.ecrireStringln(sortie , "; queue");
 	}
 	
 	
-	//Declaration
+	//---------------------------------------Declaration---------------------------------------
 	public void ouvrePrinc() {
-		Ecriture.ecrireStringln(sortie , "ouvrePrinc" + Yaka.declaration.getOffsetCompteur());
+		Ecriture.ecrireStringln(sortie , "; ouvrePrinc " + Yaka.declaration.getOffsetCompteur());
 	}
 	
 	
+	//---------------------------------------Expression---------------------------------------
+	
+	public void iconst(int n) {
+		ecrireln("; iconst " + n);
+	}
+	
+	public void idiv() {
+		ecrireln("; idiv");
+	}
+	
+	
+	//Méthodes des affectations, entrées, sorties
+	public void ecrireEnt(){
+		
+	}
+	
+	public void ecrireChaine(){
+			
+	}
+	
+	public void ecrireBool(){
+		
+	}
+	
+	public void lireEnt(int id){
+		
+	}
+	
+	public void aLaLigne(){
+		
+	}
 }

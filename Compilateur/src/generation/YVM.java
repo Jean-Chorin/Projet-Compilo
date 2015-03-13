@@ -41,8 +41,22 @@ public class YVM {
 		ecrireln("; iconst " + n);
 	}
 	
+	public void iadd() {
+		ecrireln("; iadd");
+	}
+	
+	public void imoins() {
+		ecrireln("; i");
+	}
+	
 	public void idiv() {
 		ecrireln("; idiv");
 	}
+	
+	public void i() {
+		ecrireln("; i");
+	}
+	
+	
 	
 }

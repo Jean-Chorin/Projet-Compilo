@@ -54,7 +54,7 @@ public class YVM {
 	}
 	
 	public void isub() {
-		ecrireln("; i");
+		ecrireln("; isub");
 	}
 	
 	public void imul() {

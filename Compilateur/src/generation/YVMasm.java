@@ -139,7 +139,6 @@ public class YVMasm extends YVM{
 	
 	public void iegal() {
 		super.iegal();
-		super.iinfegal();
 		ecrireln("pop bx");
 		ecrireln("pop ax");
 		ecrireln("cmp ax,bx");
@@ -151,7 +150,6 @@ public class YVMasm extends YVM{
 	
 	public void idif() {
 		super.idif();
-		super.iinfegal();
 		ecrireln("pop bx");
 		ecrireln("pop ax");
 		ecrireln("cmp ax,bx");

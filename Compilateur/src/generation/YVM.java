@@ -49,8 +49,8 @@ public class YVM {
 		ecrireln("; i");
 	}
 	
-	public void ifois() {
-		ecrireln("; ifois");
+	public void imul() {
+		ecrireln("; imul");
 	}
 	
 	public void idiv() {

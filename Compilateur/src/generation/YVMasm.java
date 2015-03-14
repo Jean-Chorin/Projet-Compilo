@@ -44,6 +44,30 @@ public class YVMasm extends YVM{
 	public void iconst(int n) {
 		super.iconst(n);
 		Ecriture.ecrireStringln(sortie , "push " + n);
+	}	
+	
+	public void iadd() {
+		super.iadd();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("add ax,bx");
+		ecrireln("push ax");
+	}	
+	
+	public void isub() {
+		super.isub();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("sub ax,bx");
+		ecrireln("push ax");
+	}	
+	
+	public void imul() {
+		super.imul();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("mul ax,bx");
+		ecrireln("push ax");
 	}
 	
 	public void idiv() {
@@ -53,4 +77,101 @@ public class YVMasm extends YVM{
 		Ecriture.ecrireStringln(sortie , "end debut");
 	}	
 	
+	public void iinf() {
+		super.iinf();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("cmp ax,bx");
+		ecrireln("jge $+6");
+		ecrireln("push -1");
+		ecrireln("jmp $+4");
+		ecrireln("push 0");
+	}	
+	
+	public void isup() {
+		super.isup();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("cmp ax,bx");
+		ecrireln("jbe $+6");
+		ecrireln("push -1");
+		ecrireln("jmp $+4");
+		ecrireln("push 0");
+	}	
+	
+	public void isupegal() {
+		super.isupegal();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("cmp ax,bx");
+		ecrireln("jb $+6");
+		ecrireln("push -1");
+		ecrireln("jmp $+4");
+		ecrireln("push 0");
+	}	
+	
+	public void iinfegal() {
+		super.iinfegal();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("cmp ax,bx");
+		ecrireln("jg $+6");
+		ecrireln("push -1");
+		ecrireln("jmp $+4");
+		ecrireln("push 0");
+	}	
+	
+	public void iegal() {
+		super.iegal();
+		super.iinfegal();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("cmp ax,bx");
+		ecrireln("jne $+6");
+		ecrireln("push -1");
+		ecrireln("jmp $+4");
+		ecrireln("push 0");
+	}	
+	
+	public void idif() {
+		super.idif();
+		super.iinfegal();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("cmp ax,bx");
+		ecrireln("je $+6");
+		ecrireln("push -1");
+		ecrireln("jmp $+4");
+		ecrireln("push 0");
+	}	
+	
+	public void iand() {
+		super.iand();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("and ax,bx");
+		ecrireln("push ax");
+	}	
+	
+	public void ior() {
+		super.ior();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("or ax,bx");
+		ecrireln("push ax");
+	}	
+	
+	public void inot() {
+		super.inot();
+		ecrireln("pop bx");
+		ecrireln("not bx");
+		ecrireln("push bx");
+	}	
+	
+	public void ineg() {
+		super.ineg();
+		ecrireln("pop bx");
+		ecrireln("neg bx");
+		ecrireln("push bx");
+	}
 }

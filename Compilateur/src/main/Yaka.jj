@@ -14,6 +14,7 @@ options{
 }
 
 PARSER_BEGIN(Yaka)
+package main;
 
 import ident.*;
 import implementation.*;
@@ -29,7 +30,14 @@ public class Yaka {
 
   public static void main(String args[]) { 
     Yaka analyseur;
-    java.io.InputStream input;
+    java.io.InputStream input; 
+  
+    tabIdent = new TabIdent();
+    expression = new Expression();
+    declaration = new Declaration();
+    instruction = new Instruction();
+    yvm = new YVM();
+
 
     if (args.length==1) {
       System.out.print(args[args.length-1] + ": ");
@@ -169,10 +177,10 @@ void defConst() : {}
 }
 
 void valConst() : {}{
-  <entier> 	{declaration.setValeur(ENTIER , YakaTokenManager.entierLu);} 	
+  <entier> 	{declaration.setValeur(Type.ENTIER , YakaTokenManager.entierLu);} 	
  | <ident>	{declaration.setValeur(YakaTokenManager.identLu);}	
- | <VRAI> 	{declaration.setValeur(BOOLEEN , -1);}
- | <FAUX> 	{declaration.setValeur(BOOLEEN , 0);}
+ | <VRAI> 	{declaration.setValeur(Type.BOOLEEN , -1);}
+ | <FAUX> 	{declaration.setValeur(Type.BOOLEEN , 0);}
 }
 
 
@@ -183,8 +191,8 @@ void declVar() : {}
 
 void type() :{}
 {
-   <ENTIER>  {declaration.setType(ENTIER);}		
- | <BOOLEEN>	{declaration.setType(BOOLEEN);}		
+   <ENTIER>  {declaration.setType(Type.ENTIER);}		
+ | <BOOLEEN>	{declaration.setType(Type.BOOLEEN);}		
 }
 /*
  * Syntaxe des instructions.

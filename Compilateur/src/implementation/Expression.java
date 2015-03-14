@@ -96,8 +96,8 @@ public class Expression {
 				 nb1 = pile_Type.pop();
 				 nb2 = pile_Type.pop();
 					if(nb1 == Type.BOOLEEN || nb2 == Type.BOOLEEN){
-						System.out.println("On ne peut pas faire des opp�rations � un bool" + " � la ligne " + 
-				Yaka.token.next.beginLine + ", � la colonne " + Yaka.token.next.beginColumn);
+						System.out.println("On ne peut pas faire des opperations a un bool" + " a la ligne " + 
+				Yaka.token.next.beginLine + ", a la colonne " + Yaka.token.next.beginColumn);
 						pile_Type.push(Type.ERREUR);
 				}else if(nb1 == Type.ERREUR || nb2 == Type.ERREUR){
 					pile_Type.push(Type.ERREUR);
@@ -115,8 +115,8 @@ public class Expression {
 				 nb1 = pile_Type.pop();
 				 nb2 = pile_Type.pop();
 					if(nb1 == Type.BOOLEEN || nb2 == Type.BOOLEEN){
-						System.out.println("On ne peut pas faire des comparaisons � un bool" + " � la ligne " + 
-				Yaka.token.next.beginLine + ", � la colonne " + Yaka.token.next.beginColumn);
+						System.out.println("On ne peut pas faire des comparaisons a un bool" + " a la ligne " + 
+				Yaka.token.next.beginLine + ", a la colonne " + Yaka.token.next.beginColumn);
 						pile_Type.push(Type.ERREUR);
 				}else if(nb1 == Type.ERREUR || nb2 == Type.ERREUR){
 					pile_Type.push(Type.ERREUR);
@@ -146,8 +146,8 @@ public class Expression {
 				 nb1 = pile_Type.pop();
 				 nb2 = pile_Type.pop();
 					if(nb1 == Type.ENTIER || nb2 == Type.ENTIER){
-						System.out.println("On ne peut pas faire des op�rations logiques � un entier" + " � la ligne " + 
-				Yaka.token.next.beginLine + ", � la colonne " + Yaka.token.next.beginColumn);
+						System.out.println("On ne peut pas faire des opperations logiques aun entier" + " a la ligne " + 
+				Yaka.token.next.beginLine + ", a la colonne " + Yaka.token.next.beginColumn);
 						pile_Type.push(Type.ERREUR);
 				}else if(nb1 == Type.ERREUR || nb2 == Type.ERREUR){
 					pile_Type.push(Type.ERREUR);
@@ -161,8 +161,8 @@ public class Expression {
 			case NEG:
 				nb1 = pile_Type.pop();
 				if(nb1 == Type.ENTIER ){
-					System.out.println("On ne peut pas faire des opp�rations � un entier" + " � la ligne " + 
-							Yaka.token.next.beginLine + ", � la colonne " + Yaka.token.next.beginColumn);
+					System.out.println("On ne peut pas faire des opperations a un entier" + " a la ligne " + 
+							Yaka.token.next.beginLine + ", a la colonne " + Yaka.token.next.beginColumn);
 					pile_Type.push(Type.ERREUR);
 				}else if(nb1 == Type.ERREUR ){
 					pile_Type.push(Type.ERREUR);
@@ -175,8 +175,8 @@ public class Expression {
 			case NON:
 				nb1 = pile_Type.pop();
 				if(nb1 == Type.BOOLEEN ){
-					System.out.println("On ne peut pas faire des opp�rations � un entier" + " � la ligne " + 
-							Yaka.token.next.beginLine + ", � la colonne " + Yaka.token.next.beginColumn);
+					System.out.println("On ne peut pas faire des opperations a un entier" + " a la ligne " + 
+							Yaka.token.next.beginLine + ", a la colonne " + Yaka.token.next.beginColumn);
 					pile_Type.push(Type.ERREUR);
 				}else if(nb1 == Type.ERREUR ){
 					pile_Type.push(Type.ERREUR);

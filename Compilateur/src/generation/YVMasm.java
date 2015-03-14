@@ -111,7 +111,7 @@ public class YVMasm extends YVM{
 		ecrireln("pop bx");
 		ecrireln("pop ax");
 		ecrireln("cmp ax,bx");
-		ecrireln("jbe $+6");
+		ecrireln("jle $+6");
 		ecrireln("push -1");
 		ecrireln("jmp $+4");
 		ecrireln("push 0");
@@ -122,7 +122,7 @@ public class YVMasm extends YVM{
 		ecrireln("pop bx");
 		ecrireln("pop ax");
 		ecrireln("cmp ax,bx");
-		ecrireln("jb $+6");
+		ecrireln("jl $+6");
 		ecrireln("push -1");
 		ecrireln("jmp $+4");
 		ecrireln("push 0");

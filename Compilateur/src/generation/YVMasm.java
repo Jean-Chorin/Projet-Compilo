@@ -2,8 +2,6 @@ package generation;
 
 import java.io.*;
 
-import main.Yaka;
-
 
 public class YVMasm extends YVM{
 	private OutputStream sortie;
@@ -14,32 +12,32 @@ public class YVMasm extends YVM{
 	}
 	
 	public void ecrireln(String s) {
-		Ecriture.ecrireStringln(sortie , s);
+		ecrireln(s);
 	}
 	
 	
 	//---------------------------------------Entete et Enqueue---------------------------------------
 	public void entete() {
 		super.entete();
-		Ecriture.ecrireStringln(sortie , ".586\n");
-		Ecriture.ecrireStringln(sortie , ".CODE");
-		Ecriture.ecrireStringln(sortie , "debut :");
-		Ecriture.ecrireStringln(sortie , "STARTUPCODE");
+		ecrireln(".586\n");
+		ecrireln(".CODE");
+		ecrireln("debut :");
+		ecrireln("STARTUPCODE");
 	}
 		
 	public void queue() {
 		super.queue();
-		Ecriture.ecrireStringln(sortie , "nop");
-		Ecriture.ecrireStringln(sortie , "exitcode");
-		Ecriture.ecrireStringln(sortie , "end debut");
+		ecrireln("nop");
+		ecrireln("exitcode");
+		ecrireln("end debut");
 	}
 	
 	
 	//---------------------------------------Declaration---------------------------------------
 	public void ouvrePrinc() {
 		super.ouvrePrinc();
-		Ecriture.ecrireStringln(sortie , "mov bp,sp");
-		Ecriture.ecrireStringln(sortie , "sub sp,14");
+		ecrireln("mov bp,sp");
+		ecrireln("sub sp,14");
 	}
 	
 	
@@ -47,7 +45,7 @@ public class YVMasm extends YVM{
 	
 	public void iconst(int n) {
 		super.iconst(n);
-		Ecriture.ecrireStringln(sortie , "push " + n);
+		ecrireln("push " + n);
 	}	
 	
 	public void iload(int n){
@@ -87,9 +85,9 @@ public class YVMasm extends YVM{
 	
 	public void idiv() {
 		super.idiv();
-		Ecriture.ecrireStringln(sortie , "pop bx");
-		Ecriture.ecrireStringln(sortie , "pop ax");
-		Ecriture.ecrireStringln(sortie , "cwd");
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("cwd");
 		ecrireln("idiv bx");
 		ecrireln("push ax");
 	}

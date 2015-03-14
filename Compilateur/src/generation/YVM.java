@@ -21,11 +21,11 @@ public class YVM {
 	
 	//--------------------------------------Entete et Enqueue--------------------------------------
 	public void entete() {
-		Ecriture.ecrireStringln(sortie , "; entete");
+		ecrireln("; entete");
 	}
 		
 	public void queue() {
-		Ecriture.ecrireStringln(sortie , "; queue");
+		ecrireln("; queue");
 	}
 	
 	
@@ -105,7 +105,10 @@ public class YVM {
 		ecrireln("; ineg");
 	}
 	
-	//M�thodes des affectations, entr�es, sorties
+	
+	
+	//-----------------------M�thodes des affectations, entr�es, sorties-----------------------
+	
 	public void ecrireEnt(){
 		
 	}

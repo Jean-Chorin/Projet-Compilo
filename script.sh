@@ -1,7 +1,9 @@
+#!/bin/bash
+echo -n "Message : "
+read message
 git add .
 git status
-set /p message= message du commit :
-git commit -m "%message%"
+git commit -m "$message"
 git status
 git fetch
 git status

@@ -41,6 +41,14 @@ public class YVM {
 		ecrireln("; iconst " + n);
 	}
 	
+	public void iload(int n) {
+		ecrireln("; iload " + n);
+	}
+	
+	public void istore(int n) {
+		ecrireln("; istore " + n);
+	}
+	
 	public void iadd() {
 		ecrireln("; iadd");
 	}

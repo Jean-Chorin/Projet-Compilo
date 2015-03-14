@@ -1,6 +1,7 @@
 package generation;
 
 import java.io.*;
+
 import main.Yaka;
 
 
@@ -12,6 +13,9 @@ public class YVMasm extends YVM{
 		sortie = Ecriture.ouvrir("sortie.asm");
 	}
 	
+	public void ecrireln(String s) {
+		Ecriture.ecrireStringln(sortie , s);
+	}
 	
 	
 	//---------------------------------------Entete et Enqueue---------------------------------------
@@ -19,7 +23,7 @@ public class YVMasm extends YVM{
 		super.entete();
 		Ecriture.ecrireStringln(sortie , ".586\n");
 		Ecriture.ecrireStringln(sortie , ".CODE");
-		Ecriture.ecrireStringln(sortie , ".debut :");
+		Ecriture.ecrireStringln(sortie , "debut :");
 		Ecriture.ecrireStringln(sortie , "STARTUPCODE");
 	}
 		
@@ -70,12 +74,27 @@ public class YVMasm extends YVM{
 		ecrireln("push ax");
 	}
 	
+	public void iload(int n){
+		super.iload(n);
+		ecrireln("push word ptr [bp" + n + "]");
+	}
+	
+	public void istore(int n){
+		super.istore(n);
+		ecrireln("pop ax");
+		ecrireln("mov word ptr [bp" + n + "],ax");
+	}
+	
+	
 	public void idiv() {
 		super.idiv();
-		Ecriture.ecrireStringln(sortie , "pop");
-		Ecriture.ecrireStringln(sortie , "exitcode");
-		Ecriture.ecrireStringln(sortie , "end debut");
-	}	
+		Ecriture.ecrireStringln(sortie , "pop bx");
+		Ecriture.ecrireStringln(sortie , "pop ax");
+		Ecriture.ecrireStringln(sortie , "cwd");
+		ecrireln("idiv bx");
+		ecrireln("push ax");
+	}
+	
 	
 	public void iinf() {
 		super.iinf();

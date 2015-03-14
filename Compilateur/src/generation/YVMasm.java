@@ -85,6 +85,29 @@ public class YVMasm extends YVM{
 		ecrireln("mov word ptr [bp" + n + "],ax");
 	}
 	
+	public void iadd(){
+		super.iadd();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("add ax,bx");
+		ecrireln("push ax");
+	}
+	
+	public void isubb(){
+		super.isub();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("sub ax,bx");
+		ecrireln("push ax");
+	}
+	
+	public void ifois(){
+		super.ifois();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("imul bx");
+		ecrireln("push ax");
+	}
 	
 	public void idiv() {
 		super.idiv();
@@ -95,6 +118,72 @@ public class YVMasm extends YVM{
 		ecrireln("push ax");
 	}
 	
+	public void iinf(){
+		super.iinf();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("cmp ax,bx");
+		ecrireln("jge $+6");
+		ecrireln("push -1");
+		ecrireln("jmp $+4");
+		ecrireln("push 0");
+
+	}
+	
+	public void isup(){
+		super.isup();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("cmp ax,bx");
+		ecrireln("jle $+6");
+		ecrireln("push -1");
+		ecrireln("jmp $+4");
+		ecrireln("push 0");
+	}
+	
+	public void isupegal(){
+		super.isupegal();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("cmp ax,bx");
+		ecrireln("jl $+6");
+		ecrireln("push -1");
+		ecrireln("jmp $+4");
+		ecrireln("push 0");
+	}
+	
+	public void iinfegal(){
+		super.iinfegal();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("cmp ax,bx");
+		ecrireln("jg $+6");
+		ecrireln("push -1");
+		ecrireln("jmp $+4");
+		ecrireln("push 0");
+	}
+	
+	public void iegal(){
+		super.iegal();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("cmp ax,bx");
+		ecrireln("jne $+6");
+		ecrireln("push -1");
+		ecrireln("jmp $+4");
+		ecrireln("push 0");
+	}
+	
+	public void idif(){
+		super.idif();
+		ecrireln("pop bx");
+		ecrireln("pop ax");
+		ecrireln("cmp ax,bx");
+		ecrireln("je $+6");
+		ecrireln("push -1");
+		ecrireln("jmp $+4");
+		ecrireln("push 0");
+	}
 	
 	public void iinf() {
 		super.iinf();

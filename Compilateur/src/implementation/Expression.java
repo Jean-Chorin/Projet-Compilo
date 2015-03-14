@@ -35,8 +35,8 @@ public class Expression {
 	//fin du calcul, on istore
 	public void end(){
 		if(dest.type != pile_Type.pop()){
-			System.out.println("R�sultats ne correspondent pas" + " � la ligne " + 
-					Yaka.token.next.beginLine + ", � la colonne " + Yaka.token.next.beginColumn);
+			System.out.println("Resultats ne correspondent pas" + " a la ligne " + 
+					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
 		}
 		Yaka.yvm.istore(dest.valeur);
 	}

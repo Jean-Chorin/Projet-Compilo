@@ -1,18 +1,18 @@
 #!/bin/bash
 echo -n "Message : "
 read message
-echo "git add : "
+echo "-------------------------------git add : -------------------------------"
 git add .
 git status
-echo "git commit : "
+echo "-------------------------------git commit : -------------------------------"
 git commit -m "$message"
 git status
-echo "git fetch : "
+echo "-------------------------------git fetch : -------------------------------"
 git fetch
 git status
-echo "git rebase : "
+echo "-------------------------------git rebase : -------------------------------"
 git rebase
 git status
-echo "git push : "
+echo "-------------------------------git push : -------------------------------"
 git push
 git status

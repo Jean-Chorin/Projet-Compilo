@@ -69,15 +69,35 @@ public class YVM {
 		ecrireln("; isupegal");
 	}
 	
-	public void i() {
-		ecrireln("; i");
+	public void iinfegal() {
+		ecrireln("; iinfegal");
 	}
 	
-	public void i() {
-		ecrireln("; i");
+	public void iegal() {
+		ecrireln("; iegal");
+	}	
+	
+	public void idif() {
+		ecrireln("; idif");
+	}	
+	
+	public void iand() {
+		ecrireln("; iand");
+	}	
+	
+	public void ior() {
+		ecrireln("; ior");
+	}	
+	
+	public void inot() {
+		ecrireln("; inot");
+	}	
+	
+	public void ineg() {
+		ecrireln("; ineg");
 	}
 	
-	//Méthodes des affectations, entrées, sorties
+	//Mï¿½thodes des affectations, entrï¿½es, sorties
 	public void ecrireEnt(){
 		
 	}

@@ -2,7 +2,7 @@
  *
  *       Auteur: Pedrono Marie-Jo
  *
- * 	création : 13 février 2002
+ * 	crï¿½ation : 13 fï¿½vrier 2002
  *
  *     nature : projet etudiant
  *
@@ -94,7 +94,7 @@ SKIP :
 }
 
 
-/* Mots réservés*/
+/* Mots rï¿½servï¿½s*/
 
 TOKEN :
 {
@@ -198,7 +198,7 @@ void type() :{}
  * Syntaxe des instructions.
  */
 /*
-*****Replacé par suiteInstr()******
+*****Replacï¿½ par suiteInstr()******
 void suiteExpr() : {}
 { (expression() (";" (expression())? )*)? }
 */
@@ -281,35 +281,34 @@ void opNeg() : {}
 }
 
 /******Affectation, entrees, sorties*******/
-suiteInstr()
+void suiteInstr() : {}
 {
 	(instruction() (";" (instruction())? )*)?
 }
 
-instruction()
+void instruction() : {}
 {
 
 }
 
-affectation()
+void affectation() : {}
 {
 	<ident>{expression.addDest(tabIdent.chercheIdent(YakaTokenManager.identLu));}	 "=" expression() {expression.end();}
 }
 
-lecture()
+void lecture() : {}
 {
 	<LIRE> "(" <ident> {instruction.lire(YakaTokenManager.identLu);} ")"
 }
 
-ecriture()
+void ecriture() : {}
 {
 	<ECRIRE> "(" ecrire() ")"
 	| <ALALIGNE> {instruction.aLaligne();}
 }
 
-ecrire()
+void ecrire() : {}
 {
 	expression() {instruction.ecrireExp();};
 	| <chaine> {instruction.ecrireChaine(YakaTokenManager.identLu);}
 }
-

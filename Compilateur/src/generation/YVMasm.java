@@ -11,11 +11,7 @@ public class YVMasm extends YVM{
 		sortie = Ecriture.ouvrir("sortie.asm");
 	}
 	
-	public void ecrireln(String s) {
-		ecrireln(s);
-	}
-	
-	
+
 	//---------------------------------------Entete et Enqueue---------------------------------------
 	public void entete() {
 		super.entete();
@@ -67,7 +63,7 @@ public class YVMasm extends YVM{
 		ecrireln("push ax");
 	}
 	
-	public void isubb(){
+	public void isub(){
 		super.isub();
 		ecrireln("pop bx");
 		ecrireln("pop ax");

@@ -31,7 +31,8 @@ public class YVM {
 	
 	//---------------------------------------Declaration---------------------------------------
 	public void ouvrePrinc() {
-		Ecriture.ecrireStringln(sortie , "; ouvrePrinc " + Yaka.declaration.getOffsetCompteur());
+		int n= (Yaka.declaration.getOffsetCompteur()+2)* (-1);
+		Ecriture.ecrireStringln(sortie , "; ouvrePrinc " + n);
 	}
 	
 	

@@ -288,7 +288,9 @@ void suiteInstr() : {}
 
 void instruction() : {}
 {
-
+	affectation()
+	| lecture()
+	| ecriture()
 }
 
 void affectation() : {}
@@ -309,6 +311,6 @@ void ecriture() : {}
 
 void ecrire() : {}
 {
-	expression() {instruction.ecrireExp();};
+	expression() {instruction.ecrire(YakaTokenManager.identLu);}
 	| <chaine> {instruction.ecrireChaine(YakaTokenManager.identLu);}
 }

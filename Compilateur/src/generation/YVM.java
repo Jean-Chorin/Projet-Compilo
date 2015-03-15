@@ -111,23 +111,23 @@ public class YVM {
 	//-----------------------M�thodes des affectations, entr�es, sorties-----------------------
 	
 	public void ecrireEnt(){
-		
+		ecrireln("; ecrireEnt");
 	}
 	
-	public void ecrireChaine(){
-			
+	public void ecrireChaine(String name){
+		ecrireln("; ecrireChaine "+'"'+name+"="+'"');	
 	}
 	
 	public void ecrireBool(){
-		
+		ecrireln("; ecrireBool");
 	}
 	
-	public void lireEnt(int id){
-		
+	public void lireEnt(int val){
+		ecrireln("; lireEnt" + val);
 	}
 	
 	public void aLaLigne(){
-		
+		ecrireln("; aLaLigne");
 	}
 	
 	

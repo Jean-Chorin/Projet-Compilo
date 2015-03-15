@@ -5,10 +5,12 @@ import java.io.*;
 
 public class YVMasm extends YVM{
 	private OutputStream sortie;
+	private int compteurLect;
 	
 	//Ouvre un OutputStream vers le fichier de nom "sortie.asm"
 	public YVMasm() {
 		sortie = Ecriture.ouvrir("sortie.asm");
+		compteurLect = 0;
 	}
 	
 
@@ -183,5 +185,40 @@ public class YVMasm extends YVM{
 		ecrireln("pop bx");
 		ecrireln("neg bx");
 		ecrireln("push bx");
+	}
+	
+	//---------------------------------------Entrees Sorties---------------------------------------
+
+	public void ecrireEnt(){
+		super.ecrireEnt();
+		ecrireln("call ecrent");
+	}
+	
+	public void ecrireChaine(String name){
+		super.ecrireChaine(name);
+		ecrireln(".DATA");
+		ecrireln("mess"+compteurLect+" DB "+'"'+name+'"');
+		ecrireln(".Code");
+		ecrireln("lea dx,mess"+compteurLect);
+		compteurLect++;
+		ecrireln("push dx");
+		ecrireln("call ecrch");
+	}
+	
+	public void ecrireBool(){
+		super.ecrireBool();
+		ecrireln("call ecrbool");
+	}
+	
+	public void lireEnt(int val){
+		super.lireEnt(val);
+		ecrireln("lea dx,[bp"+val+"]");
+		ecrireln("push dx");
+		ecrireln("call lirent");
+	}
+	
+	public void aLaLigne(){
+		super.aLaLigne();
+		ecrireln("call ligsuiv");
 	}
 }

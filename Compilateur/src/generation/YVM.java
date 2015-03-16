@@ -30,8 +30,7 @@ public class YVM {
 	
 	
 	//---------------------------------------Declaration---------------------------------------
-	public void ouvrePrinc() {
-		int n= (Yaka.declaration.getOffsetCompteur()+2)* (-1);
+	public void ouvrePrinc(int n) {
 		Ecriture.ecrireStringln(sortie , "; ouvrePrinc " + n);
 	}
 	
@@ -115,7 +114,7 @@ public class YVM {
 	}
 	
 	public void ecrireChaine(String name){
-		ecrireln("; ecrireChaine "+'"'+name+"="+'"');	
+		ecrireln("; ecrireChaine " + name );	
 	}
 	
 	public void ecrireBool(){
@@ -123,7 +122,7 @@ public class YVM {
 	}
 	
 	public void lireEnt(int val){
-		ecrireln("; lireEnt" + val);
+		ecrireln("; lireEnt " + val);
 	}
 	
 	public void aLaLigne(){

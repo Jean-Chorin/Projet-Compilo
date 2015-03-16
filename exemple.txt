@@ -10,3 +10,19 @@ c2=c1+3*c1-aa;
 b1=ba OU VRAI;
 b2=(c1<=(c2+4));
 FPROGRAMME
+
+
+PROGRAMME max
+VAR ENTIER x,y,z;
+ECRIRE("x=");
+LIRE(x);
+ALALIGNE;
+ECRIRE("y=");
+LIRE(y);
+ALALIGNE;
+ECRIRE("x+y=");
+ECRIRE(x+y);
+ALALIGNE;
+z=(x+y/2)/5;
+x=y+3*y-4;
+FPROGRAMME

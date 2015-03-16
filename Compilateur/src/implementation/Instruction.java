@@ -22,7 +22,6 @@ public class Instruction {
 	
 	// ecriture() pour le cas d'une chaine
 	public void ecrireChaine(String ident){
-		ident = YakaTokenManager.identLu;
 		Yaka.yvm.ecrireChaine(ident);
 	}
 	

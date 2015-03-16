@@ -13,14 +13,22 @@ public class YVMasm extends YVM{
 		compteurLect = 0;
 	}
 	
+	public void ln() {
+		ecrireln("");
+	}
 
 	//---------------------------------------Entete et Enqueue---------------------------------------
 	public void entete() {
 		super.entete();
+		ecrireln("extrn lirent:proc, ecrent:proc");
+		ecrireln("extrn ecrbool:proc");
+		ecrireln("extrn ecrch:proc, ligsuiv:proc");
+		ecrireln(".model SMALL");
 		ecrireln(".586\n");
 		ecrireln(".CODE");
 		ecrireln("debut :");
 		ecrireln("STARTUPCODE");
+		ln();
 	}
 		
 	public void queue() {
@@ -28,14 +36,16 @@ public class YVMasm extends YVM{
 		ecrireln("nop");
 		ecrireln("exitcode");
 		ecrireln("end debut");
+		ln();
 	}
 	
 	
 	//---------------------------------------Declaration---------------------------------------
-	public void ouvrePrinc() {
-		super.ouvrePrinc();
+	public void ouvrePrinc(int n) {
+		super.ouvrePrinc(n);
 		ecrireln("mov bp,sp");
-		ecrireln("sub sp,14");
+		ecrireln("sub sp," + n);
+		ln();
 	}
 	
 	
@@ -44,17 +54,20 @@ public class YVMasm extends YVM{
 	public void iconst(int n) {
 		super.iconst(n);
 		ecrireln("push " + n);
+		ln();
 	}	
 	
 	public void iload(int n){
 		super.iload(n);
 		ecrireln("push word ptr [bp" + n + "]");
+		ln();
 	}
 	
 	public void istore(int n){
 		super.istore(n);
 		ecrireln("pop ax");
 		ecrireln("mov word ptr [bp" + n + "],ax");
+		ln();
 	}
 	
 	public void iadd(){
@@ -63,6 +76,7 @@ public class YVMasm extends YVM{
 		ecrireln("pop ax");
 		ecrireln("add ax,bx");
 		ecrireln("push ax");
+		ln();
 	}
 	
 	public void isub(){
@@ -71,6 +85,7 @@ public class YVMasm extends YVM{
 		ecrireln("pop ax");
 		ecrireln("sub ax,bx");
 		ecrireln("push ax");
+		ln();
 	}
 	
 	public void imul(){
@@ -79,6 +94,7 @@ public class YVMasm extends YVM{
 		ecrireln("pop ax");
 		ecrireln("imul bx");
 		ecrireln("push ax");
+		ln();
 	}
 	
 	public void idiv() {
@@ -88,6 +104,7 @@ public class YVMasm extends YVM{
 		ecrireln("cwd");
 		ecrireln("idiv bx");
 		ecrireln("push ax");
+		ln();
 	}
 	
 
@@ -100,6 +117,7 @@ public class YVMasm extends YVM{
 		ecrireln("push -1");
 		ecrireln("jmp $+4");
 		ecrireln("push 0");
+		ln();
 	}	
 	
 	public void isup() {
@@ -111,6 +129,7 @@ public class YVMasm extends YVM{
 		ecrireln("push -1");
 		ecrireln("jmp $+4");
 		ecrireln("push 0");
+		ln();
 	}	
 	
 	public void isupegal() {
@@ -122,6 +141,7 @@ public class YVMasm extends YVM{
 		ecrireln("push -1");
 		ecrireln("jmp $+4");
 		ecrireln("push 0");
+		ln();
 	}	
 	
 	public void iinfegal() {
@@ -133,6 +153,7 @@ public class YVMasm extends YVM{
 		ecrireln("push -1");
 		ecrireln("jmp $+4");
 		ecrireln("push 0");
+		ln();
 	}	
 	
 	public void iegal() {
@@ -144,6 +165,7 @@ public class YVMasm extends YVM{
 		ecrireln("push -1");
 		ecrireln("jmp $+4");
 		ecrireln("push 0");
+		ln();
 	}	
 	
 	public void idif() {
@@ -155,6 +177,7 @@ public class YVMasm extends YVM{
 		ecrireln("push -1");
 		ecrireln("jmp $+4");
 		ecrireln("push 0");
+		ln();
 	}	
 	
 	public void iand() {
@@ -163,6 +186,7 @@ public class YVMasm extends YVM{
 		ecrireln("pop ax");
 		ecrireln("and ax,bx");
 		ecrireln("push ax");
+		ln();
 	}	
 	
 	public void ior() {
@@ -171,6 +195,7 @@ public class YVMasm extends YVM{
 		ecrireln("pop ax");
 		ecrireln("or ax,bx");
 		ecrireln("push ax");
+		ln();
 	}	
 	
 	public void inot() {
@@ -178,6 +203,7 @@ public class YVMasm extends YVM{
 		ecrireln("pop bx");
 		ecrireln("not bx");
 		ecrireln("push bx");
+		ln();
 	}	
 	
 	public void ineg() {
@@ -185,6 +211,7 @@ public class YVMasm extends YVM{
 		ecrireln("pop bx");
 		ecrireln("neg bx");
 		ecrireln("push bx");
+		ln();
 	}
 	
 	//---------------------------------------Entrees Sorties---------------------------------------
@@ -192,22 +219,26 @@ public class YVMasm extends YVM{
 	public void ecrireEnt(){
 		super.ecrireEnt();
 		ecrireln("call ecrent");
+		ln();
 	}
 	
 	public void ecrireChaine(String name){
 		super.ecrireChaine(name);
 		ecrireln(".DATA");
-		ecrireln("mess"+compteurLect+" DB "+'"'+name+'"');
-		ecrireln(".Code");
+		name = name.substring(0, name.length()-1);
+		ecrireln("mess"+compteurLect+" DB "+name + "$\"");
+		ecrireln(".CODE");
 		ecrireln("lea dx,mess"+compteurLect);
 		compteurLect++;
 		ecrireln("push dx");
 		ecrireln("call ecrch");
+		ln();
 	}
 	
 	public void ecrireBool(){
 		super.ecrireBool();
 		ecrireln("call ecrbool");
+		ln();
 	}
 	
 	public void lireEnt(int val){
@@ -215,10 +246,12 @@ public class YVMasm extends YVM{
 		ecrireln("lea dx,[bp"+val+"]");
 		ecrireln("push dx");
 		ecrireln("call lirent");
+		ln();
 	}
 	
 	public void aLaLigne(){
 		super.aLaLigne();
 		ecrireln("call ligsuiv");
+		ln();
 	}
 }

@@ -36,7 +36,7 @@ public class Yaka {
     expression = new Expression();
     declaration = new Declaration();
     instruction = new Instruction();
-    yvm = new YVM();
+    yvm = new YVMasm();
 
 
     if (args.length==1) {
@@ -159,7 +159,7 @@ void analyse() : {}
 
 void bloc() : {} {
  (declConst())*
- (declVar())*		{yvm.ouvrePrinc();}
+ (declVar())*		{yvm.ouvrePrinc((declaration.getOffsetCompteur()+2)* (-1));}
    suiteInstr() 
 }
 
@@ -233,7 +233,7 @@ void terme() : {}
 }
 void facteur() : {}
 {   
-  opNeg()? primaire() 
+  (opNeg())? primaire() 
 }
 
 void primaire (): {}
@@ -300,7 +300,7 @@ void affectation() : {}
 
 void lecture() : {}
 {
-	<LIRE> "(" <ident> {instruction.lire(YakaTokenManager.identLu);} ")"
+	<LIRE> "(" <ident> {instruction.lireEnt(YakaTokenManager.identLu);} ")"
 }
 
 void ecriture() : {}
@@ -312,5 +312,5 @@ void ecriture() : {}
 void ecrire() : {}
 {
 	expression() {instruction.ecrire(YakaTokenManager.identLu);}
-	| <chaine> {instruction.ecrireChaine(YakaTokenManager.identLu);}
+	| <chaine> {instruction.ecrireChaine(YakaTokenManager.chaineLue);}
 }

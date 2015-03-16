@@ -30,7 +30,11 @@ public class Expression {
 	}
 	
 	public void addDest(Ident i){
-		dest = i;
+		if(i instanceof IdConst){
+			System.out.println("On ne peut pas stocker de valeurs dans une constante" + " a la ligne " + 
+					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
+		}else{
+		dest = i;}
 	}
 	
 	public Type depile(){

@@ -18,12 +18,13 @@ public class Declaration {
 	}
 	
 	//création d'une constante booléenne de type t, sans mettre sa valeur
-	public void addConst(String nom) throws ParseException{
+	public void addConst(String nom) {
 		if (Yaka.tabIdent.existeIdent(nom)) {
-			throw Yaka.generateParseException();
+			System.out.println("Deux constantes ne peuvent avoir le même nom");
+		} else {
+			Yaka.tabIdent.rangeIdent(nom , new IdConst());
+			tmp = nom;
 		}
-		Yaka.tabIdent.rangeIdent(nom , new IdConst());
-		tmp = nom;
 	}
 	
 	//attribue la valeur et le type à l'Ident de nom tmp si BOOLEEN ou ENTIER

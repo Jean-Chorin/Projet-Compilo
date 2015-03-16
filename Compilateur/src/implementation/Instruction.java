@@ -11,12 +11,11 @@ import main.YakaTokenManager;
 public class Instruction {
 	
 	// ecriture() pour le cas d'une expression
-	public void ecrire(String ident) throws ParseException{
-		Ident id = Yaka.tabIdent.chercheIdent (ident);
-		if(id.type == Type.BOOLEEN){
+	public void ecrire(Type t) throws ParseException{
+		if(t == Type.BOOLEEN){
 			Yaka.yvm.ecrireBool();
 		}
-		if(id.type == Type.ENTIER){
+		if(t == Type.ENTIER){
 			Yaka.yvm.ecrireEnt();
 		}
 	}

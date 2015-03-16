@@ -11,6 +11,7 @@ public class Yaka implements YakaConstants {
   public static TabIdent tabIdent;
   public static Expression expression;
   public static Instruction instruction;
+  public static Iteration iteration;
   public static YVM yvm;
 
   public static void main(String args[]) {
@@ -21,6 +22,7 @@ public class Yaka implements YakaConstants {
     expression = new Expression();
     declaration = new Declaration();
     instruction = new Instruction();
+    iteration = new Iteration();
     yvm = new YVMasm();
 
 
@@ -205,6 +207,7 @@ void suiteExpr() : {}
     case 49:
       opRel();
       simpleExpr();
+   expression.calcul();
       break;
     default:
       jj_la1[6] = jj_gen;
@@ -438,6 +441,7 @@ void suiteExpr() : {}
       jj_la1[18] = jj_gen;
       ;
     }
+
   }
 
   static final public void instruction() throws ParseException {
@@ -504,7 +508,7 @@ void suiteExpr() : {}
     case 43:
     case 51:
       expression();
-                      instruction.ecrire(YakaTokenManager.identLu);
+                      instruction.ecrire(expression.depile());
       break;
     case chaine:
       jj_consume_token(chaine);

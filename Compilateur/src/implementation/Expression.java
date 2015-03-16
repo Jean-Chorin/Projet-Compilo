@@ -33,8 +33,8 @@ public class Expression {
 		dest = i;
 	}
 	
-	public void depile(){
-		pile_Type.pop();
+	public Type depile(){
+		return pile_Type.pop();
 	}
 	
 	//fin du calcul, on istore

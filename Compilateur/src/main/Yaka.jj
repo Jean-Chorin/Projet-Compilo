@@ -214,7 +214,7 @@ void expression() : {}
   simpleExpr() 
   (opRel() 
   simpleExpr() 
-  )?{expression.calcul();}
+  {expression.calcul();})?
 }
 
 
@@ -285,7 +285,7 @@ void opNeg() : {}
 /******Affectation, entrees, sorties*******/
 void suiteInstr() : {}
 {
-	(instruction() (";" (instruction())? )*)? | tantQue()
+	(instruction() (";" (instruction())? )*)? {/*| <TANTQUE>{iteration.tantque();} expression() {iteration.iffaux();}<FAIRE> suiteInstr() {iteration.goTo();}<FAIT>{iteration.fait();}*/}
 }
 
 void instruction() : {}
@@ -313,11 +313,7 @@ void ecriture() : {}
 
 void ecrire() : {}
 {
-	expression() {expression.depile();instruction.ecrire(YakaTokenManager.identLu);}
+	expression() {instruction.ecrire(expression.depile());}
 	| <chaine> {instruction.ecrireChaine(YakaTokenManager.chaineLue);}
 }
 
-void tantQue() : {}
-{
-  <TANTQUE>{iteration.tantque();} expression() {iteration.iffaux();}<FAIRE> suitreInstr() {iteration.goTo();}<FAIT>{iteration.fait();}
-}

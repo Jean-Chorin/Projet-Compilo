@@ -313,7 +313,7 @@ void ecriture() : {}
 
 void ecrire() : {}
 {
-	expression() {instruction.ecrire(YakaTokenManager.identLu);}
+	expression() {expression.depile();instruction.ecrire(YakaTokenManager.identLu);}
 	| <chaine> {instruction.ecrireChaine(YakaTokenManager.chaineLue);}
 }
 

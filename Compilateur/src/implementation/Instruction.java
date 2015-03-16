@@ -2,6 +2,7 @@ package implementation;
 
 import ident.Ident;
 import ident.Type;
+import main.ParseException;
 import main.Yaka;
 import main.YakaTokenManager;
 
@@ -10,7 +11,7 @@ import main.YakaTokenManager;
 public class Instruction {
 	
 	// ecriture() pour le cas d'une expression
-	public void ecrire(String ident){
+	public void ecrire(String ident) throws ParseException{
 		Ident id = Yaka.tabIdent.chercheIdent (ident);
 		if(id.type == Type.BOOLEEN){
 			Yaka.yvm.ecrireBool();
@@ -31,7 +32,7 @@ public class Instruction {
 	}
 	
 	// lecture()
-	public void lireEnt(String ident){
+	public void lireEnt(String ident) throws ParseException{
 		Ident id = Yaka.tabIdent.chercheIdent (ident);
 		Yaka.yvm.lireEnt(id.valeur);
 	}

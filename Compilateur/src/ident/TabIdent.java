@@ -1,6 +1,7 @@
 package ident;
 
 import java.util.*;
+import main.*;
 
 
 public class TabIdent {
@@ -13,8 +14,12 @@ public class TabIdent {
 	}
 	
 	//chercheIdent : rend l'ident en passant sa clef en paramètre
-	public Ident chercheIdent (String clef){
-		return table.get(clef);
+	public Ident chercheIdent (String clef)throws ParseException{
+		if (table.get(clef) == null) {
+			throw new ParseException("Ident " + clef + " non déclaré\n");
+		} else {
+			return table.get(clef);
+		}
 	}
 	
 	//existeIdent : rend vrai si table contient la clef

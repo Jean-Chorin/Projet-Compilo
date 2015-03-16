@@ -285,7 +285,7 @@ void opNeg() : {}
 /******Affectation, entrees, sorties*******/
 void suiteInstr() : {}
 {
-	(instruction() (";" (instruction())? )*)? | <TANTQUE>{iteration.tantque();} expression() {iteration.iffaux();}<FAIRE> suitreInstr() {iteration.goTo();}<FAIT>{iteration.fait();}
+	(instruction() (";" (instruction())? )*)? | tantQue()
 }
 
 void instruction() : {}
@@ -315,4 +315,9 @@ void ecrire() : {}
 {
 	expression() {instruction.ecrire(YakaTokenManager.identLu);}
 	| <chaine> {instruction.ecrireChaine(YakaTokenManager.chaineLue);}
+}
+
+void tantQue() : {}
+{
+  <TANTQUE>{iteration.tantque();} expression() {iteration.iffaux();}<FAIRE> suitreInstr() {iteration.goTo();}<FAIT>{iteration.fait();}
 }

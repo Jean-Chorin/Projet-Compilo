@@ -214,7 +214,7 @@ void expression() : {}
   simpleExpr() 
   (opRel() 
   simpleExpr() 
-  )?
+  )?{expression.calcul();}
 }
 
 

@@ -32,6 +32,11 @@ public class Expression {
 	public void addDest(Ident i){
 		dest = i;
 	}
+	
+	public void depile(){
+		pile_Type.pop();
+	}
+	
 	//fin du calcul, on istore
 	public void end(){
 		if(dest.type != pile_Type.pop()){

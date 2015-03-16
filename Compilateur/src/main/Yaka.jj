@@ -235,7 +235,7 @@ void terme() : {}
 }
 void facteur() : {}
 {   
-  (opNeg())? primaire() 
+  opNeg() primaire() {expression.calcul();} | primaire()
 }
 
 void primaire (): {}

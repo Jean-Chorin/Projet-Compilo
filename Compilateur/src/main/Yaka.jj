@@ -293,6 +293,7 @@ void instruction() : {}
 	affectation()
 	| lecture()
 	| ecriture()
+	| iteration()
 }
 
 void affectation() : {}
@@ -315,5 +316,12 @@ void ecrire() : {}
 {
 	expression() {instruction.ecrire(expression.depile());}
 	| <chaine> {instruction.ecrireChaine(YakaTokenManager.chaineLue);}
+}
+
+void iteration() : {}
+{
+	<TANTQUE> {Yaka.iteration.tantque();} expression() {iteration.iffaux(expression.depile());}
+	<FAIRE> suiteInstr()
+	<FAIT> {Yaka.iteration.fait();}
 }
 

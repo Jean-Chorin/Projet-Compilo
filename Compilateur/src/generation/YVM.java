@@ -6,7 +6,8 @@ import main.Yaka;
 
 
 public class YVM {
-	private OutputStream sortie;
+	protected OutputStream sortie;
+	protected int compteurIt;
 	
 	//Ouvre un OutputStream vers le fichier de nom "sortie.yaka"
 	public YVM() {
@@ -129,5 +130,21 @@ public class YVM {
 		ecrireln("; aLaLigne");
 	}
 	
+	//-----------------------Iteration-----------------------
 	
+	public void tantque(){
+		compteurIt++;
+		ecrireln("FAIRE" + compteurIt + ":");
+	}
+	
+	public void iffaux(){
+		ecrireln("; iffaux FAIT" + compteurIt);
+	}
+	
+	public void goTo(){
+		ecrireln("; goto FAIRE" + compteurIt);
+	}
+	public void fait(){
+		ecrireln("FAIT" + compteurIt + ":");
+	}
 }

@@ -26,6 +26,7 @@ public class Yaka {
   public static TabIdent tabIdent;
   public static Expression expression;
   public static Instruction instruction;
+  public static Iteration iteration;
   public static YVM yvm;
 
   public static void main(String args[]) { 
@@ -36,6 +37,7 @@ public class Yaka {
     expression = new Expression();
     declaration = new Declaration();
     instruction = new Instruction();
+    iteration = new Iteration();
     yvm = new YVMasm();
 
 
@@ -283,7 +285,7 @@ void opNeg() : {}
 /******Affectation, entrees, sorties*******/
 void suiteInstr() : {}
 {
-	(instruction() (";" (instruction())? )*)?
+	(instruction() (";" (instruction())? )*)? | <TANTQUE>{iteration.tantque();} expression() {iteration.iffaux();}<FAIRE> suitreInstr() {iteration.goTo();}<FAIT>{iteration.fait();}
 }
 
 void instruction() : {}

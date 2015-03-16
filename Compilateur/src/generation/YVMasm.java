@@ -4,8 +4,8 @@ import java.io.*;
 
 
 public class YVMasm extends YVM{
-	private OutputStream sortie;
 	private int compteurLect;
+	
 	
 	//Ouvre un OutputStream vers le fichier de nom "sortie.asm"
 	public YVMasm() {

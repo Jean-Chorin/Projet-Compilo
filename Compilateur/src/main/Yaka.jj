@@ -338,10 +338,10 @@ void iteration() : {}
 
 void conditionnel() : {}
 {
-	<SI> expression() {conditionnelle.condition(expression.depile());}<ALORS> suiteInstr()  sinon()  <FSI> {conditionnelle.fin();}
+	<SI> expression() {conditionnelle.condition(expression.depile());}<ALORS> suiteInstr()  sinon()  
 }
 
 void sinon() : {}
 {
-    <SINON> {conditionnelle.sinon();} suiteInstr() | {conditionnelle.sinon();}
+    <SINON> {conditionnelle.sinon();} suiteInstr() <FSI> {conditionnelle.fin();}|  <FSI> {conditionnelle.sinon();conditionnelle.fin();}
 }

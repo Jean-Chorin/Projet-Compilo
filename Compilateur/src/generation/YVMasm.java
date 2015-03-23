@@ -261,20 +261,26 @@ public class YVMasm extends YVM{
 			super.tantque(n);
 		}
 		
-		public void iffaux(int n){
-			super.iffaux(n);
+		public void iffaux(String s){
+			super.iffaux(s);
 			ecrireln("pop ax");
 			ecrireln("cmp ax,0");
-			ecrireln("je FAIT" + n);
+			ecrireln("je " + s);
 			ln();
 		}
 		
-		public void goTo(int n){
-			super.goTo(n);
-			ecrireln("jmp FAIRE" + n);
+		public void goTo(String s){
+			super.goTo(s);
+			ecrireln("jmp " + s);
 			ln();
 		}
 		public void fait(int n){
 			super.fait(n);
+		}
+		
+		//-----------------------Conditionnel-----------------------
+
+		public void ichaine(String s){
+			super.ichaine(s);;
 		}
 }

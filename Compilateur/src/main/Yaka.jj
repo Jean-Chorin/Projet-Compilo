@@ -285,7 +285,7 @@ void opNeg() : {}
 /******Affectation, entrees, sorties*******/
 void suiteInstr() : {}
 {
-	(instruction() (";" (instruction())? )*)? {/*| <TANTQUE>{iteration.tantque();} expression() {iteration.iffaux();}<FAIRE> suiteInstr() {iteration.goTo();}<FAIT>{iteration.fait();}*/}
+	(instruction() (";" (instruction())? )*)? 
 }
 
 void instruction() : {}
@@ -294,6 +294,7 @@ void instruction() : {}
 	| lecture()
 	| ecriture()
 	| iteration()
+	| conditionnel()
 }
 
 void affectation() : {}
@@ -318,6 +319,7 @@ void ecrire() : {}
 	| <chaine> {instruction.ecrireChaine(YakaTokenManager.chaineLue);}
 }
 
+/******Iterations*******/
 void iteration() : {}
 {
 	<TANTQUE> {Yaka.iteration.tantque();} expression() {iteration.iffaux(expression.depile());}
@@ -325,3 +327,13 @@ void iteration() : {}
 	<FAIT> {Yaka.iteration.fait();}
 }
 
+
+
+
+
+/******Conditionnel*******/
+
+void conditionnel() : {}
+{
+	<SI> expression() {conditionnelle.condition();}<ALORS> suiteInstr() <SINON> {conditionnelle.sinon();}  suiteInstr() <FSI> {conditionnelle.fin();}|<SI> expression() {conditionnelle.condition();}<ALORS> suiteInstr()  <FSI>{conditionnelle.sinon();conditionnel.fin();} 
+}

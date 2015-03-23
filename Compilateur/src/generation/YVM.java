@@ -135,14 +135,21 @@ public class YVM {
 		ecrireln("FAIRE" + n + ":");
 	}
 	
-	public void iffaux(int n){
-		ecrireln("; iffaux FAIT" + n);
+	public void iffaux(String s){
+		ecrireln("; iffaux " + s);
 	}
 	
-	public void goTo(int n){
-		ecrireln("; goto FAIRE" + n);
+	public void goTo(String s){
+		ecrireln("; goto " + s);
 	}
 	public void fait(int n){
 		ecrireln("FAIT" + n + ":");
 	}
+
+
+//-----------------------Conditionnel-----------------------
+
+public void ichaine(String s){
+	ecrireln(s + ":");
+}
 }

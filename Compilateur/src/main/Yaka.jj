@@ -27,6 +27,7 @@ public class Yaka {
   public static Expression expression;
   public static Instruction instruction;
   public static Iteration iteration;
+  public static Conditionnelle conditionnelle;
   public static YVM yvm;
 
   public static void main(String args[]) { 
@@ -335,5 +336,6 @@ void iteration() : {}
 
 void conditionnel() : {}
 {
-	<SI> expression() {conditionnelle.condition();}<ALORS> suiteInstr() <SINON> {conditionnelle.sinon();}  suiteInstr() <FSI> {conditionnelle.fin();}|<SI> expression() {conditionnelle.condition();}<ALORS> suiteInstr()  <FSI>{conditionnelle.sinon();conditionnel.fin();} 
+	<SI> expression() {conditionnelle.condition(expression.depile());}<ALORS> suiteInstr() <SINON> {conditionnelle.sinon();}  suiteInstr() <FSI> {conditionnelle.fin();}
+	|<SI> expression() {conditionnelle.condition(expression.depile());}<ALORS> suiteInstr()  <FSI>{conditionnelle.sinon();conditionnel.fin();} 
 }

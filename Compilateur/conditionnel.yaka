@@ -1,0 +1,33 @@
+PROGRAMME testCond
+VAR ENTIER c1,c2,c3;
+VAR BOOLEEN b1,b2;
+	
+	ECRIRE("c1=")
+	LIRE(c1)
+	ECRIRE("c2=")
+	LIRE(c2)
+	ECRIRE("c3=")
+	LIRE(c3)
+	SI c1>c2 ALORS
+		c3 = c1-c2;
+		SI c3>2 ALORS
+			ECRIRE("SI 2");
+		SINON
+			ECRIRE("SINON2");
+		FSI
+		SI c1<>2 ALORS
+			ECRIRE("SI 3");
+		SINON
+			ECRIRE("SINON3");
+			SI c1=3 ALORS
+				ECRIRE("SI 4");
+			SINON
+				ECRIRE("SINON4");
+			FSI
+		FSI
+	SINON
+		c3=c2-c1;
+		ECRIRE("SINON1");
+	FSI
+
+FPROGRAMME

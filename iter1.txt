@@ -1,5 +1,5 @@
 PROGRAMME iter1
-VAR ENTIER s,i,n;
+VAR ENTIER s,i,j,n;
 	ECRIRE("n=");
 	LIRE(n);
 	ALALIGNE;

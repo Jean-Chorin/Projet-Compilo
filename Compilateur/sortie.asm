@@ -9,9 +9,9 @@ extrn ecrch:proc, ligsuiv:proc
 debut :
 STARTUPCODE
 
-; ouvrePrinc 6
+; ouvrePrinc 8
 mov bp,sp
-sub sp,6
+sub sp,8
 
 ; ecrireChaine "n="
 .DATA
@@ -21,8 +21,8 @@ lea dx,mess0
 push dx
 call ecrch
 
-; lireEnt -6
-lea dx,[bp-6]
+; lireEnt -8
+lea dx,[bp-8]
 push dx
 call lirent
 
@@ -47,8 +47,8 @@ FAIRE1:
 ; iload -4
 push word ptr [bp-4]
 
-; iload -6
-push word ptr [bp-6]
+; iload -8
+push word ptr [bp-8]
 
 ; iinfegal
 pop bx

@@ -13,89 +13,109 @@ STARTUPCODE
 mov bp,sp
 sub sp,6
 
-; lireEnt -2
-lea dx,[bp-2]
+; ecrireChaine "n="
+.DATA
+mess0 DB "n=$"
+.CODE
+lea dx,mess0
+push dx
+call ecrch
+
+; lireEnt -6
+lea dx,[bp-6]
 push dx
 call lirent
 
 ; aLaLigne
 call ligsuiv
 
-; lireEnt -4
-lea dx,[bp-4]
-push dx
-call lirent
+; iconst 1
+push 1
 
+; istore -4
+pop ax
+mov word ptr [bp-4],ax
+
+; iconst 0
+push 0
+
+; istore -2
+pop ax
+mov word ptr [bp-2],ax
+
+FAIRE1:
+; iload -4
+push word ptr [bp-4]
+
+; iload -6
+push word ptr [bp-6]
+
+; iinfegal
+pop bx
+pop ax
+cmp ax,bx
+jg $+6
+push -1
+jmp $+4
+push 0
+
+; iffaux FAIT 1
+pop ax
+cmp ax,0
+je FAIT 1
+
+; iload -2
+push word ptr [bp-2]
+
+; iload -4
+push word ptr [bp-4]
+
+; iadd
+pop bx
+pop ax
+add ax,bx
+push ax
+
+; istore -2
+pop ax
+mov word ptr [bp-2],ax
+
+; iload -4
+push word ptr [bp-4]
+
+; iconst 1
+push 1
+
+; iadd
+pop bx
+pop ax
+add ax,bx
+push ax
+
+; istore -4
+pop ax
+mov word ptr [bp-4],ax
+
+FAIT1:
 ; aLaLigne
 call ligsuiv
 
-; iload -4
-push word ptr [bp-4]
-
-; istore -6
-pop ax
-mov word ptr [bp-6],ax
-
-; iload -2
-push word ptr [bp-2]
-
-; iload -4
-push word ptr [bp-4]
-
-; isup
-pop bx
-pop ax
-cmp ax,bx
-jle $+6
-push -1
-jmp $+4
-push 0
-
-; iffaux SINON1
-pop ax
-cmp ax,0
-je SINON1
+; ecrireChaine "s="
+.DATA
+mess1 DB "s=$"
+.CODE
+lea dx,mess1
+push dx
+call ecrch
 
 ; iload -2
 push word ptr [bp-2]
 
-; istore -6
-pop ax
-mov word ptr [bp-6],ax
+; ecrireEnt
+call ecrent
 
-; iload -2
-push word ptr [bp-2]
+; queue
+nop
+exitcode
+end debut
 
-; iload -4
-push word ptr [bp-4]
-
-; isup
-pop bx
-pop ax
-cmp ax,bx
-jle $+6
-push -1
-jmp $+4
-push 0
-
-; iffaux SINON2
-pop ax
-cmp ax,0
-je SINON2
-
-; iload -2
-push word ptr [bp-2]
-
-; istore -6
-pop ax
-mov word ptr [bp-6],ax
-
-; goto FSI2
-jmp FSI2
-
-SINON2:
-FSI2:
-; goto FSI1
-jmp FSI1
-
-SINON1:

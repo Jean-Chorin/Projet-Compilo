@@ -39,7 +39,9 @@ public class Yaka {
     declaration = new Declaration();
     instruction = new Instruction();
     iteration = new Iteration();
+    conditionnelle = new Conditionnelle();
     yvm = new YVMasm();
+    
 
 
     if (args.length==1) {
@@ -336,6 +338,5 @@ void iteration() : {}
 
 void conditionnel() : {}
 {
-	<SI> expression() {conditionnelle.condition(expression.depile());}<ALORS> suiteInstr() <SINON> {conditionnelle.sinon();}  suiteInstr() <FSI> {conditionnelle.fin();}
-	|<SI> expression() {conditionnelle.condition(expression.depile());}<ALORS> suiteInstr()  <FSI>{conditionnelle.sinon();conditionnel.fin();} 
+	<SI> expression() {conditionnelle.condition(expression.depile());}<ALORS> suiteInstr()  {conditionnelle.sinon();} ( <SINON>  suiteInstr())?  <FSI> {conditionnelle.fin();}
 }

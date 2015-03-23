@@ -22,13 +22,13 @@ public class Iteration {
 	
 	public void iffaux(Type t) {
 		if(t == Type.BOOLEEN){
-			Yaka.yvm.iffaux(000000000000000);
+			Yaka.yvm.iffaux("FAIT "+niv.peek());
 		}else{
 			System.out.println("Veuillez passer une expression bolleenne sue laquelle iterer");
 		}
 	}
 	
 	public void fait() {
-		
+		Yaka.yvm.fait(niv.pop());
 	}
 }

@@ -5,11 +5,8 @@ set /p message= message du commit :
 echo "-------------------------------git commit : -------------------------------"
 git commit -m "%message%"
 git status
-echo "-------------------------------git fetch : -------------------------------"
-git fetch
-git status
-echo "-------------------------------git rebase : -------------------------------"
-git rebase
+echo "-------------------------------git pull : -------------------------------"
+git pull
 git status
 echo "-------------------------------git push : -------------------------------"
 git push

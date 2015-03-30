@@ -32,7 +32,7 @@ public class Instruction {
 	
 	// lecture()
 	public void lireEnt(String ident) throws ParseException{
-		Ident id = Yaka.tabIdent.chercheIdent (ident);
+		Ident id = Yaka.tabIdent.chercheLocal (ident);
 		Yaka.yvm.lireEnt(id.valeur);
 	}
 	

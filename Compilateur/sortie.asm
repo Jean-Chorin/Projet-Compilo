@@ -129,3 +129,119 @@ push dx
 call ecrch
 
 FSI2:
+; iload -2
+push word ptr [bp-2]
+
+; iconst 2
+push 2
+
+; idif
+pop bx
+pop ax
+cmp ax,bx
+je $+6
+push -1
+jmp $+4
+push 0
+
+; iffaux SINON3
+pop ax
+cmp ax,0
+je SINON3
+
+; ecrireChaine "SI 3"
+.DATA
+mess5 DB "SI 3$"
+.CODE
+lea dx,mess5
+push dx
+call ecrch
+
+; goto FSI3
+jmp FSI3
+
+SINON3:
+; ecrireChaine "SINON3"
+.DATA
+mess6 DB "SINON3$"
+.CODE
+lea dx,mess6
+push dx
+call ecrch
+
+; iload -2
+push word ptr [bp-2]
+
+; iconst 3
+push 3
+
+; iegal
+pop bx
+pop ax
+cmp ax,bx
+jne $+6
+push -1
+jmp $+4
+push 0
+
+; iffaux SINON4
+pop ax
+cmp ax,0
+je SINON4
+
+; ecrireChaine "SI 4"
+.DATA
+mess7 DB "SI 4$"
+.CODE
+lea dx,mess7
+push dx
+call ecrch
+
+; goto FSI4
+jmp FSI4
+
+SINON4:
+; ecrireChaine "SINON4"
+.DATA
+mess8 DB "SINON4$"
+.CODE
+lea dx,mess8
+push dx
+call ecrch
+
+FSI4:
+FSI3:
+; goto FSI1
+jmp FSI1
+
+SINON1:
+; iload -4
+push word ptr [bp-4]
+
+; iload -2
+push word ptr [bp-2]
+
+; isub
+pop bx
+pop ax
+sub ax,bx
+push ax
+
+; istore -6
+pop ax
+mov word ptr [bp-6],ax
+
+; ecrireChaine "SINON1"
+.DATA
+mess9 DB "SINON1$"
+.CODE
+lea dx,mess9
+push dx
+call ecrch
+
+FSI1:
+; queue
+nop
+exitcode
+end debut
+

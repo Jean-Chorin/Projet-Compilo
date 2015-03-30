@@ -14,7 +14,7 @@ VAR BOOLEEN b1,b2;
 			ECRIRE("SI 2");
 		SINON
 			ECRIRE("SINON2");
-		FSI
+		FSI;
 		SI c1<>2 ALORS
 			ECRIRE("SI 3");
 		SINON
@@ -23,11 +23,11 @@ VAR BOOLEEN b1,b2;
 				ECRIRE("SI 4");
 			SINON
 				ECRIRE("SINON4");
-			FSI
-		FSI
+			FSI;
+		FSI;
 	SINON
 		c3=c2-c1;
 		ECRIRE("SINON1");
-	FSI
+	FSI;
 
 FPROGRAMME

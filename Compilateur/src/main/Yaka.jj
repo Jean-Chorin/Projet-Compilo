@@ -343,5 +343,5 @@ void conditionnel() : {}
 
 void sinon() : {}
 {
-    <SINON> {conditionnelle.sinon();} suiteInstr() <FSI> {conditionnelle.fin();}|  <FSI> {conditionnelle.sinon();conditionnelle.fin();}
+    (<SINON> {conditionnelle.sinon();} suiteInstr() <FSI> {conditionnelle.fin();})| ( <FSI> {conditionnelle.sinon();conditionnelle.fin();})
 }

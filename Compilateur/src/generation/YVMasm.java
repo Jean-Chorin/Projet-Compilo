@@ -283,4 +283,38 @@ public class YVMasm extends YVM{
 		public void ichaine(String s){
 			super.ichaine(s);;
 		}
+		
+		//-----------------------Fonction-----------------------
+		
+		public void ouvreBloc(int i){
+		super.ouvreBloc(i);
+		ecrireln("enter " + i +",0");
+		ln();
+		}
+		
+		public void fermeBloc(int i){
+		super.fermeBloc(i);
+		ecrireln("leave");
+		ecrireln("ret " + i);
+		ln();
+		}
+		
+		public void ireturn(int i){
+		super.ireturn(i);
+		ecrireln("pop ax");
+		ecrireln("mov [bp+" + i + "],ax");
+		ln();
+		}
+		
+		public void reserveRetour(){
+		super.reserveRetour();
+		ecrireln("sub sp,2");
+		ln();
+		}
+		
+		public void call(String s){
+		super.call(s);
+		ecrireln("call " + s);
+		ln();
+		}
 }

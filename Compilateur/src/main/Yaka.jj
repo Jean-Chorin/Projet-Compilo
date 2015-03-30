@@ -255,7 +255,7 @@ void primaire (): {}
 
 void valeur () : {}
 { <entier> 	{expression.empileIdent(new IdConst(Type.ENTIER, YakaTokenManager.entierLu));}
- | <ident> (argumentsFonction)? 	{expression.empileIdent(tabIdent.chercheIdent(YakaTokenManager.identLu));}
+ | <ident> (argumentsFonction())? 	{expression.empileIdent(tabIdent.chercheIdent(YakaTokenManager.identLu));}
  | <VRAI> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, -1));}	
  | <FAUX> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, 0));}	
  
@@ -308,7 +308,7 @@ void instruction() : {}
 
 void affectation() : {}
 {
-	<ident>{expression.addDest(tabIdent.chercheIdent(YakaTokenManager.identLu));}	 "=" expression() {expression.end();}
+	<ident>{expression.addDest(tabIdent.chercheLocal(YakaTokenManager.identLu));}	 "=" expression() {expression.end();}
 }
 
 void lecture() : {}

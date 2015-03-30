@@ -20,12 +20,18 @@ public class Expression {
 		pile_op.push(o);
 	}
 	
-	public void empileIdent(Ident e){
-		pile_Type.push(e.type);
+	public void empileIdent(Object e){
+		
 		if(e instanceof IdConst){
-			Yaka.yvm.iconst(e.valeur);
-		}else{
-			Yaka.yvm.iload(e.valeur);
+			Yaka.yvm.iconst(((Ident)e).valeur);
+			pile_Type.push(((Ident)e).type);
+		}else if( e instanceof IdVar){
+			Yaka.yvm.iload(((Ident)e).valeur);
+			pile_Type.push(((Ident)e).type);
+		}
+		else{
+			Yaka.yvm.iload(((Ident)e).valeur);
+			pile_Type.push(((Ident)e).type);
 		}
 	}
 	

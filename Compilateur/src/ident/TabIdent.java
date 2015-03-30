@@ -10,9 +10,9 @@ public class TabIdent {
 	public Map<String, Fonction> globaux;
 
 	//Constructeur de TabIdent
-	public TabIdent(int taille){
-		locaux = new HashMap<String, Ident>(taille);
-		globaux = new HashMap<String, Fonction>(taille);
+	public TabIdent(){
+		locaux = new HashMap<String, Ident>();
+		globaux = new HashMap<String, Fonction>();
 	}
 	
 	//chercheIdent : rend l'ident en passant sa clef en paramètre

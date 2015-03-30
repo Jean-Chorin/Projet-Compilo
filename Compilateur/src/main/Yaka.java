@@ -561,18 +561,27 @@ void suiteExpr() : {}
                            conditionnelle.condition(expression.depile());
     jj_consume_token(ALORS);
     suiteInstr();
-                                                                                                 conditionnelle.sinon();
+    sinon();
+  }
+
+  static final public void sinon() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
     case SINON:
       jj_consume_token(SINON);
+             conditionnelle.sinon();
       suiteInstr();
+      jj_consume_token(FSI);
+                                                          conditionnelle.fin();
+      break;
+    case FSI:
+      jj_consume_token(FSI);
+                                                                                          conditionnelle.sinon();conditionnelle.fin();
       break;
     default:
       jj_la1[22] = jj_gen;
-      ;
+      jj_consume_token(-1);
+      throw new ParseException();
     }
-    jj_consume_token(FSI);
-                                                                                                                                                            conditionnelle.fin();
   }
 
   static private boolean jj_initialized_once = false;
@@ -589,7 +598,7 @@ void suiteExpr() : {}
       jj_la1_1();
    }
    private static void jj_la1_0() {
-      jj_la1_0 = new int[] {0x80000,0x200,0x0,0x120000,0x0,0x8100,0x0,0x400000,0x800000,0x1120000,0x120000,0x120000,0x0,0x400000,0x800000,0x1000000,0x0,0x42000,0x42000,0x42000,0x0,0x1120000,0x800,};
+      jj_la1_0 = new int[] {0x80000,0x200,0x0,0x120000,0x0,0x8100,0x0,0x400000,0x800000,0x1120000,0x120000,0x120000,0x0,0x400000,0x800000,0x1000000,0x0,0x42000,0x42000,0x42000,0x0,0x1120000,0x4800,};
    }
    private static void jj_la1_1() {
       jj_la1_1 = new int[] {0x0,0x0,0x100,0x50,0x100,0x0,0x3e400,0xc0000,0x300000,0x80850,0x850,0x50,0x3e400,0xc0000,0x300000,0x80000,0x200,0x47,0x47,0x47,0x5,0x808d0,0x0,};

@@ -9,113 +9,123 @@ extrn ecrch:proc, ligsuiv:proc
 debut :
 STARTUPCODE
 
-; ouvrePrinc 8
+; ouvrePrinc 10
 mov bp,sp
-sub sp,8
+sub sp,10
 
-; ecrireChaine "n="
+; ecrireChaine "c1="
 .DATA
-mess0 DB "n=$"
+mess0 DB "c1=$"
 .CODE
 lea dx,mess0
 push dx
 call ecrch
 
-; lireEnt -8
-lea dx,[bp-8]
+; lireEnt -2
+lea dx,[bp-2]
 push dx
 call lirent
 
-; aLaLigne
-call ligsuiv
-
-; iconst 1
-push 1
-
-; istore -4
-pop ax
-mov word ptr [bp-4],ax
-
-; iconst 0
-push 0
-
-; istore -2
-pop ax
-mov word ptr [bp-2],ax
-
-FAIRE1:
-; iload -4
-push word ptr [bp-4]
-
-; iload -8
-push word ptr [bp-8]
-
-; iinfegal
-pop bx
-pop ax
-cmp ax,bx
-jg $+6
-push -1
-jmp $+4
-push 0
-
-; iffaux FAIT 1
-pop ax
-cmp ax,0
-je FAIT 1
-
-; iload -2
-push word ptr [bp-2]
-
-; iload -4
-push word ptr [bp-4]
-
-; iadd
-pop bx
-pop ax
-add ax,bx
-push ax
-
-; istore -2
-pop ax
-mov word ptr [bp-2],ax
-
-; iload -4
-push word ptr [bp-4]
-
-; iconst 1
-push 1
-
-; iadd
-pop bx
-pop ax
-add ax,bx
-push ax
-
-; istore -4
-pop ax
-mov word ptr [bp-4],ax
-
-FAIT1:
-; aLaLigne
-call ligsuiv
-
-; ecrireChaine "s="
+; ecrireChaine "c2="
 .DATA
-mess1 DB "s=$"
+mess1 DB "c2=$"
 .CODE
 lea dx,mess1
 push dx
 call ecrch
 
+; lireEnt -4
+lea dx,[bp-4]
+push dx
+call lirent
+
+; ecrireChaine "c3="
+.DATA
+mess2 DB "c3=$"
+.CODE
+lea dx,mess2
+push dx
+call ecrch
+
+; lireEnt -6
+lea dx,[bp-6]
+push dx
+call lirent
+
 ; iload -2
 push word ptr [bp-2]
 
-; ecrireEnt
-call ecrent
+; iload -4
+push word ptr [bp-4]
 
-; queue
-nop
-exitcode
-end debut
+; isup
+pop bx
+pop ax
+cmp ax,bx
+jle $+6
+push -1
+jmp $+4
+push 0
 
+; iffaux SINON1
+pop ax
+cmp ax,0
+je SINON1
+
+; iload -2
+push word ptr [bp-2]
+
+; iload -4
+push word ptr [bp-4]
+
+; isub
+pop bx
+pop ax
+sub ax,bx
+push ax
+
+; istore -6
+pop ax
+mov word ptr [bp-6],ax
+
+; iload -6
+push word ptr [bp-6]
+
+; iconst 2
+push 2
+
+; isup
+pop bx
+pop ax
+cmp ax,bx
+jle $+6
+push -1
+jmp $+4
+push 0
+
+; iffaux SINON2
+pop ax
+cmp ax,0
+je SINON2
+
+; ecrireChaine "SI 2"
+.DATA
+mess3 DB "SI 2$"
+.CODE
+lea dx,mess3
+push dx
+call ecrch
+
+; goto FSI2
+jmp FSI2
+
+SINON2:
+; ecrireChaine "SINON2"
+.DATA
+mess4 DB "SINON2$"
+.CODE
+lea dx,mess4
+push dx
+call ecrch
+
+FSI2:

@@ -2,12 +2,12 @@ PROGRAMME testCond
 VAR ENTIER c1,c2,c3;
 VAR BOOLEEN b1,b2;
 	
-	ECRIRE("c1=")
-	LIRE(c1)
-	ECRIRE("c2=")
-	LIRE(c2)
-	ECRIRE("c3=")
-	LIRE(c3)
+	ECRIRE("c1=");
+	LIRE(c1);
+	ECRIRE("c2=");
+	LIRE(c2);
+	ECRIRE("c3=");
+	LIRE(c3);
 	SI c1>c2 ALORS
 		c3 = c1-c2;
 		SI c3>2 ALORS

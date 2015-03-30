@@ -358,8 +358,9 @@ void sinon() : {}
 
 void declFonction() : {}
 {
-	type() <FONCTION> ident paramForms()
-	bloc()
+	type() {declaration.addFonction(YakaTokenManager.identLu);} <FONCTION> 
+	ident {declaration.setFonction(YakaTokenManager.identLu);} paramForms()
+		bloc()
 	<FFONCTION>
 }
 

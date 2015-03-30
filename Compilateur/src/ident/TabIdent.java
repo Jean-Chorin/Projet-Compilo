@@ -71,4 +71,8 @@ public class TabIdent {
 		}
 	}
 	
+	//videLocaux : remet la table locaux à zero
+	public void videLocaux(){
+		locaux.clear();
+	}
 }

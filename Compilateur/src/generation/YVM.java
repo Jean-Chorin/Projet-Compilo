@@ -149,7 +149,30 @@ public class YVM {
 
 //-----------------------Conditionnel-----------------------
 
-public void ichaine(String s){
-	ecrireln(s + ":");
-}
+	public void ichaine(String s){
+		ecrireln(s + ":");
+	}
+	
+//-----------------------Fonction-----------------------
+	
+	public void ouvreBloc(int i){
+	ecrireln(";ouvcBloc " + i);
+	}
+	
+	public void fermeBloc(int i){
+	ecrireln(";fermeBloc " + i);
+	}
+	
+	public void ireturn(int i){
+	ecrireln(";ireturn " + i);
+	}
+	
+	public void reserveRetour(){
+	ecrireln(";reserveRetour");
+	}
+	
+	public void call(String s){
+	ecrireln(";call " + s);
+	}
+
 }

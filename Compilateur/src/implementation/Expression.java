@@ -10,6 +10,7 @@ public class Expression {
 	private Stack<Type> pile_Type;
 	private Stack<Operateur> pile_op;
 	private Ident dest;
+	private String fCourant;
 	
 	public Expression(){
 		pile_Type = new Stack<Type>();
@@ -20,7 +21,7 @@ public class Expression {
 		pile_op.push(o);
 	}
 	
-	public void empileIdent(Object e){
+	public void empileIdent(Object e,String s){
 		
 		if(e instanceof IdConst){
 			Yaka.yvm.iconst(((Ident)e).valeur);
@@ -30,9 +31,15 @@ public class Expression {
 			pile_Type.push(((Ident)e).type);
 		}
 		else{
-			Yaka.yvm.iload(((Ident)e).valeur);
-			pile_Type.push(((Ident)e).type);
+			fCourant = s;
+			pile_Type.push(((Fonction)e).resultat);
+			Yaka.yvm.reserveRetour();
 		}
+	}
+	
+	public void call(){
+		Yaka.yvm.call(fCourant);
+		
 	}
 	
 	public void addDest(Ident i){

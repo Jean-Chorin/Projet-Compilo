@@ -156,23 +156,23 @@ public class YVM {
 //-----------------------Fonction-----------------------
 	
 	public void ouvreBloc(int i){
-	ecrireln(";ouvcBloc " + i);
+		ecrireln(";ouvcBloc " + i);
 	}
 	
 	public void fermeBloc(int i){
-	ecrireln(";fermeBloc " + i);
+		ecrireln(";fermeBloc " + i);
 	}
 	
 	public void ireturn(int i){
-	ecrireln(";ireturn " + i);
+		ecrireln(";ireturn " + i);
 	}
 	
 	public void reserveRetour(){
-	ecrireln(";reserveRetour");
+		ecrireln(";reserveRetour");
 	}
 	
 	public void call(String s){
-	ecrireln(";call " + s);
+		ecrireln(";call " + s);
 	}
 
 }

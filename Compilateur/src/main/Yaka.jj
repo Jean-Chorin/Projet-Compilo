@@ -28,6 +28,7 @@ public class Yaka {
   public static Instruction instruction;
   public static Iteration iteration;
   public static Conditionnelle conditionnelle;
+  public static Fonction fonction;
   public static YVM yvm;
 
   public static void main(String args[]) { 
@@ -40,6 +41,7 @@ public class Yaka {
     instruction = new Instruction();
     iteration = new Iteration();
     conditionnelle = new Conditionnelle();
+    fonction = new Fonction();
     yvm = new YVMasm();
     
 
@@ -157,8 +159,11 @@ TOKEN  :
 /**************************************/
 void analyse() : {}
 {
-   <PROGRAMME> <ident>	{yvm.entete();}
+   <PROGRAMME> <ident>	{yvm.entete();} 
+   (declFonction())*
+   <PRINCIPAL>
    bloc()
+   <FPINCIPAL>
    <FPROGRAMME> {yvm.queue();}
 }
 
@@ -250,7 +255,7 @@ void primaire (): {}
 
 void valeur () : {}
 { <entier> 	{expression.empileIdent(new IdConst(Type.ENTIER, YakaTokenManager.entierLu));}
- | <ident> 	{expression.empileIdent(tabIdent.chercheIdent(YakaTokenManager.identLu));}	
+ | <ident> (argumentsFonction)? 	{expression.empileIdent(tabIdent.chercheIdent(YakaTokenManager.identLu));}
  | <VRAI> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, -1));}	
  | <FAUX> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, 0));}	
  
@@ -298,6 +303,7 @@ void instruction() : {}
 	| ecriture()
 	| iteration()
 	| conditionnel()
+	| retourne()
 }
 
 void affectation() : {}
@@ -344,4 +350,35 @@ void conditionnel() : {}
 void sinon() : {}
 {
     <SINON> {conditionnelle.sinon();} suiteInstr() <FSI> {conditionnelle.fin();}|  <FSI> {conditionnelle.sinon();conditionnelle.fin();}
+}
+
+
+
+/*******Fonctions*******/
+
+void declFonction() : {}
+{
+	type() <FONCTION> ident paramForms()
+	bloc()
+	<FFONCTION>
+}
+
+void paramForms() : {}
+{
+	"(" ( paramForm() (, paramForm() )* )? ")"
+}
+
+void paramForm() : {}
+{
+	type() <ident>
+}
+
+void retourne() : {}
+{
+	<RETOURNE> expression()
+}
+
+void argumentsFonction() : {}
+{
+	"(" ( expression() (, expression())* )? ")"
 }

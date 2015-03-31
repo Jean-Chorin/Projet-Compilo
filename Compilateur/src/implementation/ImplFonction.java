@@ -22,7 +22,7 @@ public class ImplFonction {
 	}
 	
 	public void fermeBloc (){
-		Yaka.yvm.fermeBloc(Yaka.tabIdent.chercheGlobal(Yaka.tabIdent.last).nbParam());
+		Yaka.yvm.fermeBloc(Yaka.tabIdent.chercheGlobal(Yaka.tabIdent.last).nbParam()*2);
 		Yaka.tabIdent.videLocaux();
 	}
 

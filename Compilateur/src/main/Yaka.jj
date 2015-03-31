@@ -380,5 +380,5 @@ void retourne() : {}
 
 void argumentsFonction() : {}
 {
-	"(" ( expression() (, expression())* )? ")"
+	"(" ( expression() {fonction.testParam(expression.depile());} (, expression(){fonction.testParam(expression.depile());})* )? ")"
 }

@@ -37,6 +37,11 @@ public class Expression {
 		}
 	}
 	
+	
+	public String getFCourant(){
+		return fCourant;
+	}
+	
 	public void call(){
 		Yaka.yvm.call(fCourant);
 		

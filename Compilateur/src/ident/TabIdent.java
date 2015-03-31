@@ -76,6 +76,7 @@ public class TabIdent {
 	public void rangeGlobal(String clef,Fonction id){
 		if(!existeGlobal(clef)){
 			globaux.put(clef,id);
+			last = clef;
 		} else {
 			System.out.println("La fonction " + clef + " est déjà déclarée ; ligne " +
 					Yaka.token.next.beginLine + " et colonne " + Yaka.token.next.beginColumn);

@@ -14,4 +14,8 @@ public abstract class Ident {
 	public Ident() {
 		super();
 	}
+	
+	public int getValeur() {
+		return valeur;
+	}
 }

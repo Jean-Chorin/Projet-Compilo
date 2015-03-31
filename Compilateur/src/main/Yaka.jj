@@ -208,7 +208,7 @@ void type() :{}
  * Syntaxe des instructions.
  */
 /*
-*****Replac� par suiteInstr()******
+*****Remplace par suiteInstr()******
 void suiteExpr() : {}
 { (expression() (";" (expression())? )*)? }
 */
@@ -359,7 +359,7 @@ void sinon() : {}
 void declFonction() : {}
 {
 	type() {declaration.addFonction(YakaTokenManager.identLu);} <FONCTION> 
-	ident {declaration.setFonction(YakaTokenManager.identLu);} paramForms()
+	ident {declaration.setFonction(YakaTokenManager.identLu);} paramForms() {declaration.setOffset();}
 		bloc()
 	<FFONCTION>
 }
@@ -371,7 +371,7 @@ void paramForms() : {}
 
 void paramForm() : {}
 {
-	type() <ident>
+	type() {declaration.addParametre(YakaTokenManager.identLu);} <ident> {declaration.setParametre(YakaTokenManager.identLu);}
 }
 
 void retourne() : {}

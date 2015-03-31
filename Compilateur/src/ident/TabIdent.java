@@ -1,6 +1,7 @@
 package ident;
 
 import java.util.*;
+
 import main.*;
 
 
@@ -59,15 +60,22 @@ public class TabIdent {
 	
 	//rangeIdent : ajoute l'ident et sa clef à la table si ils n'y sont pas
 	//Locaux
-	public void rangeLocal(String clef,Ident id){
+	public void rangeLocal(String clef,Ident id) throws ParseException{
 		if(!existeLocal(clef)){
 			locaux.put(clef,id);
+		} else {
+			throw new ParseException("Le paramètre " + clef + " est déjà déclaré ; ligne " +
+					Yaka.token.next.beginLine + " et colonne " + Yaka.token.next.beginColumn);
 		}
+		
 	}
 	//Globaux
-	public void rangeGlobal(String clef,Fonction id){
+	public void rangeGlobal(String clef,Fonction id) throws ParseException{
 		if(!existeGlobal(clef)){
 			globaux.put(clef,id);
+		} else {
+			throw new ParseException("La fonction " + clef + " est déjà déclarée ; ligne " +
+					Yaka.token.next.beginLine + " et colonne " + Yaka.token.next.beginColumn);
 		}
 	}
 	

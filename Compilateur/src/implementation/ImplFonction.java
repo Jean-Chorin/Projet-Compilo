@@ -10,7 +10,7 @@ public class ImplFonction {
 	private Fonction fCourant;
 	private int res = 0;
 	
-	public void retourne(Type t){
+	public void retourne(Type t) throws ParseException{
 		Type f;
 			f = Yaka.tabIdent.chercheGlobal(Yaka.tabIdent.last).resultat;
 		if(t == f){
@@ -21,7 +21,7 @@ public class ImplFonction {
 		}
 	}
 	
-	public void fermeBloc (){
+	public void fermeBloc () throws ParseException{
 		Yaka.yvm.fermeBloc(Yaka.tabIdent.chercheGlobal(Yaka.tabIdent.last).nbParam()*2);
 		Yaka.tabIdent.videLocaux();
 	}

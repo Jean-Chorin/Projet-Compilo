@@ -1,5 +1,6 @@
 package implementation;
 import java.util.Stack;
+
 import ident.*;
 import main.*;
 
@@ -21,7 +22,7 @@ public class Expression {
 		pile_op.push(o);
 	}
 	
-	public void empileIdent(Object e,String s){
+	public void empileIdent(Object e,String s) throws ParseException{
 		
 		if(e instanceof IdConst){
 			Yaka.yvm.iconst(((Ident)e).valeur);

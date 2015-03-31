@@ -67,12 +67,12 @@ public class Declaration {
 	//----------------------------Declaration de fonction------------------------------
 	
 	// Change l'attribut temporaire type en fonction de sType, qui vaut la String BOOLEEN ou ENTIER
-	public void addFonction(String sType) throws ParseException{
+	public void addFonction(String sType){
 		//Remettre le compteur à 0 pour les nouveaux offsets et reinitialise listParam
 		offsetCompteur = 0;
 		listeParam = new Vector<IdParam>();
 		
-		if (sType == "BOOLEEN") {
+		/*if (sType == "BOOLEEN") {
 			type = Type.BOOLEEN;
 		} else {
 			if (sType == "ENTIER") {
@@ -80,10 +80,10 @@ public class Declaration {
 			}
 			else {
 				//Si ni ENTIER ni BOOLEEN
-				throw new ParseException("La fonction doit rendre un ENTIER ou un BOOLEEN ; ligne " +
+				System.out.println("La fonction doit rendre un ENTIER ou un BOOLEEN ; ligne " +
 				Yaka.token.next.beginLine + " et colonne " + Yaka.token.next.beginColumn);
 			}
-		}
+		}*/
 	}
 	
 	// Ajoute une fonction de type correspondant à l'attribut temporaire type
@@ -98,7 +98,7 @@ public class Declaration {
 	
 	// Change l'attribut temporaire type en fonction de sType, qui vaut la String BOOLEEN ou ENTIER
 	public void addParametre(String sType) throws ParseException{
-		if (sType == "BOOLEEN") {
+		/*if (sType == "BOOLEEN") {
 			type = Type.BOOLEEN;
 		} else {
 			if (sType == "ENTIER") {
@@ -109,21 +109,21 @@ public class Declaration {
 				throw new ParseException("Les paramètres doivent être des ENTIER ou des BOOLEEN ; ligne " +
 				Yaka.token.next.beginLine + " et colonne " + Yaka.token.next.beginColumn);
 			}
-		}
+		}*/
 	}
 	
 	// Ajoute un parametre de type correspondant à l'attribut temporaire type
-	public void setParametre (String nom) throws ParseException {
+	public void setParametre (String nom){
 		IdParam tmp = new IdParam(type, 4 - (offsetCompteur) * 2);
 		Yaka.tabIdent.rangeLocal(nom, tmp);
 		listeParam.add(tmp); // On ajoute le paramètre dans la liste temporaire des paramètres
-		Fonction f = Yaka.tabIdent.chercheGlobal(nom);
+		Fonction f = Yaka.tabIdent.chercheGlobal(tmpNomFonction);
 		f.parametres.add(type);
 		offsetCompteur += 1;
 	}
 	
 	//remet l'offsetCompteur à -2 après l'ajout des paramètres dans la TabIdent et ajoute la taille des parmètres aux offsets des paramètres (cf formules dans poly)
-	public void setOffset() throws ParseException{
+	public void setOffset(){
 		Fonction f = Yaka.tabIdent.chercheGlobal(tmpNomFonction);
 		for (IdParam idParam : listeParam) {
 			idParam.valeur += f.nbParam();

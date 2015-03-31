@@ -28,7 +28,7 @@ public class Yaka {
   public static Instruction instruction;
   public static Iteration iteration;
   public static Conditionnelle conditionnelle;
-  public static Fonction fonction;
+  public static ImplFonction fonction;
   public static YVM yvm;
 
   public static void main(String args[]) { 
@@ -41,7 +41,7 @@ public class Yaka {
     instruction = new Instruction();
     iteration = new Iteration();
     conditionnelle = new Conditionnelle();
-    fonction = new Fonction();
+    fonction = new ImplFonction();
     yvm = new YVMasm();
     
 
@@ -163,7 +163,7 @@ void analyse() : {}
    (declFonction())*
    <PRINCIPAL>
    bloc()
-   <FPINCIPAL>
+   <FPRINCIPAL>
    <FPROGRAMME> {yvm.queue();}
 }
 
@@ -254,10 +254,10 @@ void primaire (): {}
 }
 
 void valeur () : {}
-{ <entier> 	{expression.empileIdent(new IdConst(Type.ENTIER, YakaTokenManager.entierLu));}
+{ <entier> 	{expression.empileIdent(new IdConst(Type.ENTIER, YakaTokenManager.entierLu),null);}
  | <ident> {expression.empileIdent(tabIdent.chercheIdent(YakaTokenManager.identLu),YakaTokenManager.identLu);} (argumentsFonction() {expression.call();})? 	
- | <VRAI> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, -1));}	
- | <FAUX> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, 0));}	
+ | <VRAI> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, -1),null);}	
+ | <FAUX> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, 0),null);}	
  
 }
 
@@ -359,14 +359,14 @@ void sinon() : {}
 void declFonction() : {}
 {
 	type() {declaration.addFonction(YakaTokenManager.identLu);} <FONCTION> 
-	ident {declaration.setFonction(YakaTokenManager.identLu);} paramForms() {declaration.setOffset();}
+	<ident> {declaration.setFonction(YakaTokenManager.identLu);} paramForms() {declaration.setOffset();}
 		bloc()
 	<FFONCTION> {fonction.fermeBloc ();}
 }
 
 void paramForms() : {}
 {
-	"(" ( paramForm() (, paramForm() )* )? ")"
+	"(" ( paramForm() ("," paramForm() )* )? ")"
 }
 
 void paramForm() : {}
@@ -381,5 +381,5 @@ void retourne() : {}
 
 void argumentsFonction() : {}
 {
-	"(" ( expression() {fonction.testParam(expression.depile());} (, expression(){fonction.testParam(expression.depile());})* )? ")"
+	"(" ( expression() {fonction.testParam(expression.depile());} ("," expression(){fonction.testParam(expression.depile());})* )? ")"
 }

@@ -22,7 +22,7 @@ public class TabIdent {
 	//Locaux :
 	public Ident chercheLocal (String clef)throws ParseException{
 		if (locaux.get(clef) == null) {
-			throw new ParseException("Ident " + clef + " non déclaré\n");
+			throw new ParseException("chercheLocal Ident " + clef + " non déclaré\n");
 		} else {
 			return locaux.get(clef);
 		}
@@ -30,17 +30,19 @@ public class TabIdent {
 	//Globaux :
 	public Fonction chercheGlobal (String clef){
 		if (globaux.get(clef) == null) {
-			System.out.println("Ident " + clef + " non déclaré\n");
+			System.out.println("chercheGlobal Ident " + clef + " non déclaré\n");
 			return null;
 		} else {
 			return globaux.get(clef);
 		}
 	}
 	//ChercheIdent:
-	public Object chercheIdent (String clef)throws ParseException{
+	public Object chercheIdent (String clef){
 		if (locaux.get(clef) == null) {
 			if(globaux.get(clef) == null){
-			throw new ParseException("Ident " + clef + " non déclaré\n");}
+				System.out.println("chercheIdent : Ident " + clef + " non déclaré\n");
+				return null;
+			}
 			else{
 				return globaux.get(clef);
 				}
@@ -62,21 +64,20 @@ public class TabIdent {
 	
 	//rangeIdent : ajoute l'ident et sa clef à la table si ils n'y sont pas
 	//Locaux
-	public void rangeLocal(String clef,Ident id) throws ParseException{
+	public void rangeLocal(String clef,Ident id){
 		if(!existeLocal(clef)){
 			locaux.put(clef,id);
 		} else {
-			throw new ParseException("Le paramètre " + clef + " est déjà déclaré ; ligne " +
-					Yaka.token.next.beginLine + " et colonne " + Yaka.token.next.beginColumn);
+			System.out.println("Le paramètre " + clef + " est déjà déclaré");
 		}
 		
 	}
 	//Globaux
-	public void rangeGlobal(String clef,Fonction id) throws ParseException{
+	public void rangeGlobal(String clef,Fonction id){
 		if(!existeGlobal(clef)){
 			globaux.put(clef,id);
 		} else {
-			throw new ParseException("La fonction " + clef + " est déjà déclarée ; ligne " +
+			System.out.println("La fonction " + clef + " est déjà déclarée ; ligne " +
 					Yaka.token.next.beginLine + " et colonne " + Yaka.token.next.beginColumn);
 		}
 	}

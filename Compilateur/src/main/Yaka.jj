@@ -376,7 +376,7 @@ void paramForm() : {}
 
 void retourne() : {}
 {
-	<RETOURNE> {yvm.ireturn(tabIdent.globaux.get(XXXXX).nbParam()*2+4);} expression()
+	<RETOURNE> {yvm.ireturn(tabIdent.globaux.get(abIdent.last).nbParam()*2+4);} expression()
 }
 
 void argumentsFonction() : {}

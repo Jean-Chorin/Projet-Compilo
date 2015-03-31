@@ -30,6 +30,9 @@ public class Expression {
 		}else if( e instanceof IdVar){
 			Yaka.yvm.iload(((Ident)e).valeur);
 			pile_Type.push(((Ident)e).type);
+		}else if( e instanceof IdParam){
+			Yaka.yvm.iload(((Ident)e).valeur);
+			pile_Type.push(((Ident)e).type);
 		}
 		else{
 			fCourant = s;
@@ -70,7 +73,7 @@ public class Expression {
 		Yaka.yvm.istore(dest.valeur);
 	}
 	
-	//appel le YVM correspondant � l'op�rateur
+	//appel le YVM correspondant a l'operateur
 	private void choix_op(Operateur o){
 		switch(o){
 		

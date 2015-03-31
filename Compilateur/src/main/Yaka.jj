@@ -169,7 +169,7 @@ void analyse() : {}
 
 void bloc() : {} {
  (declConst())*
- (declVar())*		{yvm.ouvrePrinc((declaration.getOffsetCompteur()+2)* (-1));}
+ (declVar())*		{yvm.ouvreBloc((declaration.getOffsetCompteur()+2)* (-1));}
    suiteInstr() 
 }
 

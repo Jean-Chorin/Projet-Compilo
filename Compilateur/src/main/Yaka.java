@@ -109,7 +109,7 @@ public class Yaka implements YakaConstants {
       }
       declVar();
     }
-                         yvm.ouvrePrinc((declaration.getOffsetCompteur()+2)* (-1));
+                         yvm.ouvreBloc((declaration.getOffsetCompteur()+2)* (-1));
     suiteInstr();
   }
 

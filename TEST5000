@@ -1,0 +1,69 @@
+PROGRAMME test5000
+
+ENTIER FONCTION max (ENTIER i, ENTIER j)
+	VAR BOOLEEN b,c;
+	VAR ENTIER k;
+	k = i;
+	SI k>j ALORS RETOURNE k
+	SINON RETOURNE j FSI;
+FFONCTION
+
+
+
+BOOLEEN FONCTION lait ()
+	VAR BOOLEEN z,pilou;
+	VAR ENTIER cola;
+	cola = 6;
+	z = cola <= 42;
+	pilou = cola = max (cola,5);
+	TANTQUE cola <= 10 FAIRE
+		cola = cola + 1;
+	FAIT;
+	SI z ALORS
+		cola = 42;
+		pilou = z;
+	FSI;
+	RETOURNE pilou;
+FFONCTION
+
+
+
+ENTIER FONCTION caramel (ENTIER c, BOOLEEN l)
+	VAR BOOLEEN sucre,mou;
+	VAR ENTIER dose;
+	dose = c;
+	mou = l;
+	SI c > 0 ALORS
+		SI mou ALORS
+			dose = dose * 2;
+			TANTQUE dose <> 0 FAIRE
+				dose = dose - 1;
+			FAIT;
+		SINON 
+			TANTQUE dose <> 0 FAIRE
+				dose = dose - 1;
+			FAIT;
+		FSI;
+		RETOURNE 1;
+	SINON 
+		RETOURNE -1;
+	FSI;			
+FFONCTION
+
+
+
+PRINCIPAL
+	VAR ENTIER i,j,k;
+	VAR BOOLEEN b;
+	b=lait(); 
+	i=caramel (22,b);
+	LIRE(j);
+	ALALIGNE;
+	k=max(i,min(j,5))+2;
+	ALALIGNE;
+	ECRIRE(k);
+	ALALIGNE;
+	ECRIRE(b);
+FPRINCIPAL
+
+FPROGRAMME

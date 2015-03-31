@@ -255,7 +255,7 @@ void primaire (): {}
 
 void valeur () : {}
 { <entier> 	{expression.empileIdent(new IdConst(Type.ENTIER, YakaTokenManager.entierLu));}
- | <ident> {expression.empileIdent(tabIdent.chercheIdent(YakaTokenManager.identLu),YakaTokenManager.identLu);} (argumentsFonction())? 	
+ | <ident> {expression.empileIdent(tabIdent.chercheIdent(YakaTokenManager.identLu),YakaTokenManager.identLu);} (argumentsFonction() {expression.call();})? 	
  | <VRAI> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, -1));}	
  | <FAUX> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, 0));}	
  
@@ -361,7 +361,7 @@ void declFonction() : {}
 	type() {declaration.addFonction(YakaTokenManager.identLu);} <FONCTION> 
 	ident {declaration.setFonction(YakaTokenManager.identLu);} paramForms() {declaration.setOffset();}
 		bloc()
-	<FFONCTION>
+	<FFONCTION> {fonction.fermeBloc ();}
 }
 
 void paramForms() : {}
@@ -376,10 +376,10 @@ void paramForm() : {}
 
 void retourne() : {}
 {
-	<RETOURNE> expression()
+	<RETOURNE> {yvm.ireturn(tabIdent.globaux.get(tabIdent.last).nbParam()*2+4);} expression()
 }
 
 void argumentsFonction() : {}
 {
-	"(" ( expression() (, expression())* )? ")"
+	"(" ( expression() {fonction.testParam(expression.depile());} (, expression(){fonction.testParam(expression.depile());})* )? ")"
 }

@@ -9,6 +9,7 @@ public class TabIdent {
 
 	public Map<String, Ident> locaux;
 	public Map<String, Fonction> globaux;
+	public String last = null;
 
 	//Constructeur de TabIdent
 	public TabIdent(){
@@ -27,9 +28,10 @@ public class TabIdent {
 		}
 	}
 	//Globaux :
-	public Fonction chercheGlobal (String clef)throws ParseException{
+	public Fonction chercheGlobal (String clef){
 		if (globaux.get(clef) == null) {
-			throw new ParseException("Ident " + clef + " non déclaré\n");
+			System.out.println("Ident " + clef + " non déclaré\n");
+			return null;
 		} else {
 			return globaux.get(clef);
 		}

@@ -32,9 +32,15 @@ public class Expression {
 		}
 		else{
 			fCourant = s;
-			pile_Type.push(((Fonction)e).resultat);
+			//pile_Type.push(((Fonction)e).resultat);
+			Yaka.fonction.setFonction(Yaka.tabIdent.chercheGlobal(s));
 			Yaka.yvm.reserveRetour();
 		}
+	}
+	
+	
+	public String getFCourant(){
+		return fCourant;
 	}
 	
 	public void call(){

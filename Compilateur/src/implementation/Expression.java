@@ -32,7 +32,7 @@ public class Expression {
 		}
 		else{
 			fCourant = s;
-			pile_Type.push(((Fonction)e).resultat);
+			//pile_Type.push(((Fonction)e).resultat);
 			Yaka.yvm.reserveRetour();
 		}
 	}

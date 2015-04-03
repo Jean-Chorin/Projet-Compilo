@@ -174,5 +174,8 @@ public class YVM {
 	public void call(String s){
 		ecrireln(";call " + s);
 	}
+	public void princ(){
+		ecrireln("main:");
+	}
 
 }

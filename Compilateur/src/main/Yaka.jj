@@ -255,7 +255,7 @@ void primaire (): {}
 
 void valeur () : {}
 { <entier> 	{expression.empileIdent(new IdConst(Type.ENTIER, YakaTokenManager.entierLu),null);}
- | <ident> {expression.empileIdent(tabIdent.chercheIdent(YakaTokenManager.identLu),YakaTokenManager.identLu);} (argumentsFonction() {expression.call();})? 	
+ | <ident> {expression.empileIdent(tabIdent.chercheIdent(YakaTokenManager.identLu),YakaTokenManager.identLu);} (argumentsFonction() {fonction.depile();expression.call();})? 	
  | <VRAI> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, -1),null);}	
  | <FAUX> 	{expression.empileIdent(new IdConst(Type.BOOLEEN, 0),null);}	
  

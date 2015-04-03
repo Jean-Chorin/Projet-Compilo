@@ -1,16 +1,18 @@
 package implementation;
 
 
-import java.util.Map.Entry;
 
-import ident.*;
+import ident.Fonction;
+import ident.Type;
+import java.util.Vector;
 import main.ParseException;
 import main.Yaka;
 
 public class ImplFonction {
 	
-	private Fonction fCourant;
-	private int res = 0;
+	private Vector<Fonction> fCourant = new Vector<Fonction>();
+	private Vector<Integer> res = new Vector<Integer>();
+	private int courant = -1;
 	
 	public void retourne(Type t) throws ParseException{
 		Type f;
@@ -38,20 +40,27 @@ public class ImplFonction {
 
 	
 	public void setFonction(Fonction f){
-		fCourant = f;	
-		res=0;
+		courant++;
+		fCourant.add(courant,f);
+		res.add(courant,0);
+	
+	}
+	public void depile(){
+		courant --;
 	}
 	
 	public void testParam(Type t){
-		if(res >= fCourant.nbParam()){
+
+		
+		if(res.get(courant) >= fCourant.get(courant).nbParam()){
 			System.out.println("Trop de parametres" + " a la ligne " + 
 					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
 		}
-		else if(t != fCourant.parametres.get(res)){
+		else if(t != fCourant.get(courant).parametres.get(res.get(courant))){
 			System.out.println("Parametre pas du bon type" + " a la ligne " + 
 					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
 		}
-		res++;
+		res.add(courant,(res.get(courant))+1);
 	}
 	
 }

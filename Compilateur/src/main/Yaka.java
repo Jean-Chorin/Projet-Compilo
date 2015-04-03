@@ -329,7 +329,7 @@ void suiteExpr() : {}
       switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
       case 43:
         argumentsFonction();
-                                                                                                                                     expression.call();
+                                                                                                                                     fonction.depile();expression.call();
         break;
       default:
         jj_la1[12] = jj_gen;

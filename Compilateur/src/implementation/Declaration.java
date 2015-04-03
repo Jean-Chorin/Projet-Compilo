@@ -119,7 +119,7 @@ public class Declaration {
 		listeParam.add(tmp); // On ajoute le paramètre dans la liste temporaire des paramètres
 		Fonction f = Yaka.tabIdent.chercheGlobal(tmpNomFonction);
 		f.parametres.add(type);
-		System.out.println(f.parametres.toArray());
+		System.out.println("Parametre de " + Yaka.tabIdent.last + " " + f.parametres);
 		offsetCompteur += 1;
 	}
 	

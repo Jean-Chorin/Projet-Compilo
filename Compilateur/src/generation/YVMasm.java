@@ -26,8 +26,6 @@ public class YVMasm extends YVM{
 		ecrireln(".model SMALL");
 		ecrireln(".586\n");
 		ecrireln(".CODE");
-		ecrireln("debut :");
-		ecrireln("STARTUPCODE");
 		ln();
 	}
 		
@@ -317,4 +315,13 @@ public class YVMasm extends YVM{
 		ecrireln("call " + s);
 		ln();
 		}
-}
+		
+		public void princ(){
+			ecrireln("debut :");
+			ecrireln("STARTUPCODE");
+			ln();
+			ecrireln("main:");
+			
+		}
+		}
+		

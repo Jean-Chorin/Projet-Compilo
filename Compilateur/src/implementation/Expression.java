@@ -11,7 +11,7 @@ public class Expression {
 	private Stack<Type> pile_Type;
 	private Stack<Operateur> pile_op;
 	private Ident dest;
-	private String fCourant;
+	
 	
 	public Expression(){
 		pile_Type = new Stack<Type>();
@@ -35,22 +35,14 @@ public class Expression {
 			pile_Type.push(((Ident)e).type);
 		}
 		else{
-			fCourant = s;
 			pile_Type.push(((Fonction)e).resultat);
-			Yaka.fonction.setFonction(Yaka.tabIdent.chercheGlobal(s));
+			Yaka.fonction.setFonction(Yaka.tabIdent.chercheGlobal(s),s);
 			Yaka.yvm.reserveRetour();
 		}
 	}
 	
 	
-	public String getFCourant(){
-		return fCourant;
-	}
-	
-	public void call(){
-		Yaka.yvm.call(fCourant);
-		
-	}
+
 	
 	public void addDest(Ident i){
 		if(i instanceof IdConst){

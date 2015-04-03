@@ -4,7 +4,9 @@ package implementation;
 
 import ident.Fonction;
 import ident.Type;
+
 import java.util.Vector;
+
 import main.ParseException;
 import main.Yaka;
 
@@ -12,6 +14,7 @@ public class ImplFonction {
 	
 	private Vector<Fonction> fCourant = new Vector<Fonction>();
 	private Vector<Integer> res = new Vector<Integer>();
+	private Vector<String> SCourant =  new Vector<String>();
 	private int courant = -1;
 	
 	public void retourne(Type t) throws ParseException{
@@ -24,6 +27,8 @@ public class ImplFonction {
 					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
 		}
 	}
+	
+
 	
 	public void fermeBloc () throws ParseException{
 		Yaka.yvm.fermeBloc(Yaka.tabIdent.chercheGlobal(Yaka.tabIdent.last).nbParam()*2);
@@ -39,15 +44,24 @@ public class ImplFonction {
 	}
 
 	
-	public void setFonction(Fonction f){
+	public void setFonction(Fonction f,String s){
 		courant++;
 		fCourant.add(courant,f);
 		res.add(courant,0);
+		SCourant.add(courant,s);
 	
 	}
 	public void depile(){
 		courant --;
 	}
+	
+	public String nom(){
+		return SCourant.get(courant);
+		
+	}
+	
+
+	
 	
 	public void testParam(Type t){
 

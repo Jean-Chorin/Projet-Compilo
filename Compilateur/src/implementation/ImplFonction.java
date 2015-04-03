@@ -17,7 +17,7 @@ public class ImplFonction {
 	private Vector<String> SCourant =  new Vector<String>();
 	private int courant = -1;
 	
-	public void retourne(Type t) throws ParseException{
+	public void retourne(Type t){
 		Type f;
 			f = Yaka.tabIdent.chercheGlobal(Yaka.tabIdent.last).resultat;
 		if(t == f){
@@ -27,10 +27,9 @@ public class ImplFonction {
 					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
 		}
 	}
-	
 
 	
-	public void fermeBloc () throws ParseException{
+	public void fermeBloc (){
 		Yaka.yvm.fermeBloc(Yaka.tabIdent.chercheGlobal(Yaka.tabIdent.last).nbParam()*2);
 		
 		//Pour tester l'ajout des paramètres et des fonctions dans TabIdent
@@ -76,5 +75,6 @@ public class ImplFonction {
 		}
 		res.add(courant,(res.get(courant))+1);
 	}
+	
 	
 }

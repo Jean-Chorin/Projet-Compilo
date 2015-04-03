@@ -51,13 +51,17 @@ public class YVMasm extends YVM{
 	
 	public void iconst(int n) {
 		super.iconst(n);
-		ecrireln("push " + n);
+		ecrireln("push word ptr" + n);
 		ln();
 	}	
 	
 	public void iload(int n){
 		super.iload(n);
-		ecrireln("push word ptr [bp" + n + "]");
+		if (n < 0) {
+			ecrireln("push word ptr [bp" + n + "]");
+		} else {
+			ecrireln("push word ptr [bp+" + n + "]");
+		}
 		ln();
 	}
 	

@@ -78,6 +78,7 @@ public class Yaka implements YakaConstants {
       declFonction();
     }
     jj_consume_token(PRINCIPAL);
+               yvm.princ();
     bloc();
     jj_consume_token(FPRINCIPAL);
     jj_consume_token(FPROGRAMME);
@@ -621,9 +622,10 @@ void suiteExpr() : {}
                 declaration.addFonction(YakaTokenManager.identLu);
     jj_consume_token(FONCTION);
     jj_consume_token(ident);
-                 declaration.setFonction(YakaTokenManager.identLu);
+                 yvm.ichaine(YakaTokenManager.identLu);
+                                                          declaration.setFonction(YakaTokenManager.identLu);
     paramForms();
-                                                                                   declaration.setOffset();
+                                                                                                                            declaration.setOffset();
     bloc();
     jj_consume_token(FFONCTION);
                      fonction.fermeBloc ();

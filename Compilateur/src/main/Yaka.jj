@@ -359,7 +359,7 @@ void sinon() : {}
 void declFonction() : {}
 {
 	type() {declaration.addFonction(YakaTokenManager.identLu);} <FONCTION> 
-	<ident> {declaration.setFonction(YakaTokenManager.identLu);} paramForms() {declaration.setOffset();}
+	<ident> {yvm.ichaine(YakaTokenManager.identLu);} {declaration.setFonction(YakaTokenManager.identLu);} paramForms() {declaration.setOffset();}
 		bloc()
 	<FFONCTION> {fonction.fermeBloc ();}
 }

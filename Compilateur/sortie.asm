@@ -6,9 +6,8 @@ extrn ecrch:proc, ligsuiv:proc
 .586
 
 .CODE
-debut :
-STARTUPCODE
 
+max:
 ;ouvcBloc 6
 enter 6,0
 
@@ -62,6 +61,7 @@ FSI1:
 leave
 ret 4
 
+min:
 ;ouvcBloc 0
 enter 0,0
 
@@ -108,6 +108,7 @@ FSI2:
 leave
 ret 4
 
+sup:
 ;ouvcBloc 0
 enter 0,0
 
@@ -134,6 +135,10 @@ push 0
 leave
 ret 4
 
+debut :
+STARTUPCODE
+
+main:
 ;ouvcBloc 8
 enter 8,0
 

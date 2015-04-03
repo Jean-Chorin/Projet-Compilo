@@ -330,7 +330,7 @@ void suiteExpr() : {}
       switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
       case 43:
         argumentsFonction();
-                                                                                                                                     fonction.depile();expression.call();
+                                                                                                                                     yvm.call(fonction.nom());fonction.depile();
         break;
       default:
         jj_la1[12] = jj_gen;
@@ -667,8 +667,8 @@ void suiteExpr() : {}
 
   static final public void retourne() throws ParseException {
     jj_consume_token(RETOURNE);
-                    yvm.ireturn(tabIdent.globaux.get(tabIdent.last).nbParam()*2+4);
     expression();
+                                 yvm.ireturn(tabIdent.globaux.get(tabIdent.last).nbParam()*2+4);
   }
 
   static final public void argumentsFonction() throws ParseException {

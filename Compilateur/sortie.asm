@@ -12,7 +12,7 @@ max:
 enter 6,0
 
 ; iload 6
-push word ptr [bp6]
+push word ptr [bp+6]
 
 ; istore -6
 pop ax
@@ -22,7 +22,7 @@ mov word ptr [bp-6],ax
 push word ptr [bp-6]
 
 ; iload 4
-push word ptr [bp4]
+push word ptr [bp+4]
 
 ; isup
 pop bx
@@ -38,23 +38,23 @@ pop ax
 cmp ax,0
 je SINON1
 
+; iload -6
+push word ptr [bp-6]
+
 ;ireturn 8
 pop ax
 mov [bp+8],ax
-
-; iload -6
-push word ptr [bp-6]
 
 ; goto FSI1
 jmp FSI1
 
 SINON1:
+; iload 4
+push word ptr [bp+4]
+
 ;ireturn 8
 pop ax
 mov [bp+8],ax
-
-; iload 4
-push word ptr [bp4]
 
 FSI1:
 ;fermeBloc 4
@@ -66,10 +66,10 @@ min:
 enter 0,0
 
 ; iload 6
-push word ptr [bp6]
+push word ptr [bp+6]
 
 ; iload 4
-push word ptr [bp4]
+push word ptr [bp+4]
 
 ; iinf
 pop bx
@@ -85,23 +85,23 @@ pop ax
 cmp ax,0
 je SINON2
 
+; iload 6
+push word ptr [bp+6]
+
 ;ireturn 8
 pop ax
 mov [bp+8],ax
-
-; iload 6
-push word ptr [bp6]
 
 ; goto FSI2
 jmp FSI2
 
 SINON2:
+; iload 4
+push word ptr [bp+4]
+
 ;ireturn 8
 pop ax
 mov [bp+8],ax
-
-; iload 4
-push word ptr [bp4]
 
 FSI2:
 ;fermeBloc 4
@@ -112,15 +112,11 @@ sup:
 ;ouvcBloc 0
 enter 0,0
 
-;ireturn 8
-pop ax
-mov [bp+8],ax
-
 ; iload 6
-push word ptr [bp6]
+push word ptr [bp+6]
 
 ; iload 4
-push word ptr [bp4]
+push word ptr [bp+4]
 
 ; isup
 pop bx
@@ -130,6 +126,10 @@ jle $+6
 push -1
 jmp $+4
 push 0
+
+;ireturn 8
+pop ax
+mov [bp+8],ax
 
 ;fermeBloc 4
 leave
@@ -143,7 +143,7 @@ main:
 enter 8,0
 
 ; iconst 5
-push 5
+push word ptr 5
 
 ; istore -2
 pop ax
@@ -170,16 +170,16 @@ sub sp,2
 push word ptr [bp-4]
 
 ; iconst 5
-push 5
+push word ptr 5
 
 ;call min
 call min
 
-;call min
-call min
+;call max
+call max
 
 ; iconst 2
-push 2
+push word ptr 2
 
 ; iadd
 pop bx
@@ -195,7 +195,7 @@ mov word ptr [bp-6],ax
 sub sp,2
 
 ; iconst 1
-push 1
+push word ptr 1
 
 ;reserveRetour
 sub sp,2
@@ -207,7 +207,7 @@ push word ptr [bp-2]
 push word ptr [bp-4]
 
 ; iconst 5
-push 5
+push word ptr 5
 
 ; isub
 pop bx
@@ -231,7 +231,7 @@ sub sp,2
 push word ptr [bp-2]
 
 ; iconst 2
-push 2
+push word ptr 2
 
 ; imul
 pop bx
@@ -245,8 +245,8 @@ push word ptr [bp-4]
 ;call min
 call min
 
-;call min
-call min
+;call sup
+call sup
 
 ; istore -8
 pop ax

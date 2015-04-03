@@ -1,6 +1,8 @@
 package implementation;
 
 
+import java.util.Map.Entry;
+
 import ident.*;
 import main.ParseException;
 import main.Yaka;
@@ -23,6 +25,14 @@ public class ImplFonction {
 	
 	public void fermeBloc () throws ParseException{
 		Yaka.yvm.fermeBloc(Yaka.tabIdent.chercheGlobal(Yaka.tabIdent.last).nbParam()*2);
+		
+		//Pour tester l'ajout des paramètres et des fonctions dans TabIdent
+		/*for (Entry<String, Ident> e : Yaka.tabIdent.locaux.entrySet()) {
+			System.out.println(e.getKey() + " " + e.getValue().valeur);
+		}
+		for (Entry<String, Fonction> e : Yaka.tabIdent.globaux.entrySet()) {
+			System.out.println(e.getKey() + " resultat : " + e.getValue().resultat +  " paramètres :  " + e.getValue().parametres.toString());
+		}*/
 		Yaka.tabIdent.videLocaux();
 	}
 

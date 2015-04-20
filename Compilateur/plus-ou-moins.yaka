@@ -1,0 +1,120 @@
+PROGRAMME pluoumoi
+
+BOOLEEN FONCTION recommencer (ENTIER i)
+	SI i=1 ALORS
+		RETOURNE VRAI;
+	SINON
+		RETOURNE FAUX;
+	FSI;
+FFONCTION
+
+BOOLEEN FONCTION comparaison (ENTIER i, ENTIER j)
+	SI i<j ALORS
+		ECRIRE("MOINS");
+		RETOURNE FAUX;
+	SINON
+		SI i>j ALORS
+			ECRIRE("PLUS");
+			RETOURNE FAUX;
+		SINON
+			ECRIRE("Reussi !");
+			RETOURNE VRAI;
+		FSI;
+	FSI;
+FFONCTION
+
+
+
+PRINCIPAL
+VAR ENTIER a,r,i,j,t,c,u,m1,m2,m3;
+VAR BOOLEEN b,p;
+
+b=VRAI;
+p=VRAI;
+u=-1;
+m1=0;
+m2=0;
+m3=0;
+a=1;
+
+TANTQUE (a>0) ET (a<3) FAIRE
+	ECRIRE("Bienvenue dans le jeu plus ou moins");
+	ALALIGNE;
+	ECRIRE("Pour jouer : 1");
+	ALALIGNE;
+	ECRIRE("Voir les meilleurs scores : 2");
+	ALALIGNE;
+
+	LIRE(a);
+	ALALIGNE;
+
+	SI a=1 ALORS
+		TANTQUE b FAIRE
+			ECRIRE("Donnez la borne de debut (ex: 0)");
+			LIRE(i);
+			ALALIGNE;
+			ECRIRE("Donnez la borne de fin (ex: 100)");
+			LIRE(j);
+			ALALIGNE;
+
+			t=10;
+
+			c=0;
+
+			TANTQUE NON p FAIRE
+				c = c + 1;
+
+				ECRIRE("Iteration ");
+				ECRIRE(c);
+				ALALIGNE;
+
+				ECRIRE("Votre numero : ");
+				LIRE(u);
+
+				p = comparaison(t, u);
+
+			FAIT;	
+
+			SI c > m3 ALORS
+				SI c > m2 ALORS
+					SI c> m1 ALORS
+						m1 = c;
+					SINON
+						m2 = c;
+					FSI;
+				SINON
+					m3 = c;
+				FSI;
+			FSI;
+
+			ECRIRE("Voulez-vous recommencer ? (Oui 1/Non 2");
+			LIRE(r);
+			ALALIGNE;
+			b=recommencer(r);
+		FAIT;
+	SINON
+		SI a=2 ALORS
+			ECRIRE("Meilleurs scores");
+			ALALIGNE;
+
+			ECRIRE("1er : ");
+			ECRIRE(m1);
+			ALALIGNE;
+
+			ECRIRE("2e : ");
+			ECRIRE(m2);
+			ALALIGNE;
+
+			ECRIRE("3e : ");
+			ECRIRE(m3);
+			ALALIGNE;
+		SINON
+			ECRIRE("Mauvaise touche. Au revoir !");
+		FSI;
+	FSI;
+FAIT;
+
+FPRINCIPAL
+
+FPROGRAMME
+

@@ -24,6 +24,21 @@ BOOLEEN FONCTION comparaison (ENTIER i, ENTIER j)
 FFONCTION
 
 
+ENTIER FONCTION attribution (ENTIER i, ENTIER j)
+VAR ENTIER tmp;
+  tmp = j+1;
+
+  TANTQUE (tmp<i) OU (tmp>j) FAIRE
+    ECRIRE("Joueur deux, entrez une valeur : ");
+    LIRE(tmp);
+    
+    SI (tmp<i) OU (tmp>j) ALORS
+      ECRIRE("Nombre en dehors des bornes.");
+    FSI;    
+   FAIT;
+  RETOURNE tmp;
+FFONCTION
+
 
 PRINCIPAL
 VAR ENTIER a,r,i,j,t,c,u,m1,m2,m3;
@@ -37,7 +52,7 @@ m2=0;
 m3=0;
 a=1;
 
-TANTQUE (a>0) ET (a<3) FAIRE
+TANTQUE (a=1) OU (a=2) FAIRE
 	ECRIRE("Bienvenue dans le jeu plus ou moins");
 	ALALIGNE;
 	ECRIRE("Pour jouer : 1");
@@ -57,7 +72,7 @@ TANTQUE (a>0) ET (a<3) FAIRE
 			LIRE(j);
 			ALALIGNE;
 
-			t=10;
+			t=attribution(i,j);
 
 			c=0;
 

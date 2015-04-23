@@ -9,13 +9,13 @@ BOOLEEN FONCTION MORT (ENTIER i)
 		ECRIRE("Un rocher vous tombe dessus et vous finissez ecrabouille");
 	FSI;
 	SI i = 3 ALORS
-		ECRIRE("Vous etes emascule à l'acide et mourrez à la suite de vos blessures");
+		ECRIRE("Vous etes emascule a l'acide et mourrez a la suite de vos blessures");
 	FSI;
 	SI i = 4 ALORS
 		ECRIRE("Vous etes hypnotise par un chat et mourrez en vous lechant le cul");
 	FSI;
 	SI i = 5 ALORS
-		ECRIRE("Vous mangez un banquet empoisonné et mourrez");
+		ECRIRE("Vous mangez un banquet empoisonne et mourrez");
 	FSI;
 	SI i = 6 ALORS
 		ECRIRE("Une Lyche vous tues");
@@ -30,7 +30,7 @@ BOOLEEN FONCTION MORT (ENTIER i)
 		ECRIRE("Vous mourrez poignarde dans le dos");
 	FSI;
 	SI i = 10 ALORS
-		ECRIRE("Vous trebuchez, vous cassez un ongle et mourrez à la suite de vos blessures");
+		ECRIRE("Vous trebuchez, vous cassez un ongle et mourrez a la suite de vos blessures");
 	FSI;
 	SI i = 11 ALORS
 		ECRIRE("Vous etes mange par une taupe-garou");
@@ -42,7 +42,7 @@ BOOLEEN FONCTION MORT (ENTIER i)
 		ECRIRE("Vous mourrez de diarhee (suffocation)");
 	FSI;
 	SI i = 14 ALORS
-		ECRIRE("Vous etes pris dans des pieges à loups et mourrez");
+		ECRIRE("Vous etes pris dans des pieges a loups et mourrez");
 	FSI;
 	SI i = 15 ALORS
 		ECRIRE("Le Dieu de la honte vous tues!");
@@ -54,7 +54,7 @@ BOOLEEN FONCTION MORT (ENTIER i)
 		ECRIRE("Vous etes embarque comme hotesse du bordel de la ville: vous mourrez d'une MST");
 	FSI;
 	SI i = 18 ALORS
-		ECRIRE("Vous finissez à l'usine et y passer le restant de votre vie");
+		ECRIRE("Vous finissez a l'usine et y passer le restant de votre vie");
 	FSI;
 	SI i = 19 ALORS
 		ECRIRE("Vous etes pris pendant votre tentative de vol, NOOB! Vous etes execute");
@@ -115,7 +115,7 @@ FFONCTION
 
 BOOLEEN FONCTION E100 ()
 	ALALIGNE;
-	ECRIRE("Pilou sautes du comptoir et vous invites à boire une biere. 'PILOU PILOU piiiilou");
+	ECRIRE("Pilou sautes du comptoir et vous invites a boire une biere. 'PILOU PILOU piiiilou");
 	ALALIGNE;
 	RETOURNE VRAI;
 FFONCTION
@@ -162,7 +162,7 @@ BOOLEEN FONCTION E43 (ENTIER r, ENTIER s)
 	ALALIGNE;
 	ECRIRE("Au bout du tunnel vous arrivez dans une taverne.");
 	ALALIGNE;
-	ECRIRE("En avançant vous voyez qu'un trésors est present dans la salle.");
+	ECRIRE("En avancant vous voyez qu'un tresors est present dans la salle.");
 	ALALIGNE;
 	RETOURNE E99(r,s);
 FFONCTION
@@ -194,7 +194,7 @@ BOOLEEN FONCTION E46 (ENTIER r, ENTIER s)
 	ALALIGNE;
 	ECRIRE("Vous faites mumuse un moment avec cerbere puis continuez votre chemin.");
 	ALALIGNE;
-	ECRIRE("Vous tombez alors sur une taverne rempli d'armes sertient de pierres précieuses.");
+	ECRIRE("Vous tombez alors sur une taverne rempli d'armes sertient de pierres precieuses.");
 	ALALIGNE;
 	RETOURNE E99(r,s);
 FFONCTION
@@ -203,7 +203,7 @@ BOOLEEN FONCTION E47 (ENTIER r, ENTIER s)
 	ALALIGNE;
 	ECRIRE("Vous cassez la gueule au cerbere et continuez.");
 	ALALIGNE;
-	ECRIRE("Vous tombez alors sur une taverne rempli de piles à neutrons.");
+	ECRIRE("Vous tombez alors sur une taverne rempli de piles a neutrons.");
 	ALALIGNE;
 	RETOURNE E99(r,s);
 FFONCTION
@@ -348,9 +348,9 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("et vous vous baignez dans ses entrailles.");
 	ALALIGNE;
-	ECRIRE("Une lueur apparait plus loins dans le couloir. elle gagne en intensité.");
+	ECRIRE("Une lueur apparait plus loins dans le couloir. elle gagne en intensite.");
 	ALALIGNE;
-	ECRIRE("1. Continuer à se baigner");
+	ECRIRE("1. Continuer a se baigner");
 	ALALIGNE;
 	ECRIRE("2. Manger le chat");
 	ALALIGNE;
@@ -395,7 +395,7 @@ FFONCTION
 BOOLEEN FONCTION E22 (ENTIER r, ENTIER s)
 VAR ENTIER c;
 	ALALIGNE;
-	ECRIRE("Ayant admirablement utilisé votre grande frite macDo du menu Happy meal.");
+	ECRIRE("Ayant admirablement utilise votre grande frite macDo du menu Happy meal.");
 	ALALIGNE;
 	ECRIRE("Avec votre super jouet rattata, vous vous retrouvez face a un cerbere belge.");
 	ALALIGNE;
@@ -687,7 +687,7 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("par l'intersiste de l'ombre diffractee par la troisieme pleine lune apres le viol d'une belette sur un petit ours.");
 	ALALIGNE;
-	ECRIRE("Il vous propose de vous joindre à lui meme si ce metier est difficile.");
+	ECRIRE("Il vous propose de vous joindre a lui meme si ce metier est difficile.");
 	ALALIGNE;
 	ECRIRE("1. Ficile ! LOL!");
 	ALALIGNE;
@@ -798,7 +798,7 @@ BOOLEEN FONCTION E16(ENTIER r, ENTIER s)
 		RETOURNE MORT(12);
 	FSI;
 	SI r = 3 ALORS
-		ECRIRE("Obi-wan te force à faire des choses.");
+		ECRIRE("Obi-wan te force a faire des choses.");
 		ALALIGNE;
 		RETOURNE MORT(16);
 	FSI;
@@ -808,7 +808,7 @@ BOOLEEN FONCTION E16(ENTIER r, ENTIER s)
 		RETOURNE MORT(12);
 	FSI;
 	SI r = 6 ALORS
-		ECRIRE("Obi-wan Kenobi te prend pour un droïde et te bute");
+		ECRIRE("Obi-wan Kenobi te prend pour un droide et te bute");
 		ALALIGNE;
 		RETOURNE MORT(12);
 	FSI;
@@ -818,7 +818,7 @@ FFONCTION
 BOOLEEN FONCTION E14(ENTIER r, ENTIER s)
 VAR ENTIER c;
 	ALALIGNE;
-	ECRIRE("Vous arrivez au bord d'une rivière, ");
+	ECRIRE("Vous arrivez au bord d'une riviere, ");
 	ALALIGNE;
 	ECRIRE("sur la rive d'en face se trouve un fermier, et sur la votre, une petite porte.");
 	ALALIGNE;
@@ -861,7 +861,7 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("Vous entrez dans une piece remplie de verdure,");
 	ALALIGNE;
-	ECRIRE("il y a une porte en face et une petite porte (1 m) à côté de vous");
+	ECRIRE("il y a une porte en face et une petite porte (1 m) a cote de vous");
 	ALALIGNE;
 	ECRIRE("1. Prendre la petite porte (1 m)");
 	ALALIGNE;
@@ -1000,7 +1000,7 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("6. Porte avec un Digicode");
 	ALALIGNE;
-	ECRIRE("7. Porte incrusté de runes et de gemmes");
+	ECRIRE("7. Porte incruste de runes et de gemmes");
 	ALALIGNE;
 	ECRIRE("8. Porte sans porte (un trou quoi , une arcade sombre)");
 	ALALIGNE;

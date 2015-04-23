@@ -1,0 +1,1214 @@
+PROGRAMME ElDungeonDelDiablo
+
+BOOLEEN FONCTION MORT (ENTIER i)
+	ALALIGNE;
+	SI i = 1 ALORS
+		ECRIRE("Vous tombez dans un trou et vous finissez en flaque de sang");
+	FSI;
+	SI i = 2 ALORS
+		ECRIRE("Un rocher vous tombe dessus et vous finissez ecrabouille");
+	FSI;
+	SI i = 3 ALORS
+		ECRIRE("Vous etes emascule à l'acide et mourrez à la suite de vos blessures");
+	FSI;
+	SI i = 4 ALORS
+		ECRIRE("Vous etes hypnotise par un chat et mourrez en vous lechant le cul");
+	FSI;
+	SI i = 5 ALORS
+		ECRIRE("Vous mangez un banquet empoisonné et mourrez");
+	FSI;
+	SI i = 6 ALORS
+		ECRIRE("Une Lyche vous tues");
+	FSI;
+	SI i = 7 ALORS
+		ECRIRE("Cerbere vous egorge et se repais de votre chair");
+	FSI;
+	SI i = 8 ALORS
+		ECRIRE("Un demon mineur t'egorge");
+	FSI;
+	SI i = 9 ALORS
+		ECRIRE("Vous mourrez poignarde dans le dos");
+	FSI;
+	SI i = 10 ALORS
+		ECRIRE("Vous trebuchez, vous cassez un ongle et mourrez à la suite de vos blessures");
+	FSI;
+	SI i = 11 ALORS
+		ECRIRE("Vous etes mange par une taupe-garou");
+	FSI;
+	SI i = 12 ALORS
+		ECRIRE("T'es mort! LOL!");
+	FSI;
+	SI i = 13 ALORS
+		ECRIRE("Vous mourrez de diarhee (suffocation)");
+	FSI;
+	SI i = 14 ALORS
+		ECRIRE("Vous etes pris dans des pieges à loups et mourrez");
+	FSI;
+	SI i = 15 ALORS
+		ECRIRE("Le Dieu de la honte vous tues!");
+	FSI;
+	SI i = 16 ALORS
+		ECRIRE("Vous mourrez d'une MST");
+	FSI;
+	SI i = 17 ALORS
+		ECRIRE("Vous etes embarque comme hotesse du bordel de la ville: vous mourrez d'une MST");
+	FSI;
+	SI i = 18 ALORS
+		ECRIRE("Vous finissez à l'usine et y passer le restant de votre vie");
+	FSI;
+	SI i = 19 ALORS
+		ECRIRE("Vous etes pris pendant votre tentative de vol, NOOB! Vous etes execute");
+	FSI;
+	SI i = 20 ALORS
+		ECRIRE("Vous n'etes pas pris en flagrant delit. Mais au vue de votre facies, vous etes declarer coupable. Vous etes execute ");
+	FSI;
+	SI i = 21 ALORS
+		ECRIRE("Au bout du tunel, vous tombez sur une taverne. Apres 5 ans de beuveries, tout le monde a oublie qui etais le patron de la taverne et vous le devenez. Vous mourrez 10 ans plus tard, tuez par un client.");
+	FSI;
+	SI i = 22 ALORS
+		ECRIRE("Vous mourrez du diabete");
+	FSI;
+	SI i = 23 ALORS
+		ECRIRE("BADOUM!!");
+	FSI;
+	SI i = 24 ALORS
+		ECRIRE("Vous mourrez de faible nutrition");
+	FSI;
+	SI i = 25 ALORS
+		ECRIRE("Le poulet se transforme en demon et vous pete la gueule");
+	FSI;
+	SI i = 26 ALORS
+		ECRIRE("Vous trouvez de l'herbe a chat, vous finissez drogue et mourrez");
+	FSI;
+	SI i = 27 ALORS
+		ECRIRE("Vous mourrez, manger par un Magicarpe");
+	FSI;
+	SI i = 28 ALORS
+		ECRIRE("Vous rouillez! Poil au pieds!");
+		ALALIGNE;
+		ECRIRE("T'es noye! Poil au nez!");
+		ALALIGNE;
+		ECRIRE("T'as perdu! Poil au cul!");
+	FSI;
+	SI i = 29 ALORS
+		ECRIRE("Mort de vieillesse (mais plus vierge)");
+	FSI;
+	SI i = 30 ALORS
+		ECRIRE("Des Belges vous attaques au vue de votre odeur et vous tues");
+	FSI;
+	SI i = 31 ALORS
+		ECRIRE("Pika Pika");
+	FSI;
+	SI i = 32 ALORS
+		ECRIRE("Les Belges vous mangent");
+	FSI;
+	SI i = 33 ALORS
+		ECRIRE("Un jet de flamme vous crame");
+	FSI;
+	SI i = 34 ALORS
+		ECRIRE("Au vue de vos faibles defenses (contrairement aux elephants), un Magicarpe vous bouffe");
+	FSI;
+	ALALIGNE;
+	RETOURNE FAUX;
+FFONCTION
+
+
+BOOLEEN FONCTION E100 ()
+	ALALIGNE;
+	ECRIRE("Pilou sautes du comptoir et vous invites à boire une biere. 'PILOU PILOU piiiilou");
+	ALALIGNE;
+	RETOURNE VRAI;
+FFONCTION
+
+
+BOOLEEN FONCTION E99 (ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Vous rencontrez le maitre des lieux. Le Dieu Pilou le demoniaque.");
+	ALALIGNE;
+	ECRIRE("Qui vous domines de toute sa hauteur (1m), assis sur le comptoir de la taverne");
+	ALALIGNE;
+	ECRIRE("Il vous declare: 'Hey Pilou! Pilou pilouuu pilou'");
+	ALALIGNE;
+	ECRIRE("1. Pilou");
+	ALALIGNE;
+	ECRIRE("2. Pipilou");
+	ALALIGNE;
+	ECRIRE("3. Pikalou?");
+	ALALIGNE;
+	ECRIRE("4. Piloutoutchou");
+	ALALIGNE;
+	ECRIRE("5. Piloutout");
+	ALALIGNE;
+	ECRIRE("6. Pika Pika Pilou?");
+	ALALIGNE;
+	ECRIRE("7. Pipipipipilou");
+	ALALIGNE;
+	ECRIRE("8. Popilou");
+	ALALIGNE;
+	ECRIRE("9. Pilouuuuuuu");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = (r+s) ALORS
+		RETOURNE E100();
+	SINON
+		RETOURNE MORT(12);
+	FSI;
+FFONCTION
+
+
+BOOLEEN FONCTION E43 (ENTIER r, ENTIER s)
+	ALALIGNE;
+	ECRIRE("Au bout du tunnel vous arrivez dans une taverne.");
+	ALALIGNE;
+	ECRIRE("En avançant vous voyez qu'un trésors est present dans la salle.");
+	ALALIGNE;
+	RETOURNE E99(r,s);
+FFONCTION
+
+
+BOOLEEN FONCTION E44 (ENTIER r, ENTIER s)
+	ALALIGNE;
+	ECRIRE("Vous lancez votre poulet au cerbere.");
+	ALALIGNE;
+	ECRIRE("Pendant qu'il le mange, vous avancez jusqu'a la porte");
+	ALALIGNE;
+	ECRIRE("Vous tombez sur une taverne rempli d'or");
+	ALALIGNE;
+	RETOURNE E99(r,s);
+FFONCTION
+
+BOOLEEN FONCTION E45 (ENTIER r, ENTIER s)
+	ALALIGNE;
+	ECRIRE("Vous tombez dans un trou et vous rattrapez habilement.");
+	ALALIGNE;
+	ECRIRE("En jetant un regard autour de vous vous voyez");
+	ALALIGNE;
+	ECRIRE("que vous etes dans une taverne rempli de bijoux");
+	ALALIGNE;
+	RETOURNE E99(r,s);
+FFONCTION
+
+BOOLEEN FONCTION E46 (ENTIER r, ENTIER s)
+	ALALIGNE;
+	ECRIRE("Vous faites mumuse un moment avec cerbere puis continuez votre chemin.");
+	ALALIGNE;
+	ECRIRE("Vous tombez alors sur une taverne rempli d'armes sertient de pierres précieuses.");
+	ALALIGNE;
+	RETOURNE E99(r,s);
+FFONCTION
+
+BOOLEEN FONCTION E47 (ENTIER r, ENTIER s)
+	ALALIGNE;
+	ECRIRE("Vous cassez la gueule au cerbere et continuez.");
+	ALALIGNE;
+	ECRIRE("Vous tombez alors sur une taverne rempli de piles à neutrons.");
+	ALALIGNE;
+	RETOURNE E99(r,s);
+FFONCTION
+
+BOOLEEN FONCTION E42 (ENTIER r, ENTIER s)
+	ALALIGNE;
+	SI r = 2 ALORS
+		RETOURNE MORT(21);
+	SINON
+		RETOURNE MORT(2);
+	FSI;
+FFONCTION
+
+
+BOOLEEN FONCTION E24 (ENTIER r, ENTIER s,BOOLEEN a)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Vous arrivez dans une salle avec deux cascades qui cachent des passages.");
+	ALALIGNE;
+	ECRIRE("Une est d'huile et l'autre d'eau.");
+	ALALIGNE;
+	ECRIRE("1. Poil au dos");
+	ALALIGNE;
+	ECRIRE("2. Prendre la petite porte (1m)");
+	ALALIGNE;
+	ECRIRE("3. Passer par la cascade d'eau");
+	ALALIGNE;
+	ECRIRE("4. Rentrer chez soi");
+	ALALIGNE;
+	ECRIRE("5. Passer par la cascade d'huile");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE MORT(12);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	SI c = 3 ALORS
+		SI a ALORS
+			RETOURNE MORT(28);
+		SINON
+			RETOURNE MORT(34);
+		FSI;
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	SI c = 5 ALORS
+		RETOURNE MORT(30);
+	FSI;
+	RETOURNE MORT(12);	
+FFONCTION
+
+
+BOOLEEN FONCTION E7 (ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Vous trouvez une armure");
+	ALALIGNE;
+	ECRIRE("1. Prendre l'armure");
+	ALALIGNE;
+	ECRIRE("2. Ne pas la prendre");
+	ALALIGNE;
+	ECRIRE("3. Prendre la petite porte (1m)");
+	ALALIGNE;
+	ECRIRE("4. Rentrer chez soi");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE E24(r,s,VRAI);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE E24(r,s,FAUX);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	RETOURNE MORT(12);	
+FFONCTION
+
+
+BOOLEEN FONCTION E23 (ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Bravo grace a votre nyctalopie, vous trouvez une echelle que le narrateur n'avais pas vu.");
+	ALALIGNE;
+	ECRIRE("Vous etes desormais face a cerbere.");
+	ALALIGNE;
+	ECRIRE("1. Combattre");
+	ALALIGNE;
+	ECRIRE("2. Passer furtivement");
+	ALALIGNE;
+	ECRIRE("3. Tenter de l'amadouer");
+	ALALIGNE;
+	ECRIRE("4. Chanter");
+	ALALIGNE;
+	ECRIRE("5. Faire un strip tease");
+	ALALIGNE;
+	ECRIRE("6. Rentrer chez soi");
+	ALALIGNE;
+	ECRIRE("7. Prendre la petite porte (1m)");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE E46(r,s);
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 5 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 6 ALORS
+		RETOURNE MORT(1);
+	FSI;
+	SI c = 7 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	RETOURNE MORT(12);	
+FFONCTION
+
+
+
+
+BOOLEEN FONCTION E9 (ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Vous tuez un chat qui vous regardais mal,");
+	ALALIGNE;
+	ECRIRE("et vous vous baignez dans ses entrailles.");
+	ALALIGNE;
+	ECRIRE("Une lueur apparait plus loins dans le couloir. elle gagne en intensité.");
+	ALALIGNE;
+	ECRIRE("1. Continuer à se baigner");
+	ALALIGNE;
+	ECRIRE("2. Manger le chat");
+	ALALIGNE;
+	ECRIRE("3. Aller vers la lueur tranquillement");
+	ALALIGNE;
+	ECRIRE("4. Courir vers la lueur");
+	ALALIGNE;
+	ECRIRE("6. Prendre la petite porte (1m)");
+	ALALIGNE;
+	ECRIRE("7. Rentrer chez soi");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE MORT(33);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE MORT(13);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE MORT(33);
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE MORT(10);
+	FSI;
+	SI c = 5 ALORS
+		SI r = 4 ALORS
+			RETOURNE E23(r,s);
+		SINON
+			RETOURNE MORT(12);
+		FSI;
+	FSI;
+	SI c = 6 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	SI c = 7 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	RETOURNE MORT(12);	
+FFONCTION
+
+BOOLEEN FONCTION E22 (ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Ayant admirablement utilisé votre grande frite macDo du menu Happy meal.");
+	ALALIGNE;
+	ECRIRE("Avec votre super jouet rattata, vous vous retrouvez face a un cerbere belge.");
+	ALALIGNE;
+	ECRIRE("Au vue de sa gamelle de moules frites, cela parait logique.");
+	ALALIGNE;
+	ECRIRE("1. Combattre");
+	ALALIGNE;
+	ECRIRE("2. Passer furtivement");
+	ALALIGNE;
+	ECRIRE("3. Tenter de l'amadouer");
+	ALALIGNE;
+	ECRIRE("4. Chanter");
+	ALALIGNE;
+	ECRIRE("5. Faire un strip tease");
+	ALALIGNE;
+	ECRIRE("6. Rentrer chez soi");
+	ALALIGNE;
+	ECRIRE("7. Prendre la petite porte (1m)");
+	ALALIGNE;
+	ECRIRE("8. Attaquer avec rattata");
+	ALALIGNE;
+	ECRIRE("9. Jouer avec rattata");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE E47(r,s);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE MORT(7);;
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 5 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 6 ALORS
+		RETOURNE MORT(1);
+	FSI;
+	SI c = 7 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	SI c = 8 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 9 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	RETOURNE MORT(12);	
+FFONCTION
+
+BOOLEEN FONCTION E21 (ENTIER r, ENTIER s, BOOLEEN f)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Des belges sauvages sortent des hautes herbes !");
+	ALALIGNE;
+	ECRIRE("1. Utiliser rattata");
+	ALALIGNE;
+	ECRIRE("2. Les attaquer");
+	ALALIGNE;
+	ECRIRE("3. Tenter de les amadouer");
+	ALALIGNE;
+	ECRIRE("4. Leur parler");
+	ALALIGNE;
+	ECRIRE("5. Passer furtivement");
+	ALALIGNE;
+	ECRIRE("6. Rentrer chez soi");
+	ALALIGNE;
+	ECRIRE("7. Passer en courant");
+	ALALIGNE;
+	ECRIRE("8. Prendre la petite porte (1m)");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE MORT(12);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE MORT(8);
+	FSI;
+	SI c = 3 ALORS
+		SI f ALORS
+			RETOURNE E22(r,s);
+		SINON
+			RETOURNE MORT(32);
+		FSI;
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE MORT(6);
+	FSI;
+	SI c = 5 ALORS
+		RETOURNE MORT(11);
+	FSI;
+	SI c = 6 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	SI c = 7 ALORS
+		RETOURNE MORT(10);
+	FSI;
+	SI c = 8 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	RETOURNE MORT(12);	
+FFONCTION
+
+
+
+
+BOOLEEN FONCTION E8 (ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Vous arrivez devant un banquet..");
+	ALALIGNE;
+	ECRIRE("1. Prendre un poulet");
+	ALALIGNE;
+	ECRIRE("2. Y manger");
+	ALALIGNE;
+	ECRIRE("3. Commander Macdo");
+	ALALIGNE;
+	ECRIRE("4. Prendre une salade verte");
+	ALALIGNE;
+	ECRIRE("5. Rentrer chez soi");
+	ALALIGNE;
+	ECRIRE("6. Prendre la petite porte (1m)");
+	ALALIGNE;
+	ECRIRE("7. Continuer tout droit");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE E21(r,s,FAUX);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE MORT(8);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE E21(r,s,VRAI);
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE E21(r,s,FAUX);
+	FSI;
+	SI c = 5 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	SI c = 6 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	SI c = 7 ALORS
+		RETOURNE E21(r,s,FAUX);
+	FSI;
+	RETOURNE MORT(12);	
+FFONCTION
+
+
+BOOLEEN FONCTION E20 (ENTIER r, ENTIER s,BOOLEEN p)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Apres quelques couloirs, vous vous retrouvez devant cerbere.");
+	ALALIGNE;
+	ECRIRE("C'est con d'avoir passer tant d'annee a deux pas de la fin.");
+	ALALIGNE;
+	ECRIRE("1. Combattre");
+	ALALIGNE;
+	ECRIRE("2. Passer furtivement");
+	ALALIGNE;
+	ECRIRE("3. Tenter de l'amadouer");
+	ALALIGNE;
+	ECRIRE("4. Chanter");
+	ALALIGNE;
+	ECRIRE("5. Faire un strip tease");
+	ALALIGNE;
+	ECRIRE("6. Rentrer chez soi");
+	ALALIGNE;
+	ECRIRE("7. Prendre la petite porte (1m)");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 3 ALORS
+		SI p ALORS
+			RETOURNE E44(r,s);
+		SINON
+			RETOURNE MORT(7);
+		FSI;
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 5 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 6 ALORS
+		RETOURNE MORT(1);
+	FSI;
+	SI c = 7 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	RETOURNE MORT(12);	
+FFONCTION
+
+
+BOOLEEN FONCTION E19 (ENTIER r, ENTIER s)
+VAR ENTIER c,i;
+	ALALIGNE;
+	i=1;
+	TANTQUE i < 20 FAIRE
+	ECRIRE("Voila ");
+	ECRIRE( 2 * i);
+	ECRIRE(" ans que vous etes dans la ferme");
+	ALALIGNE;
+	ECRIRE("1. Rester");
+	ALALIGNE;
+	ECRIRE("2. Continuer la quete");
+	ALALIGNE;
+	ECRIRE("3. Rentrer chez soi");
+	ALALIGNE;
+	ECRIRE("4. Prendre la petite porte (1m)");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 2 ALORS
+		RETOURNE E20(r,s,FAUX);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	i = i+1;
+	FAIT;
+
+	ECRIRE("Apres 40 ans dans la ferme, vous decidez de reprendre votre quequete.");
+	ALALIGNE;
+	ECRIRE("Le fermier Bouvier vous dit au revoir, triste que ses nuits vont etre froides desormais");
+	ALALIGNE;
+	ECRIRE("mais il vous propose un dernier poulet dans son infini bonte.");
+	ALALIGNE;
+	ECRIRE("1. Manger ce poulet avec votre amis");
+	ALALIGNE;
+	ECRIRE("2. Emporter le poulet avec vous");
+	ALALIGNE;
+	ECRIRE("3. Lui cracher a la gueule et partir");
+	ALALIGNE;
+	ECRIRE("4. Decider de rester finir votre vie avec votre Christian");
+	ALALIGNE;
+	ECRIRE("5. Prendre la petite porte (1m)");
+	ALALIGNE;
+	ECRIRE("6. Rentrer chez soi");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE E20(r,s,FAUX);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE E20(r,s,VRAI);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE E20(r,s,FAUX);
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE MORT(29);
+	FSI;
+	SI c = 5 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	SI c = 6 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	RETOURNE MORT(12);
+FFONCTION
+
+BOOLEEN FONCTION E18 (ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Vous rencontrez un homme se presentant comme Christian Bouvier,");
+	ALALIGNE;
+	ECRIRE("fondateur ds illuminatis, vampire pedobear du croissant triangle sans frontiere au chocolat");
+	ALALIGNE;
+	ECRIRE("par l'intersiste de l'ombre diffractee par la troisieme pleine lune apres le viol d'une belette sur un petit ours.");
+	ALALIGNE;
+	ECRIRE("Il vous propose de vous joindre à lui meme si ce metier est difficile.");
+	ALALIGNE;
+	ECRIRE("1. Ficile ! LOL!");
+	ALALIGNE;
+	ECRIRE("2. Oh ouais!");
+	ALALIGNE;
+	ECRIRE("3. Prendre la petite porte (1m)");
+	ALALIGNE;
+	ECRIRE("4. Rentrer chez soi et lui cracher a la gueule");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE MORT(12);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE E19(r,s);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	RETOURNE MORT(12);	
+FFONCTION	
+
+
+BOOLEEN FONCTION E15 (ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	SI (r = 1) OU (r = 2) ALORS
+		RETOURNE MORT(27);
+	FSI;
+	SI r = 6 ALORS 
+		RETOURNE MORT(28);
+	FSI;
+	SI r = 3 ALORS
+		RETOURNE E18(r,s);
+	FSI;
+
+	ECRIRE("Assoiffez de sang, vous vous approchez discretement dans son dos, vou l'egorgez!");
+	ALALIGNE;
+	ECRIRE("Mais apres avoir vue son visage, vous reconnaissez votre ami d'enfance: Christian Bouvier,");
+	ALALIGNE;
+	ECRIRE("le vampire qui profitais de vos crime pour avoir sa dose. Pris de remord, vous vous infligez un supplice atroce!");
+	ALALIGNE;
+	RETOURNE MORT(3);	
+FFONCTION
+
+
+BOOLEEN FONCTION E17 (ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Vous arrivez devat cerbere, vosu voyez derriere lui la porte de la salle au tresors");
+	ALALIGNE;
+	ECRIRE("(vous le devinez habilement a l'aide de l'ecritaux du collier de cerbere : 'Gardien de la salle aux tresors')");
+	ALALIGNE;
+	ECRIRE("1. Combattre");
+	ALALIGNE;
+	ECRIRE("2. Passer furtivement");
+	ALALIGNE;
+	ECRIRE("3. Tenter de l'amadouer");
+	ALALIGNE;
+	ECRIRE("4. Chanter");
+	ALALIGNE;
+	ECRIRE("5. Faire un strip tease");
+	ALALIGNE;
+	ECRIRE("6. Rentrer chez soi");
+	ALALIGNE;
+	ECRIRE("7. Prendre la petite porte (1m)");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 5 ALORS
+		RETOURNE MORT(7);
+	FSI;
+	SI c = 6 ALORS
+		RETOURNE E45(r,s);
+	FSI;
+	SI c = 7 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	RETOURNE MORT(12);	
+FFONCTION
+
+BOOLEEN FONCTION E16(ENTIER r, ENTIER s)
+	ALALIGNE;
+	SI r = 1 ALORS
+		ECRIRE("Obi-wan te propose de le suivre, il te revele alors une porte cache et tu continue ton chemin.");
+		ALALIGNE;
+		RETOURNE E17(r,s);
+	FSI;
+	SI r = 2 ALORS
+		ECRIRE("Obi te propose de le suivre, et te promet meme des bonbons, mais, comme t'es un nain, tu l'insulte et il te bute.");
+		ALALIGNE;
+		RETOURNE MORT(12);
+	FSI;
+	SI r = 3 ALORS
+		ECRIRE("Obi-wan te force à faire des choses.");
+		ALALIGNE;
+		RETOURNE MORT(16);
+	FSI;
+	SI r = 4 ALORS
+		ECRIRE("Obi-wan te tue parce que t'es noir.");
+		ALALIGNE;
+		RETOURNE MORT(12);
+	FSI;
+	SI r = 6 ALORS
+		ECRIRE("Obi-wan Kenobi te prend pour un droïde et te bute");
+		ALALIGNE;
+		RETOURNE MORT(12);
+	FSI;
+FFONCTION
+	
+
+BOOLEEN FONCTION E14(ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Vous arrivez au bord d'une rivière, ");
+	ALALIGNE;
+	ECRIRE("sur la rive d'en face se trouve un fermier, et sur la votre, une petite porte.");
+	ALALIGNE;
+	ECRIRE("1. Prendre la petite porte (1 m)");
+	ALALIGNE;
+	ECRIRE("2. Allez parler au fermier");
+	ALALIGNE;
+	ECRIRE("3. Rentrer chez soi");
+	ALALIGNE;
+	ECRIRE("4. Pecher du poisson");
+	ALALIGNE;
+	ECRIRE("5. Obi-wan Kenobi");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		SI r = 2 ALORS
+			RETOURNE E43(r,s);
+		FSI;
+		RETOURNE MORT(2);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE E15(r,s);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE MORT(27);
+	FSI;
+	SI c = 5 ALORS
+		RETOURNE E16(r,s);
+	FSI;
+	RETOURNE MORT(12);
+FFONCTION
+	
+	
+BOOLEEN FONCTION E12(ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Vous entrez dans une piece remplie de verdure,");
+	ALALIGNE;
+	ECRIRE("il y a une porte en face et une petite porte (1 m) à côté de vous");
+	ALALIGNE;
+	ECRIRE("1. Prendre la petite porte (1 m)");
+	ALALIGNE;
+	ECRIRE("2. Courir jusqu'a la porte en face");
+	ALALIGNE;
+	ECRIRE("3. Marcher jusqu'a a porte en face");
+	ALALIGNE;
+	ECRIRE("4. Rentrer chez soi");
+	ALALIGNE;
+	ECRIRE("5. Manger de l'herbe");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE MORT(10);
+	FSI;
+	SI c = 3 ALORS
+		SI r = 5 ALORS
+			RETOURNE MORT(26);
+		FSI;
+	RETOURNE E14(r,s);
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	SI c = 5 ALORS
+		RETOURNE MORT(13);
+	FSI;
+	RETOURNE MORT(12);
+FFONCTION
+
+
+BOOLEEN FONCTION E11(ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Vous voyez un poulet.");
+	ALALIGNE;
+	ECRIRE("1. Continuer");
+	ALALIGNE;
+	ECRIRE("2. L'attaquer");
+	ALALIGNE;
+	ECRIRE("3. Rentrer chez soi");
+	ALALIGNE;
+	ECRIRE("4. Prendre la petite porte (1 m)");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI (c = 1) OU (c = 2) ALORS
+		RETOURNE MORT(25);
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	RETOURNE MORT(12);
+FFONCTION
+
+
+BOOLEEN FONCTION E10(ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Vous etes a un croisement, poil au dent, poil au turban.");
+	ALALIGNE;
+	ECRIRE("1. Porte de gauche peinte en rouge");
+	ALALIGNE;
+	ECRIRE("2. Porte de droite peinte en verte");
+	ALALIGNE;
+	ECRIRE("3. Prendre la petite porte (1 m)");
+	ALALIGNE;
+	ECRIRE("4. Rentrer chez soi");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE E11(r,s);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE E12(r,s);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	RETOURNE MORT(12);
+FFONCTION
+
+BOOLEEN FONCTION E6(ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ALALIGNE;
+	ECRIRE("Vous trouvez un poulet grille. Choisissez que faire.");
+	ALALIGNE;
+	ECRIRE("1. Ne pas le manger");
+	ALALIGNE;
+	ECRIRE("2. Le manger");
+	ALALIGNE;
+	ECRIRE("3. Rentrer chez soi");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE MORT(24);
+	FSI;
+	SI c = 2 ALORS
+		RETOURNE E10(r,s);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	RETOURNE MORT(12);
+FFONCTION
+
+
+
+BOOLEEN FONCTION E5(ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ECRIRE("Vous etes maintenant devant l'entree ... ou plutot les 8 entrees. Laquelle choisir ?");
+	ALALIGNE;
+	ECRIRE("1. Porte delabre en bois de chene datant de 350 ans,");
+	ALALIGNE;
+	ECRIRE("fabrique par maitre Baleon avec son assistant Brand le Batisseur assiste par ses schtroumpfs et ses geants");
+	ALALIGNE;
+	ECRIRE("2. Porte en chocolat (sans poignee)");
+	ALALIGNE;
+	ECRIRE("3. Prendre la petite porte (1 m)");
+	ALALIGNE;
+	ECRIRE("4. Porte en champignon sans poignee");
+	ALALIGNE;
+	ECRIRE("5. Porte avec un levier de commande");
+	ALALIGNE;
+	ECRIRE("6. Porte avec un Digicode");
+	ALALIGNE;
+	ECRIRE("7. Porte incrusté de runes et de gemmes");
+	ALALIGNE;
+	ECRIRE("8. Porte sans porte (un trou quoi , une arcade sombre)");
+	ALALIGNE;
+	ECRIRE("9. Rentrer chez soi");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		RETOURNE E6(r,s);
+	FSI;
+	SI c = 2 ALORS
+		SI (r = 5) OU (r = 3) ALORS
+			RETOURNE MORT(22);
+		FSI;
+		SI r = 2 ALORS
+			ECRIRE("Vous entendez un bruit sur le cote qui suscite votre interet, vous y allez donc");
+			ALALIGNE;
+			RETOURNE MORT(21);
+		FSI;
+		RETOURNE E7(r,s);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	SI c = 4 ALORS
+		SI r = 2 ALORS
+			ECRIRE("Vous rencontrez des schtroumpfs qui vous guide vers la taverne");
+			ALALIGNE;
+			RETOURNE MORT(21);
+		FSI;
+		RETOURNE MORT(13);
+	FSI;
+	SI c = 5 ALORS
+		RETOURNE MORT(31);
+	FSI;
+	SI c = 6 ALORS
+		SI r = 6 ALORS
+			RETOURNE E8(r,s);
+		FSI;
+		RETOURNE MORT(23);
+	FSI;
+	SI c = 7 ALORS
+		RETOURNE MORT(12);
+	FSI;
+	SI c = 8 ALORS
+		SI (r = 4) OU (r = 5) ALORS
+			RETOURNE E9(r,s);
+		FSI;
+		RETOURNE MORT(4);
+	FSI;
+	SI c = 9 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	RETOURNE MORT(12);
+FFONCTION
+	
+
+BOOLEEN FONCTION E3(ENTIER r, ENTIER s)
+VAR ENTIER c;
+	ECRIRE("Vous arrivez pendant une douce nuit etoile dans le village de Bourg-Carton ou se trouve le Donjon de Pilou. La fortune vous y attend!");
+	ALALIGNE;
+	ECRIRE("Que faire ?");
+	ALALIGNE;
+	ECRIRE("1. Dormir");
+	ALALIGNE;
+	ECRIRE("2. Y aller");
+	ALALIGNE;
+	ECRIRE("3. Rentrer chez soi");
+	ALALIGNE;
+	ECRIRE("4. Aller au bordel");
+	ALALIGNE;
+	ECRIRE("5. Voler un passant");
+	ALALIGNE;
+	ECRIRE("6. Se laver dans le lac");
+	ALALIGNE;
+	ECRIRE ("7. Prendre la petite porte (1 m)");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c = 1 ALORS
+		SI (r = 9) ET (s = 2) ALORS
+			RETOURNE MORT(17);
+		FSI;
+		SI r = 8 ALORS
+			RETOURNE MORT(18);
+		FSI;
+		SI (r = 7) OU (r = 9) OU (r = 4) ALORS
+			RETOURNE MORT(9);
+		FSI;
+		RETOURNE E5(r,s);
+	FSI;
+	SI c = 2 ALORS
+		SI r = 4 ALORS
+			RETOURNE E5(r,s);
+		FSI;
+		RETOURNE MORT(14);
+	FSI;
+	SI c = 3 ALORS
+		RETOURNE MORT(15);
+	FSI;
+	SI c = 4 ALORS
+		SI s = 1 ALORS
+			RETOURNE MORT(16);
+		FSI;
+		SI s = 2 ALORS
+			RETOURNE MORT(17);
+		FSI;
+		RETOURNE MORT(9);
+	FSI;
+	SI c = 5 ALORS
+		SI r = 7 ALORS
+			RETOURNE MORT(20);
+		FSI;
+		RETOURNE MORT(19);
+	FSI;
+	SI c = 6 ALORS
+		SI r = 6 ALORS
+			RETOURNE MORT(28);
+		FSI;
+		RETOURNE MORT(27);
+	FSI;
+	SI c = 7 ALORS
+		RETOURNE E42(r,s);
+	FSI;
+	RETOURNE MORT(12);
+FFONCTION
+	
+
+BOOLEEN FONCTION E2(ENTIER r)
+VAR ENTIER s;
+	ECRIRE("Maintenant, choississez votre sexe, qui sait, peut-etre que vous decouvrirez une nouvelle voie.");
+	ALALIGNE;
+	ECRIRE("1. Male");
+	ALALIGNE;
+	ECRIRE("2. Femelle");
+	ALALIGNE;
+	ECRIRE("3. Indeterminee");
+	ALALIGNE;
+	LIRE(s);
+	ALALIGNE;
+	SI (s = 1) OU (s = 2) OU (s = 3) ALORS
+		RETOURNE E3(r,s);
+	SINON
+		RETOURNE MORT(12);
+	FSI;
+FFONCTION
+
+
+BOOLEEN FONCTION E1()
+VAR ENTIER r;
+	ECRIRE("Courage valeureux aventurier, veuillez tout d'abord choisir votre race en rentrant le numero correspondant:");
+	ALALIGNE;
+	ECRIRE("1. Elfe");
+	ALALIGNE;
+	ECRIRE("2. Nain");
+	ALALIGNE;
+	ECRIRE("3. Humain");
+	ALALIGNE;
+	ECRIRE("4. Drow");
+	ALALIGNE;
+	ECRIRE("5. Zoman");
+	ALALIGNE;
+	ECRIRE("6. Cyborg");
+	ALALIGNE;
+	ECRIRE("7. Arabe");
+	ALALIGNE;
+	ECRIRE("8. Chinois");
+	ALALIGNE;
+	ECRIRE("9. Roux");
+	ALALIGNE;
+	LIRE(r);
+	ALALIGNE;
+	SI (r = 1) OU (r = 2) OU (r = 3) OU (r = 4) OU (r = 5) OU (r = 6) OU (r = 7) OU (r = 8) OU (r = 9) ALORS
+		RETOURNE E2(r);
+	SINON
+		RETOURNE MORT(12);
+	FSI;
+FFONCTION
+
+PRINCIPAL
+VAR ENTIER c;
+VAR BOOLEEN m;
+
+c=1;
+TANTQUE c=1 FAIRE
+	ALALIGNE;
+	ALALIGNE;
+	ALALIGNE;
+	ECRIRE("Bienvenue dans 'El Dungeon Del Diablo' jeune aventurier");
+	ALALIGNE;
+	ECRIRE("Pret a tenter l'aventure?");
+	ALALIGNE;
+	ECRIRE("1. Jouer");
+	ALALIGNE;
+	ECRIRE("2. Quitter");
+	ALALIGNE;
+	LIRE(c);
+	ALALIGNE;
+	SI c=1 ALORS
+		m = E1();
+		SI m ALORS
+			ECRIRE("Bravo, tu es arrive au bout de cette dure epreuve.");
+		SINON
+			ECRIRE("GAME OVER");
+		FSI;
+		ALALIGNE;
+	FSI;
+FAIT;
+FPRINCIPAL
+FPROGRAMME
+	

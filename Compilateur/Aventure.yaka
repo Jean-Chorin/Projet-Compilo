@@ -63,7 +63,7 @@ BOOLEEN FONCTION MORT (ENTIER i)
 		ECRIRE("Vous n'etes pas pris en flagrant delit. Mais au vue de votre facies, vous etes declarer coupable. Vous etes execute ");
 	FSI;
 	SI i = 21 ALORS
-		ECRIRE("Au bout du tunel, vous tombez sur une taverne. Apres 5 ans de beuveries, tout le monde a oublie qui etais le patron de la taverne et vous le devenez. Vous mourrez 10 ans plus tard, tuez par un client.");
+		ECRIRE("Au bout du tunnel, vous tombez sur une taverne. Apres 5 ans de beuveries, tout le monde a oublie qui etais le patron de la taverne et vous le devenez. Vous mourrez 10 ans plus tard, tuez par un client.");
 	FSI;
 	SI i = 22 ALORS
 		ECRIRE("Vous mourrez du diabete");
@@ -824,7 +824,7 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("1. Prendre la petite porte (1m)");
 	ALALIGNE;
-	ECRIRE("2. Allez parler au fermier en traversant la rivière à la nage");
+	ECRIRE("2. Allez parler au fermier en traversant la riviere a la nage");
 	ALALIGNE;
 	ECRIRE("3. Rentrer chez soi");
 	ALALIGNE;
@@ -1027,7 +1027,7 @@ VAR ENTIER c;
 	FSI;
 	SI c = 4 ALORS
 		SI r = 2 ALORS
-			ECRIRE("Vous rencontrez des schtroumpfs qui vous guide vers la taverne");
+			ECRIRE("Vous rencontrez des schtroumpfs qui vous guide dans un tunnel");
 			ALALIGNE;
 			RETOURNE MORT(21);
 		FSI;

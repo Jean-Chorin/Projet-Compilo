@@ -824,7 +824,7 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("1. Prendre la petite porte (1m)");
 	ALALIGNE;
-	ECRIRE("2. Allez parler au fermier");
+	ECRIRE("2. Allez parler au fermier en traversant la rivière à la nage");
 	ALALIGNE;
 	ECRIRE("3. Rentrer chez soi");
 	ALALIGNE;
@@ -861,7 +861,7 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("Vous entrez dans une piece remplie de verdure,");
 	ALALIGNE;
-	ECRIRE("il y a une porte en face et une petite porte (1 m) a cote de vous");
+	ECRIRE("il y a une porte en face et une petite porte (1m) a cote de vous");
 	ALALIGNE;
 	ECRIRE("1. Prendre la petite porte (1m)");
 	ALALIGNE;
@@ -1066,7 +1066,7 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("1. Dormir");
 	ALALIGNE;
-	ECRIRE("2. Y aller");
+	ECRIRE("2. Aller au donjon");
 	ALALIGNE;
 	ECRIRE("3. Rentrer chez soi");
 	ALALIGNE;
@@ -1151,7 +1151,7 @@ FFONCTION
 
 BOOLEEN FONCTION E1()
 VAR ENTIER r;
-	ECRIRE("Courage valeureux aventurier, veuillez tout d'abord choisir votre race en rentrant le numero correspondant:");
+	ECRIRE("Courage valeureux aventurier, veuillez tout d'abord choisir votre race:");
 	ALALIGNE;
 	ECRIRE("1. Elfe");
 	ALALIGNE;

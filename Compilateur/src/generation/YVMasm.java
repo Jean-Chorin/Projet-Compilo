@@ -283,7 +283,7 @@ public class YVMasm extends YVM{
 		//-----------------------Conditionnel-----------------------
 
 		public void ichaine(String s){
-			super.ichaine(s);;
+			super.ichaine(s);
 		}
 		
 		//-----------------------Fonction-----------------------

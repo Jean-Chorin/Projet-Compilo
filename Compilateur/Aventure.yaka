@@ -2,7 +2,6 @@ PROGRAMME ElDungeonDelDiablo
 
 BOOLEEN FONCTION MORT (ENTIER i)
 	ALALIGNE;
-	ECRIRE("Coucou");
 	
 	SI i = 1 ALORS
 		ECRIRE("Vous tombez dans un trou et vous finissez en flaque de sang");

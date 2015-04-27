@@ -102,7 +102,7 @@ TANTQUE (a=1) OU (a=2) FAIRE
 				FSI;
 			FSI;
 
-			ECRIRE("Voulez-vous recommencer ? (Oui 1/Non 2");
+			ECRIRE("Voulez-vous recommencer ?(Oui 1/Non 2");
 			LIRE(r);
 			ALALIGNE;
 			b=recommencer(r);

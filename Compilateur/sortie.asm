@@ -286,6 +286,9 @@ jmp FSI4
 
 SINON4:
 FSI4:
+; goto FAIRE1
+jmp FAIRE1
+
 FAIT1:
 ; iload -2
 push word ptr [bp-2]
@@ -602,6 +605,9 @@ call comparaison
 pop ax
 mov word ptr [bp-26],ax
 
+; goto FAIRE4
+jmp FAIRE4
+
 FAIT4:
 ; iload -14
 push word ptr [bp-14]
@@ -728,6 +734,9 @@ call recommencer
 pop ax
 mov word ptr [bp-24],ax
 
+; goto FAIRE3
+jmp FAIRE3
+
 FAIT3:
 ; goto FSI5
 jmp FSI5
@@ -829,6 +838,9 @@ call ecrch
 
 FSI9:
 FSI5:
+; goto FAIRE2
+jmp FAIRE2
+
 FAIT2:
 ; queue
 nop

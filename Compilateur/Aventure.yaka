@@ -81,7 +81,7 @@ BOOLEEN FONCTION MORT (ENTIER i)
 		ECRIRE("Vous trouvez de l'herbe a chat, vous finissez drogue et mourrez");
 	FSI;
 	SI i = 27 ALORS
-		ECRIRE("Vous mourrez, manger par un Magicarpe");
+		ECRIRE("Vous mourrez, mange par un Magicarpe");
 	FSI;
 	SI i = 28 ALORS
 		ECRIRE("Vous rouillez! Poil au pieds!");
@@ -728,7 +728,7 @@ VAR ENTIER c;
 		RETOURNE E18(r,s);
 	FSI;
 
-	ECRIRE("Assoiffez de sang, vous vous approchez discretement dans son dos, vou l'egorgez!");
+	ECRIRE("Assoiffez de sang, vous vous approchez discretement dans son dos, vous l'egorgez!");
 	ALALIGNE;
 	ECRIRE("Mais apres avoir vue son visage, vous reconnaissez votre ami d'enfance: Christian Bouvier,");
 	ALALIGNE;

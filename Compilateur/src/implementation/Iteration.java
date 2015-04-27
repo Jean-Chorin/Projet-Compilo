@@ -29,6 +29,8 @@ public class Iteration {
 	}
 	
 	public void fait() {
-		Yaka.yvm.fait(niv.pop());
+		int n= niv.pop();
+		Yaka.yvm.goTo("FAIRE" + n);
+		Yaka.yvm.fait(n);
 	}
 }

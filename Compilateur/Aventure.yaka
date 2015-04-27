@@ -1066,6 +1066,11 @@ FFONCTION
 
 BOOLEEN FONCTION E3(ENTIER r, ENTIER s)
 VAR ENTIER c;
+	ECRIRE(r);
+	ECRIRE(s);
+
+
+	ALALIGNE;
 	ECRIRE("Vous arrivez pendant une douce nuit etoile dans le village de Bourg-Carton ou se trouve le Donjon de Pilou. La fortune vous y attend!");
 	ALALIGNE;
 	ECRIRE("Que faire ?");
@@ -1137,6 +1142,9 @@ FFONCTION
 
 BOOLEEN FONCTION E2(ENTIER r)
 VAR ENTIER s;
+
+	ECRIRE(r);
+
 	ECRIRE("Maintenant, choississez votre sexe, qui sait, peut-etre que vous decouvrirez une nouvelle voie.");
 	ALALIGNE;
 	ECRIRE("1. Male");
@@ -1179,6 +1187,13 @@ VAR ENTIER r;
 	ALALIGNE;
 	LIRE(r);
 	ALALIGNE;
+
+
+	ECRIRE(r);
+	ALALIGNE;
+
+
+
 	SI (r = 1) OU (r = 2) OU (r = 3) OU (r = 4) OU (r = 5) OU (r = 6) OU (r = 7) OU (r = 8) OU (r = 9) ALORS
 		RETOURNE E2(r);
 	SINON

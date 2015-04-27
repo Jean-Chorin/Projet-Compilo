@@ -31,7 +31,7 @@ public class Expression {
 			Yaka.yvm.iload(((Ident)e).valeur);
 			pile_Type.push(((Ident)e).type);
 		}else if( e instanceof IdParam){
-			Yaka.yvm.iload(((Ident)e).valeur);
+			Yaka.yvm.iload(((Ident)e).valeur-2);
 			pile_Type.push(((Ident)e).type);
 		}
 		else{

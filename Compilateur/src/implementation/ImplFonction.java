@@ -18,16 +18,16 @@ public class ImplFonction {
 	private int fonccour = 1;
 	private int courant = -1;
 	
-	public void retourne(Type t){
-		Type f;
+	public void retourne(/*Type t*/){
+		/*Type f;
 			f = Yaka.tabIdent.chercheGlobal(Yaka.tabIdent.last).resultat;
-		if(t == f){
+		if(t == f){*/
 			Yaka.yvm.ireturn(Yaka.tabIdent.globaux.get(Yaka.tabIdent.last).nbParam()*2+4);
-			Yaka.yvm.goTo("FINFONC" + fonccour);
-		}else{
+		/*}else{
 			System.out.println("Incorect parameter Type in the fonction" + Yaka.tabIdent.last + " a la ligne " + 
 					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
-		}
+		}*/
+		Yaka.yvm.goTo("FINFONC" + fonccour);
 	}
 
 	

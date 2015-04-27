@@ -668,7 +668,7 @@ void suiteExpr() : {}
   static final public void retourne() throws ParseException {
     jj_consume_token(RETOURNE);
     expression();
-                                 yvm.ireturn(tabIdent.globaux.get(tabIdent.last).nbParam()*2+4);
+                                 /*yvm.ireturn(tabIdent.globaux.get(tabIdent.last).nbParam()*2+4);*/ fonction.retourne();
   }
 
   static final public void argumentsFonction() throws ParseException {

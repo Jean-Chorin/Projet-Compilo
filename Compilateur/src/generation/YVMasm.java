@@ -2,6 +2,8 @@ package generation;
 
 import java.io.*;
 
+import main.Yaka;
+
 
 public class YVMasm extends YVM{
 	private int compteurLect;
@@ -57,6 +59,9 @@ public class YVMasm extends YVM{
 	
 	public void iload(int n){
 		super.iload(n);
+		if (n % 2 != 0) {
+			System.out.println("Hey ! cbite" + n);
+		}
 		if (n < 0) {
 			ecrireln("push word ptr [bp" + n + "]");
 		} else {

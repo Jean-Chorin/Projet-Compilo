@@ -19,19 +19,19 @@ BOOLEEN FONCTION MORT (ENTIER i)
 		ECRIRE("Vous mangez un banquet empoisonne et mourrez");
 	FSI;
 	SI i = 6 ALORS
-		ECRIRE("Une Lyche vous tues");
+		ECRIRE("Une Lyche vous tue");
 	FSI;
 	SI i = 7 ALORS
-		ECRIRE("Cerbere vous egorge et se repais de votre chair");
+		ECRIRE("Cerbere vous egorge et se repait de votre chair");
 	FSI;
 	SI i = 8 ALORS
-		ECRIRE("Un demon mineur t'egorge");
+		ECRIRE("Un demon mineur vous egorge");
 	FSI;
 	SI i = 9 ALORS
 		ECRIRE("Vous mourrez poignarde dans le dos");
 	FSI;
 	SI i = 10 ALORS
-		ECRIRE("Vous trebuchez, vous cassez un ongle et mourrez a la suite de vos blessures");
+		ECRIRE("Vous trebuchez, vous vous cassez un ongle et mourrez a la suite de vos blessures");
 	FSI;
 	SI i = 11 ALORS
 		ECRIRE("Vous etes mange par une taupe-garou");
@@ -46,13 +46,13 @@ BOOLEEN FONCTION MORT (ENTIER i)
 		ECRIRE("Vous etes pris dans des pieges a loups et mourrez");
 	FSI;
 	SI i = 15 ALORS
-		ECRIRE("Le Dieu de la honte vous tues!");
+		ECRIRE("Le Dieu de la honte vous tue!");
 	FSI;
 	SI i = 16 ALORS
 		ECRIRE("Vous mourrez d'une MST");
 	FSI;
 	SI i = 17 ALORS
-		ECRIRE("Vous etes embarque comme hotesse du bordel de la ville: vous mourrez d'une MST");
+		ECRIRE("Vous etes embarquee comme hotesse du bordel de la ville: vous mourrez d'une MST");
 	FSI;
 	SI i = 18 ALORS
 		ECRIRE("Vous finissez a l'usine et y passer le restant de votre vie");
@@ -61,10 +61,10 @@ BOOLEEN FONCTION MORT (ENTIER i)
 		ECRIRE("Vous etes pris pendant votre tentative de vol, NOOB! Vous etes execute");
 	FSI;
 	SI i = 20 ALORS
-		ECRIRE("Vous n'etes pas pris en flagrant delit. Mais au vue de votre facies, vous etes declarer coupable. Vous etes execute ");
+		ECRIRE("Vous n'etes pas pris en flagrant delit. Mais au vue de votre facies, vous etes declare coupable. Vous etes execute ");
 	FSI;
 	SI i = 21 ALORS
-		ECRIRE("Au bout du tunnel, vous tombez sur une taverne. Apres 5 ans de beuveries, tout le monde a oublie qui etais le patron de la taverne et vous le devenez. Vous mourrez 10 ans plus tard, tuez par un client.");
+		ECRIRE("Au bout du tunnel, vous tombez sur une taverne. Apres 5 ans de beuveries, tout le monde a oublie qui etait le patron de la taverne et vous le devenez. Vous mourrez 10 ans plus tard, tue par un client.");
 	FSI;
 	SI i = 22 ALORS
 		ECRIRE("Vous mourrez du diabete");
@@ -73,7 +73,7 @@ BOOLEEN FONCTION MORT (ENTIER i)
 		ECRIRE("BADOUM!!");
 	FSI;
 	SI i = 24 ALORS
-		ECRIRE("Vous mourrez de faible nutrition");
+		ECRIRE("Vous mourrez d'inanition");
 	FSI;
 	SI i = 25 ALORS
 		ECRIRE("Le poulet se transforme en demon et vous pete la gueule");
@@ -95,7 +95,7 @@ BOOLEEN FONCTION MORT (ENTIER i)
 		ECRIRE("Mort de vieillesse (mais plus vierge)");
 	FSI;
 	SI i = 30 ALORS
-		ECRIRE("Des Belges vous attaques au vue de votre odeur et vous tues");
+		ECRIRE("Des Belges vous attaquent au vue de votre odeur et vous tue");
 	FSI;
 	SI i = 31 ALORS
 		ECRIRE("Pika Pika");
@@ -127,7 +127,7 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("Vous rencontrez le maitre des lieux. Le Dieu Pilou le demoniaque.");
 	ALALIGNE;
-	ECRIRE("Qui vous domines de toute sa hauteur (1m), assis sur le comptoir de la taverne");
+	ECRIRE("Qui vous domine de toute sa hauteur (1m), assis sur le comptoir de la taverne");
 	ALALIGNE;
 	ECRIRE("Il vous declare: 'Hey Pilou! Pilou pilouuu pilou'");
 	ALALIGNE;
@@ -163,7 +163,7 @@ BOOLEEN FONCTION E43 (ENTIER r, ENTIER s)
 	ALALIGNE;
 	ECRIRE("Au bout du tunnel vous arrivez dans une taverne.");
 	ALALIGNE;
-	ECRIRE("En avancant vous voyez qu'un tresors est present dans la salle.");
+	ECRIRE("En avancant vous voyez qu'un tresor est present dans la salle.");
 	ALALIGNE;
 	RETOURNE E99(r,s);
 FFONCTION
@@ -175,7 +175,7 @@ BOOLEEN FONCTION E44 (ENTIER r, ENTIER s)
 	ALALIGNE;
 	ECRIRE("Pendant qu'il le mange, vous avancez jusqu'a la porte");
 	ALALIGNE;
-	ECRIRE("Vous tombez sur une taverne rempli d'or");
+	ECRIRE("Vous tombez sur une taverne remplie d'or");
 	ALALIGNE;
 	RETOURNE E99(r,s);
 FFONCTION
@@ -186,7 +186,7 @@ BOOLEEN FONCTION E45 (ENTIER r, ENTIER s)
 	ALALIGNE;
 	ECRIRE("En jetant un regard autour de vous vous voyez");
 	ALALIGNE;
-	ECRIRE("que vous etes dans une taverne rempli de bijoux");
+	ECRIRE("que vous etes dans une taverne remplie de bijoux");
 	ALALIGNE;
 	RETOURNE E99(r,s);
 FFONCTION
@@ -195,7 +195,7 @@ BOOLEEN FONCTION E46 (ENTIER r, ENTIER s)
 	ALALIGNE;
 	ECRIRE("Vous faites mumuse un moment avec cerbere puis continuez votre chemin.");
 	ALALIGNE;
-	ECRIRE("Vous tombez alors sur une taverne rempli d'armes sertis de pierres precieuses.");
+	ECRIRE("Vous tombez alors sur une taverne remplie d'armes serties de pierres precieuses.");
 	ALALIGNE;
 	RETOURNE E99(r,s);
 FFONCTION
@@ -295,7 +295,7 @@ FFONCTION
 BOOLEEN FONCTION E23 (ENTIER r, ENTIER s)
 VAR ENTIER c;
 	ALALIGNE;
-	ECRIRE("Bravo grace a votre nyctalopie, vous trouvez une echelle que le narrateur n'avais pas vu.");
+	ECRIRE("Bravo grace a votre nyctalopie, vous trouvez une echelle que le narrateur n'avait pas vu.");
 	ALALIGNE;
 	ECRIRE("Vous etes desormais face a cerbere.");
 	ALALIGNE;
@@ -345,11 +345,11 @@ FFONCTION
 BOOLEEN FONCTION E9 (ENTIER r, ENTIER s)
 VAR ENTIER c;
 	ALALIGNE;
-	ECRIRE("Vous tuez un chat qui vous regardais mal,");
+	ECRIRE("Vous tuez un chat qui vous regardait mal,");
 	ALALIGNE;
 	ECRIRE("et vous vous baignez dans ses entrailles.");
 	ALALIGNE;
-	ECRIRE("Une lueur apparait plus loins dans le couloir. elle gagne en intensite.");
+	ECRIRE("Une lueur apparait plus loin dans le couloir. elle gagne en intensite.");
 	ALALIGNE;
 	ECRIRE("1. Continuer a se baigner");
 	ALALIGNE;
@@ -396,7 +396,7 @@ FFONCTION
 BOOLEEN FONCTION E22 (ENTIER r, ENTIER s)
 VAR ENTIER c;
 	ALALIGNE;
-	ECRIRE("Ayant admirablement utilise votre grande frite macDo du menu Happy meal.");
+	ECRIRE("Ayant admirablement utilise votre grande frite MacDo du menu Happy meal.");
 	ALALIGNE;
 	ECRIRE("Avec votre super jouet rattata, vous vous retrouvez face a un cerbere belge.");
 	ALALIGNE;
@@ -463,7 +463,7 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("3. Tenter de les amadouer");
 	ALALIGNE;
-	ECRIRE("4. Leur parler");
+	ECRIRE("4. Leurs parler");
 	ALALIGNE;
 	ECRIRE("5. Passer furtivement");
 	ALALIGNE;
@@ -560,7 +560,7 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("Apres quelques couloirs, vous vous retrouvez devant cerbere.");
 	ALALIGNE;
-	ECRIRE("C'est con d'avoir passer tant d'annee a deux pas de la fin.");
+	ECRIRE("C'est con d'avoir passe tant d'annees a deux pas de la fin.");
 	ALALIGNE;
 	ECRIRE("1. Combattre");
 	ALALIGNE;
@@ -640,11 +640,11 @@ VAR ENTIER c,i;
 
 	ECRIRE("Apres 40 ans dans la ferme, vous decidez de reprendre votre quequete.");
 	ALALIGNE;
-	ECRIRE("Le fermier Bouvier vous dit au revoir, triste que ses nuits vont etre froides desormais");
+	ECRIRE("Le fermier Bouvier vous dit au revoir, triste que ses nuits seront froides desormais");
 	ALALIGNE;
-	ECRIRE("mais il vous propose un dernier poulet dans son infini bonte.");
+	ECRIRE("mais il vous propose un dernier poulet dans son infinie bonte.");
 	ALALIGNE;
-	ECRIRE("1. Manger ce poulet avec votre amis");
+	ECRIRE("1. Manger ce poulet avec votre ami");
 	ALALIGNE;
 	ECRIRE("2. Emporter le poulet avec vous");
 	ALALIGNE;
@@ -684,11 +684,11 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("Vous rencontrez un homme se presentant comme Christian Bouvier,");
 	ALALIGNE;
-	ECRIRE("fondateur ds illuminatis, vampire pedobear du croissant triangle sans frontiere au chocolat");
+	ECRIRE("fondateur des illuminatis, vampire pedobear du croissant triangle sans frontieres au chocolat");
 	ALALIGNE;
 	ECRIRE("par l'intersiste de l'ombre diffractee par la troisieme pleine lune apres le viol d'une belette sur un petit ours.");
 	ALALIGNE;
-	ECRIRE("Il vous propose de vous joindre a lui meme si ce metier est difficile.");
+	ECRIRE("Il vous propose de vous joindre a lui, meme si ce metier est difficile.");
 	ALALIGNE;
 	ECRIRE("1. Ficile ! LOL!");
 	ALALIGNE;
@@ -729,11 +729,11 @@ VAR ENTIER c;
 		RETOURNE E18(r,s);
 	FSI;
 
-	ECRIRE("Assoiffez de sang, vous vous approchez discretement dans son dos, vous l'egorgez!");
+	ECRIRE("Assoiffe de sang, vous vous approchez discretement dans son dos, vous l'egorgez!");
 	ALALIGNE;
-	ECRIRE("Mais apres avoir vue son visage, vous reconnaissez votre ami d'enfance: Christian Bouvier,");
+	ECRIRE("Mais apres avoir vu son visage, vous reconnaissez votre ami d'enfance: Christian Bouvier,");
 	ALALIGNE;
-	ECRIRE("le vampire qui profitais de vos crime pour avoir sa dose. Pris de remord, vous vous infligez un supplice atroce!");
+	ECRIRE("le vampire qui profitait de vos crime pour avoir sa dose. Pris de remords, vous vous infligez un supplice atroce!");
 	ALALIGNE;
 	RETOURNE MORT(3);	
 FFONCTION
@@ -742,7 +742,7 @@ FFONCTION
 BOOLEEN FONCTION E17 (ENTIER r, ENTIER s)
 VAR ENTIER c;
 	ALALIGNE;
-	ECRIRE("Vous arrivez devat cerbere, vosu voyez derriere lui la porte de la salle au tresors");
+	ECRIRE("Vous arrivez devant cerbere, vous voyez derriere lui la porte de la salle aux tresors");
 	ALALIGNE;
 	ECRIRE("(vous le devinez habilement a l'aide de l'ecritaux du collier de cerbere : 'Gardien de la salle aux tresors')");
 	ALALIGNE;
@@ -789,12 +789,12 @@ FFONCTION
 BOOLEEN FONCTION E16(ENTIER r, ENTIER s)
 	ALALIGNE;
 	SI r = 1 ALORS
-		ECRIRE("Obi-wan te propose de le suivre, il te revele alors une porte cache et tu continue ton chemin.");
+		ECRIRE("Obi-wan te propose de le suivre, il te revele alors une porte cachee et tu continues ton chemin.");
 		ALALIGNE;
 		RETOURNE E17(r,s);
 	FSI;
 	SI r = 2 ALORS
-		ECRIRE("Obi te propose de le suivre, et te promet meme des bonbons, mais, comme t'es un nain, tu l'insulte et il te bute.");
+		ECRIRE("Obi te propose de le suivre, et te promet meme des bonbons, mais, comme t'es un nain, tu l'insultes et il te bute.");
 		ALALIGNE;
 		RETOURNE MORT(12);
 	FSI;
@@ -1006,7 +1006,7 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("6. Porte avec un Digicode");
 	ALALIGNE;
-	ECRIRE("7. Porte incruste de runes et de gemmes");
+	ECRIRE("7. Porte incrustee de runes et de gemmes");
 	ALALIGNE;
 	ECRIRE("8. Porte sans porte (un trou quoi , une arcade sombre)");
 	ALALIGNE;
@@ -1033,7 +1033,7 @@ VAR ENTIER c;
 	FSI;
 	SI c = 4 ALORS
 		SI r = 2 ALORS
-			ECRIRE("Vous rencontrez des schtroumpfs qui vous guide dans un tunnel");
+			ECRIRE("Vous rencontrez des schtroumpfs qui vous guident dans un tunnel");
 			ALALIGNE;
 			RETOURNE MORT(21);
 		FSI;
@@ -1067,7 +1067,7 @@ FFONCTION
 BOOLEEN FONCTION E3(ENTIER r, ENTIER s)
 VAR ENTIER c;
 	ALALIGNE;
-	ECRIRE("Vous arrivez pendant une douce nuit etoile dans le village de Bourg-Carton ou se trouve le Donjon de Pilou. La fortune vous y attend!");
+	ECRIRE("Vous arrivez pendant une douce nuit etoilee dans le village de Bourg-Carton ou se trouve le Donjon de Pilou. La fortune vous y attend!");
 	ALALIGNE;
 	ECRIRE("Que faire ?");
 	ALALIGNE;

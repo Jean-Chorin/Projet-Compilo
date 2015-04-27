@@ -195,7 +195,7 @@ BOOLEEN FONCTION E46 (ENTIER r, ENTIER s)
 	ALALIGNE;
 	ECRIRE("Vous faites mumuse un moment avec cerbere puis continuez votre chemin.");
 	ALALIGNE;
-	ECRIRE("Vous tombez alors sur une taverne rempli d'armes sertient de pierres precieuses.");
+	ECRIRE("Vous tombez alors sur une taverne rempli d'armes sertis de pierres precieuses.");
 	ALALIGNE;
 	RETOURNE E99(r,s);
 FFONCTION
@@ -967,6 +967,8 @@ VAR ENTIER c;
 	ALALIGNE;
 	ECRIRE("3. Rentrer chez soi");
 	ALALIGNE;
+	ECRIRE("4. Prendre la petite porte (1m)");
+	ALALIGNE;
 	LIRE(c);
 	ALALIGNE;
 	SI c = 1 ALORS
@@ -977,6 +979,9 @@ VAR ENTIER c;
 	FSI;
 	SI c = 3 ALORS
 		RETOURNE MORT(15);
+	FSI;
+	SI c = 4 ALORS
+		RETOURNE E42(r,s);
 	FSI;
 	RETOURNE MORT(12);
 FFONCTION

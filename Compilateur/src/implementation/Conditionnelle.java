@@ -6,7 +6,9 @@ import main.*;
 import ident.*;
 
 public class Conditionnelle {
+	//Attribut : pile -> Pile servant à calculer la profondeur des conditionnelles
 	private Stack<Integer> pile = new Stack<Integer>();
+	//Attribut : compteur -> Int servant à numéroter les conditionnelles
 	private int compteur = 0;
 
 

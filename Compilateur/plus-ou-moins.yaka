@@ -11,13 +11,16 @@ FFONCTION
 BOOLEEN FONCTION comparaison (ENTIER i, ENTIER j)
 	SI i<j ALORS
 		ECRIRE("MOINS");
+		ALALIGNE;
 		RETOURNE FAUX;
 	SINON
 		SI i>j ALORS
 			ECRIRE("PLUS");
+			ALALIGNE;
 			RETOURNE FAUX;
 		SINON
 			ECRIRE("Reussi !");
+			ALALIGNE;
 			RETOURNE VRAI;
 		FSI;
 	FSI;
@@ -34,6 +37,7 @@ VAR ENTIER tmp;
     
     SI (tmp<i) OU (tmp>j) ALORS
       ECRIRE("Nombre en dehors des bornes.");
+      ALALIGNE;
     FSI;    
    FAIT;
   RETOURNE tmp;
@@ -45,7 +49,7 @@ VAR ENTIER a,r,i,j,t,c,u,m1,m2,m3;
 VAR BOOLEEN b,p;
 
 b=VRAI;
-p=VRAI;
+p=FAUX;
 u=-1;
 m1=0;
 m2=0;
@@ -102,7 +106,7 @@ TANTQUE (a=1) OU (a=2) FAIRE
 				FSI;
 			FSI;
 
-			ECRIRE("Voulez-vous recommencer ?(Oui 1/Non 2");
+			ECRIRE("Voulez-vous recommencer ? (Oui 1/Non 2)");
 			LIRE(r);
 			ALALIGNE;
 			b=recommencer(r);

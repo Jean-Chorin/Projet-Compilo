@@ -315,8 +315,8 @@ push word ptr -1
 pop ax
 mov word ptr [bp-24],ax
 
-; iconst -1
-push word ptr -1
+; iconst 0
+push word ptr 0
 
 ; istore -26
 pop ax
@@ -705,9 +705,9 @@ jmp FSI6
 
 SINON6:
 FSI6:
-; ecrireChaine "Voulez-vous recommencer ? (Oui 1/Non 2"
+; ecrireChaine "Voulez-vous recommencer ?(Oui 1/Non 2"
 .DATA
-mess12 DB "Voulez-vous recommencer ? (Oui 1/Non 2$"
+mess12 DB "Voulez-vous recommencer ?(Oui 1/Non 2$"
 .CODE
 lea dx,mess12
 push dx

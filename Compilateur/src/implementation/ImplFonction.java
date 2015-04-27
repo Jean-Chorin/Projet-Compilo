@@ -15,6 +15,7 @@ public class ImplFonction {
 	private Vector<Fonction> fCourant = new Vector<Fonction>();
 	private Vector<Integer> res = new Vector<Integer>();
 	private Vector<String> SCourant =  new Vector<String>();
+	private int fonccour = 1;
 	private int courant = -1;
 	
 	public void retourne(Type t){
@@ -22,6 +23,7 @@ public class ImplFonction {
 			f = Yaka.tabIdent.chercheGlobal(Yaka.tabIdent.last).resultat;
 		if(t == f){
 			Yaka.yvm.ireturn(Yaka.tabIdent.globaux.get(Yaka.tabIdent.last).nbParam()*2+4);
+			Yaka.yvm.goTo("FINFONC" + fonccour);
 		}else{
 			System.out.println("Incorect parameter Type in the fonction" + Yaka.tabIdent.last + " a la ligne " + 
 					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
@@ -30,6 +32,9 @@ public class ImplFonction {
 
 	
 	public void fermeBloc (){
+		
+		Yaka.yvm.ichaine("FINFONC" + fonccour);
+		fonccour++;
 		Yaka.yvm.fermeBloc(Yaka.tabIdent.chercheGlobal(Yaka.tabIdent.last).nbParam()*2);
 		
 		//Pour tester l'ajout des paramètres et des fonctions dans TabIdent

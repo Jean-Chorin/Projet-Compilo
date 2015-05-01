@@ -619,13 +619,13 @@ void suiteExpr() : {}
 /*******Fonctions*******/
   static final public void declFonction() throws ParseException {
     type();
-                declaration.addFonction(YakaTokenManager.identLu);fonction.add(YakaTokenManager.identLu);
+                declaration.addFonction(YakaTokenManager.identLu);
     jj_consume_token(FONCTION);
     jj_consume_token(ident);
                  yvm.ichaine(YakaTokenManager.identLu);
-                                                          declaration.setFonction(YakaTokenManager.identLu);
+                                                          declaration.setFonction(YakaTokenManager.identLu);fonction.add(YakaTokenManager.identLu);
     paramForms();
-                                                                                                                            declaration.setOffset();
+                                                                                                                                                                   declaration.setOffset();
     bloc();
     jj_consume_token(FFONCTION);
                      fonction.fermeBloc ();

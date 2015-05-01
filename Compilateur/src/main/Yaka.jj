@@ -358,8 +358,8 @@ void sinon() : {}
 
 void declFonction() : {}
 {
-	type() {declaration.addFonction(YakaTokenManager.identLu);fonction.add(YakaTokenManager.identLu);} <FONCTION> 
-	<ident> {yvm.ichaine(YakaTokenManager.identLu);} {declaration.setFonction(YakaTokenManager.identLu);} paramForms() {declaration.setOffset();}
+	type() {declaration.addFonction(YakaTokenManager.identLu);} <FONCTION> 
+	<ident> {yvm.ichaine(YakaTokenManager.identLu);} {declaration.setFonction(YakaTokenManager.identLu);fonction.add(YakaTokenManager.identLu);} paramForms() {declaration.setOffset();}
 		bloc()
 	<FFONCTION> {fonction.fermeBloc ();}
 }

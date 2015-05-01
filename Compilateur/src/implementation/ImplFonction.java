@@ -17,20 +17,25 @@ public class ImplFonction {
 	private Vector<String> SCourant =  new Vector<String>();
 	private int fonccour = 1;
 	private int courant = -1;
+	private String declarefonc;
 	
-	public void retourne(/*Type t*/){
-		/*Type f;
-			f = Yaka.tabIdent.chercheGlobal(Yaka.tabIdent.last).resultat;
-		if(t == f){*/
+	public void retourne(Type f){
+		
+			Type t = Yaka.tabIdent.chercheGlobal(declarefonc).resultat;
+		if(t == f){
 			Yaka.yvm.ireturn(Yaka.tabIdent.globaux.get(Yaka.tabIdent.last).nbParam()*2+4);
-		/*}else{
+			Yaka.yvm.goTo("FINFONC" + fonccour);
+		}else{
 			System.out.println("Incorect parameter Type in the fonction" + Yaka.tabIdent.last + " a la ligne " + 
 					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
-		}*/
-		Yaka.yvm.goTo("FINFONC" + fonccour);
+		}
+
 	}
 
-	
+	public void add(String s){
+		declarefonc = s;
+		
+	}
 	public void fermeBloc (){
 		
 		Yaka.yvm.ichaine("FINFONC" + fonccour);

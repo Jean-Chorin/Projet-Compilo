@@ -358,7 +358,7 @@ void sinon() : {}
 
 void declFonction() : {}
 {
-	type() {declaration.addFonction(YakaTokenManager.identLu);} <FONCTION> 
+	type() {declaration.addFonction(YakaTokenManager.identLu);fonction.add(YakaTokenManager.identLu);} <FONCTION> 
 	<ident> {yvm.ichaine(YakaTokenManager.identLu);} {declaration.setFonction(YakaTokenManager.identLu);} paramForms() {declaration.setOffset();}
 		bloc()
 	<FFONCTION> {fonction.fermeBloc ();}
@@ -376,7 +376,7 @@ void paramForm() : {}
 
 void retourne() : {}
 {
-	<RETOURNE> expression() {/*yvm.ireturn(tabIdent.globaux.get(tabIdent.last).nbParam()*2+4);*/ fonction.retourne();}
+	<RETOURNE> expression() { fonction.retourne(expression.depile());}
 }
 
 void argumentsFonction() : {}

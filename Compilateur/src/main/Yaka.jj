@@ -371,7 +371,7 @@ void paramForms() : {}
 
 void paramForm() : {}
 {
-	type() {declaration.addParametre(YakaTokenManager.identLu);} <ident> {declaration.setParametre(YakaTokenManager.identLu);}
+	type() <ident> {declaration.setParametre(YakaTokenManager.identLu);}
 }
 
 void retourne() : {}

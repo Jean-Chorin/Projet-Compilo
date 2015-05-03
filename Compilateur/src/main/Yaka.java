@@ -660,9 +660,8 @@ void suiteExpr() : {}
 
   static final public void paramForm() throws ParseException {
     type();
-                declaration.addParametre(YakaTokenManager.identLu);
     jj_consume_token(ident);
-                                                                              declaration.setParametre(YakaTokenManager.identLu);
+                        declaration.setParametre(YakaTokenManager.identLu);
   }
 
   static final public void retourne() throws ParseException {

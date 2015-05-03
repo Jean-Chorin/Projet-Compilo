@@ -95,22 +95,7 @@ public class Declaration {
 	
 	
 	//----------------------------Declaration de parametre------------------------------
-	
-	// Change l'attribut temporaire type en fonction de sType, qui vaut la String BOOLEEN ou ENTIER
-	public void addParametre(String sType) throws ParseException{
-		/*if (sType == "BOOLEEN") {
-			type = Type.BOOLEEN;
-		} else {
-			if (sType == "ENTIER") {
-				type = Type.ENTIER;
-			}
-			else {
-				//Si ni ENTIER ni BOOLEEN
-				throw new ParseException("Les param�tres doivent �tre des ENTIER ou des BOOLEEN ; ligne " +
-				Yaka.token.next.beginLine + " et colonne " + Yaka.token.next.beginColumn);
-			}
-		}*/
-	}
+
 	
 	// Ajoute un parametre de type correspondant � l'attribut temporaire type
 	public void setParametre (String nom){

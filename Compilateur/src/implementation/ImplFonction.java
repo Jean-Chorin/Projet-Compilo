@@ -29,14 +29,15 @@ public class ImplFonction {
 	//vérifie si le parametre de retour correspond au parametre indiqué dans la fonction et écrit via yvm
 	public void retourne(Type f){
 		
-			Type t = Yaka.tabIdent.chercheGlobal(declarefonc).resultat;
-		if(t == f){
-			Yaka.yvm.ireturn(Yaka.tabIdent.globaux.get(Yaka.tabIdent.last).nbParam()*2+4);
-			Yaka.yvm.goTo("FINFONC" + fonccour);
-		}else if(main){
+		Type t = Yaka.tabIdent.chercheGlobal(declarefonc).resultat;
+		if(main){
 			System.out.println("Retourne dans le principal interdit" + Yaka.tabIdent.last + " a la ligne " + 
 					Yaka.token.beginLine + " et a la colonne " + Yaka.token.beginColumn);
 		}
+		else if(t == f){
+			Yaka.yvm.ireturn(Yaka.tabIdent.globaux.get(Yaka.tabIdent.last).nbParam()*2+4);
+			Yaka.yvm.goTo("FINFONC" + fonccour);
+		} 
 		else{
 			System.out.println("Incorect parameter Type in the fonction" + Yaka.tabIdent.last + " a la ligne " + 
 					Yaka.token.beginLine + " et a la colonne " + Yaka.token.beginColumn);

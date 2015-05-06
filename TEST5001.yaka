@@ -18,7 +18,7 @@ PRINCIPAL
 	i=5;
 	j=12;
 	k=2;
-	k=analyse(j,b);
+	k=analyse(j,k,i);
 FPRINCIPAL
 
 FPROGRAMME

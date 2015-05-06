@@ -10904,6 +10904,7 @@ FSI178:
 ; aLaLigne
 call ligsuiv
 
+<<<<<<< HEAD
 ; goto FSI177
 jmp FSI177
 
@@ -10911,8 +10912,21 @@ SINON177:
 FSI177:
 ; goto FAIRE2
 jmp FAIRE2
+=======
+; iload -14
+push word ptr [bp-14]
+>>>>>>> commentary
 
 FAIT2:
+; queue
+nop
+exitcode
+end debut
+
+; istore -12
+pop ax
+mov word ptr [bp-12],ax
+
 ; queue
 nop
 exitcode

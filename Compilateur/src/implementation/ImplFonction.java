@@ -71,6 +71,10 @@ public class ImplFonction {
 	
 	//Quand on a fini avec l'appel de la fonction
 	public void depile(){
+		if(res.get(courant) > fCourant.get(courant).nbParam()-1){
+			System.out.println("Pas assez de parametres" + " a la ligne " + 
+					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
+		}
 		courant --;
 	}
 	

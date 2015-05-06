@@ -11,7 +11,7 @@ public class Conditionnelle {
 	//Attribut : compteur -> Int servant à numéroter les conditionnelles
 	private int compteur = 0;
 
-
+//écrit le iffaux, vérifie si l'expression ren dbien un booleen dans le si
 public void condition(Type t){
 	compteur++;
 	pile.push(compteur);
@@ -22,6 +22,7 @@ public void condition(Type t){
 	Yaka.yvm.iffaux("SINON" + compteur);
 }
 
+//écrit le sinon
 public void sinon(){
 	int tampon =  pile.pop();
 	Yaka.yvm.goTo("FSI" + tampon);
@@ -29,6 +30,7 @@ public void sinon(){
 	pile.push(tampon);
 }
 
+//écrit le fsi
 public void fin(){
 	int tampon =  pile.pop();
 	Yaka.yvm.ichaine("FSI" + tampon);

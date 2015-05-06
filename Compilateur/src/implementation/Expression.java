@@ -8,8 +8,10 @@ import main.*;
 
 public class Expression {
 	
+	//piles d'opérateurs et de types
 	private Stack<Type> pile_Type;
 	private Stack<Operateur> pile_op;
+	//ident dans lequel on stock le résultat du calcul
 	private Ident dest;
 	
 	
@@ -18,10 +20,12 @@ public class Expression {
 		pile_op = new Stack<Operateur>();
 	}
 	
+	//empile un opérateur
 	public void empileOp(Operateur o){
 		pile_op.push(o);
 	}
 	
+	//empile un Ident, vérifiant si c'est une fonction, un parametre ou une variable/constante
 	public void empileIdent(Object e,String s) throws ParseException{
 		
 		if(e instanceof IdConst){
@@ -43,7 +47,7 @@ public class Expression {
 	
 	
 
-	
+	//ajoute l'ident de destination
 	public void addDest(Ident i){
 		if(i instanceof IdConst){
 			System.out.println("On ne peut pas stocker de valeurs dans une constante" + " a la ligne " + 
@@ -52,6 +56,7 @@ public class Expression {
 		dest = i;}
 	}
 	
+	//rend le type en hut de la pile (sert en pratique pour récupéré le dernier type à la fin d'un calcul)
 	public Type depile(){
 		return pile_Type.pop();
 	}

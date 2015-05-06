@@ -11,14 +11,20 @@ import main.ParseException;
 import main.Yaka;
 
 public class ImplFonction {
-	
+	//pile de fonction appellée
 	private Vector<Fonction> fCourant = new Vector<Fonction>();
+	//pile du nombre de parametre passer à la fonction appellée
 	private Vector<Integer> res = new Vector<Integer>();
+	//pile du nom des fonction appellée
 	private Vector<String> SCourant =  new Vector<String>();
+	//pour les jumps après les retournes
 	private int fonccour = 1;
+	//indice de la fonction courante dans la pile
 	private int courant = -1;
+	//nom de la fonction qu'on déclare
 	private String declarefonc;
 	
+	//vérifie si le parametre de retour correspond au parametre indiqué dans la fonction et écrit via yvm
 	public void retourne(Type f){
 		
 			Type t = Yaka.tabIdent.chercheGlobal(declarefonc).resultat;
@@ -31,11 +37,13 @@ public class ImplFonction {
 		}
 
 	}
-
+	//ajoute le nom de la fonction que l'on déclare
 	public void add(String s){
 		declarefonc = s;
 		
 	}
+	
+	//fin de la fonction courante. Vide les idents locaux
 	public void fermeBloc (){
 		
 		Yaka.yvm.ichaine("FINFONC" + fonccour);
@@ -52,7 +60,7 @@ public class ImplFonction {
 		Yaka.tabIdent.videLocaux();
 	}
 
-	
+	//lorsque l'on appel une fonction, elle est initialisée, avec elle et son nom
 	public void setFonction(Fonction f,String s){
 		courant++;
 		fCourant.add(courant,f);
@@ -60,18 +68,20 @@ public class ImplFonction {
 		SCourant.add(courant,s);
 	
 	}
+	
+	//Quand on a fini avec l'appel de la fonction
 	public void depile(){
 		courant --;
 	}
 	
+	//récupere le nom d ela fonction courante
 	public String nom(){
 		return SCourant.get(courant);
-		
 	}
 	
 
 	
-	
+	//Test le nombre de parametre et le type de parametre
 	public void testParam(Type t){
 
 		

@@ -9,17 +9,20 @@ public class Iteration {
 	private Stack<Integer> niv;
 	private int nivMax;
 	
+	//Constructeur d'Iteration
 	public Iteration() {
 		niv = new Stack<Integer>();
 		nivMax = 0;
 	}
 	
+	//Ecriture du tantque
 	public void tantque() {
 		nivMax++;
 		niv.push(nivMax);
 		Yaka.yvm.tantque(nivMax);
 	}
 	
+	//Ecriture du iffaux
 	public void iffaux(Type t) {
 		if(t == Type.BOOLEEN){
 			Yaka.yvm.iffaux("FAIT"+niv.peek());
@@ -28,6 +31,7 @@ public class Iteration {
 		}
 	}
 	
+	//Ecriture du fait
 	public void fait() {
 		int n= niv.pop();
 		Yaka.yvm.goTo("FAIRE" + n);

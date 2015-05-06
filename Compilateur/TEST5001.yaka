@@ -1,0 +1,24 @@
+PROGRAMME test5001
+
+ENTIER FONCTION analyse (ENTIER i, ENTIER j)
+	VAR BOOLEEN blitz;
+	VAR ENTIER jeannot,pilou;
+	jeannot = 3;
+	pilou = 9 - jeannot;
+	blitz = pilou>jeannot;
+	SI blitz ALORS RETOURNE jeannot;
+	SINON RETOURNE 0 FSI;
+FFONCTION
+
+
+PRINCIPAL
+	VAR ENTIER i,j,k;
+	VAR BOOLEEN b;
+	b=i>j;
+	i=5;
+	j=12;
+	k=2;
+	k=analyse(j,k,i);
+FPRINCIPAL
+
+FPROGRAMME

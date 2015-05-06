@@ -11,7 +11,6 @@ ENTIER FONCTION analyse (ENTIER i, ENTIER j)
 FFONCTION
 
 
-
 BOOLEEN FONCTION numerique ()
 	VAR BOOLEEN z,pilou;
 	VAR ENTIER cola;
@@ -29,43 +28,14 @@ BOOLEEN FONCTION numerique ()
 FFONCTION
 
 
-
-ENTIER FONCTION matricielle (ENTIER c, BOOLEEN l)
-	VAR BOOLEEN sucre,mou;
-	VAR ENTIER dose;
-	dose = c;
-	mou = l;
-	SI c > 0 ALORS
-		SI mou ALORS
-			dose = dose * 2;
-			TANTQUE dose <> 0 FAIRE
-				dose = dose - 1;
-			FAIT;
-		SINON 
-			TANTQUE dose <> 0 FAIRE
-				dose = dose - 1;
-			FAIT;
-		FSI;
-		RETOURNE 1;
-	SINON 
-		RETOURNE -1;
-	FSI;			
-FFONCTION
-
-
-
 PRINCIPAL
 	VAR ENTIER i,j,k;
 	VAR BOOLEEN b;
 	b=lait(); 
-	i=caramel (22,b);
-	LIRE(j);
-	ALALIGNE;
-	k=max(i,min(j,5))+2;
-	ALALIGNE;
-	ECRIRE(k);
-	ALALIGNE;
-	ECRIRE(b);
+	i=5;
+	j=12;
+	k=2;
+	analyse(j,k,i);
 FPRINCIPAL
 
 FPROGRAMME

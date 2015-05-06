@@ -17,7 +17,7 @@ public void condition(Type t){
 	pile.push(compteur);
 	if(t != Type.BOOLEEN){
 		System.out.println("On attend un boolean dans les conditions" + " a la ligne " + 
-				Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
+				Yaka.token.beginLine + " et a la colonne " + Yaka.token.beginColumn);
 	}
 	Yaka.yvm.iffaux("SINON" + compteur);
 }

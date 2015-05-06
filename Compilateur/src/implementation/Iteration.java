@@ -27,7 +27,8 @@ public class Iteration {
 		if(t == Type.BOOLEEN){
 			Yaka.yvm.iffaux("FAIT"+niv.peek());
 		}else{
-			System.out.println("Veuillez passer une expression bolleenne sue laquelle iterer");
+			System.out.println("Veuillez passer une expression bolleenne sue laquelle iterer; ligne " +
+					Yaka.token.beginLine + " et colonne " + Yaka.token.beginColumn);
 		}
 	}
 	

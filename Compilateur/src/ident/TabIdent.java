@@ -22,7 +22,8 @@ public class TabIdent {
 	//Locaux :
 	public Ident chercheLocal (String clef)throws ParseException{
 		if (locaux.get(clef) == null) {
-			throw new ParseException("chercheLocal Ident " + clef + " non déclaré\n");
+			throw new ParseException("chercheLocal Ident " + clef + " non déclaré ; ligne " +
+					Yaka.token.beginLine + " et colonne " + Yaka.token.beginColumn);
 		} else {
 			return locaux.get(clef);
 		}
@@ -30,7 +31,8 @@ public class TabIdent {
 	//Globaux :
 	public Fonction chercheGlobal (String clef){
 		if (globaux.get(clef) == null) {
-			System.out.println("chercheGlobal Ident " + clef + " non déclaré\n");
+			System.out.println("chercheGlobal Ident " + clef + " non déclaré; ligne " +
+					Yaka.token.beginLine + " et colonne " + Yaka.token.beginColumn);
 			return null;
 		} else {
 			return globaux.get(clef);
@@ -40,7 +42,8 @@ public class TabIdent {
 	public Object chercheIdent (String clef){
 		if (locaux.get(clef) == null) {
 			if(globaux.get(clef) == null){
-				System.out.println("chercheIdent : Ident " + clef + " non déclaré\n");
+				System.out.println("chercheIdent : Ident " + clef + " non déclaré ; ligne " +
+					Yaka.token.beginLine + " et colonne " + Yaka.token.beginColumn);
 				return null;
 			}
 			else{
@@ -68,7 +71,8 @@ public class TabIdent {
 		if(!existeLocal(clef)){
 			locaux.put(clef,id);
 		} else {
-			System.out.println("Le paramètre " + clef + " est déjà déclaré");
+			System.out.println("Le paramètre " + clef + " est déjà déclaré; ligne " +
+					Yaka.token.beginLine + " et colonne " + Yaka.token.beginColumn);
 		}
 		
 	}

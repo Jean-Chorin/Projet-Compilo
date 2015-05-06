@@ -24,9 +24,10 @@ public class Declaration {
 	}
 	
 	//crï¿½ation d'une constante boolï¿½enne de type t, sans mettre sa valeur
-	public void addConst(String nom) throws ParseException {
+	public void addConst(String nom) {
 		if (Yaka.tabIdent.existeLocal(nom)) {
-			System.out.println("Deux constantes ne peuvent avoir le mï¿½me nom");
+			System.out.println("Deux constantes ne peuvent avoir le même nom; ligne " +
+					Yaka.token.beginLine + " et colonne " + Yaka.token.beginColumn);
 		} else {
 			Yaka.tabIdent.rangeLocal(nom , new IdConst());
 			tmpNomParam = nom;
@@ -54,9 +55,10 @@ public class Declaration {
 	
 	
 	//ajoute un Ident de nom "nom" et de type Declaration.type 
-	public void addIdent(String nom) throws ParseException{
+	public void addIdent(String nom){
 		if (Yaka.tabIdent.existeLocal(nom)) {
-			throw Yaka.generateParseException();
+			System.out.println("Deux variables ne peuvent avoir le même nom; ligne " +
+					Yaka.token.beginLine + " et colonne " + Yaka.token.beginColumn);
 		}
 		Yaka.tabIdent.rangeLocal(nom , new IdVar(type , offsetCompteur));
 		offsetCompteur -= 2;
@@ -72,22 +74,10 @@ public class Declaration {
 		offsetCompteur = 0;
 		listeParam = new Vector<IdParam>();
 		
-		/*if (sType == "BOOLEEN") {
-			type = Type.BOOLEEN;
-		} else {
-			if (sType == "ENTIER") {
-				type = Type.ENTIER;
-			}
-			else {
-				//Si ni ENTIER ni BOOLEEN
-				System.out.println("La fonction doit rendre un ENTIER ou un BOOLEEN ; ligne " +
-				Yaka.token.next.beginLine + " et colonne " + Yaka.token.next.beginColumn);
-			}
-		}*/
 	}
 	
 	// Ajoute une fonction de type correspondant ï¿½ l'attribut temporaire type
-	public void setFonction (String nom) throws ParseException {
+	public void setFonction (String nom) {
 		//Mettre le tmpNomFonction au nom de la fonction
 		tmpNomFonction = nom;
 		Yaka.tabIdent.rangeGlobal(nom, new Fonction(type));

@@ -79,7 +79,7 @@ public class TabIdent {
 			last = clef;
 		} else {
 			System.out.println("La fonction " + clef + " est déjà déclarée ; ligne " +
-					Yaka.token.next.beginLine + " et colonne " + Yaka.token.next.beginColumn);
+					Yaka.token.beginLine + " et colonne " + Yaka.token.beginColumn);
 		}
 	}
 	

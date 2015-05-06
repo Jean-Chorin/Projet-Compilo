@@ -23,6 +23,8 @@ public class ImplFonction {
 	private int courant = -1;
 	//nom de la fonction qu'on déclare
 	private String declarefonc;
+	//si on est dans le main
+	private boolean main = false;
 	
 	//vérifie si le parametre de retour correspond au parametre indiqué dans la fonction et écrit via yvm
 	public void retourne(Type f){
@@ -31,16 +33,23 @@ public class ImplFonction {
 		if(t == f){
 			Yaka.yvm.ireturn(Yaka.tabIdent.globaux.get(Yaka.tabIdent.last).nbParam()*2+4);
 			Yaka.yvm.goTo("FINFONC" + fonccour);
-		}else{
+		}else if(main){
+			System.out.println("Retourne dans le principal interdit" + Yaka.tabIdent.last + " a la ligne " + 
+					Yaka.token.beginLine + " et a la colonne " + Yaka.token.beginColumn);
+		}
+		else{
 			System.out.println("Incorect parameter Type in the fonction" + Yaka.tabIdent.last + " a la ligne " + 
-					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
+					Yaka.token.beginLine + " et a la colonne " + Yaka.token.beginColumn);
 		}
 
 	}
 	//ajoute le nom de la fonction que l'on déclare
 	public void add(String s){
 		declarefonc = s;
-		
+	}
+	
+	public void setMain(boolean b){
+		main = b;
 	}
 	
 	//fin de la fonction courante. Vide les idents locaux
@@ -71,9 +80,9 @@ public class ImplFonction {
 	
 	//Quand on a fini avec l'appel de la fonction
 	public void depile(){
-		if(res.get(courant) > fCourant.get(courant).nbParam()-1){
+		if(res.get(courant) < fCourant.get(courant).nbParam()-1){
 			System.out.println("Pas assez de parametres" + " a la ligne " + 
-					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
+					Yaka.token.beginLine + " et a la colonne " + Yaka.token.beginColumn);
 		}
 		courant --;
 	}
@@ -91,11 +100,11 @@ public class ImplFonction {
 		
 		if(res.get(courant) >= fCourant.get(courant).nbParam()){
 			System.out.println("Trop de parametres" + " a la ligne " + 
-					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
+					Yaka.token.beginLine + " et a la colonne " + Yaka.token.beginColumn);
 		}
 		else if(t != fCourant.get(courant).parametres.get(res.get(courant))){
 			System.out.println("Parametre pas du bon type" + " a la ligne " + 
-					Yaka.token.next.beginLine + " et a la colonne " + Yaka.token.next.beginColumn);
+					Yaka.token.beginLine + " et a la colonne " + Yaka.token.beginColumn);
 		}
 		res.add(courant,(res.get(courant))+1);
 	}
